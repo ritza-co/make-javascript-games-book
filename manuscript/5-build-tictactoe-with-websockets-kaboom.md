@@ -323,7 +323,7 @@ We're only interested in detecting 2 cases: A win or a draw.
 
 There are just 8 patterns that determine if a player has won at tic-tac-toe. Let's map them to our board with its indexed blocks: 
 
-![All possible win lines](/images/tutorials/27-tictactoe-kaboom/allwins.png) 
+![All possible win lines](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/allwins.png) 
 
 We can encode each of these winning patterns into an array of 3 numbers each. Then we can add each of those patterns to a larger array, like this:
 
@@ -379,7 +379,7 @@ Now we have all the functionality we need on the server, let's move on to buildi
 
 The first thing we need to do is create an opening scene in Kaboom that will prompt for the player's name, and setup Socket.IO so we can connect to the server. Head over to the Kaboom repl we created earlier, and add a new scene called `startGame`: 
 
-![add new scene](/images/tutorials/27-tictactoe-kaboom/startGameScene.gif)
+![add new scene](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/startGameScene.gif)
 
 Now we can add a reference to Socket.IO. Normally, in a plain HTML project, we could add a [`<script>`](https://www.w3schools.com/tags/tag_script.asp) tag and reference the Socket.IO [client script](https://socket.io/docs/v4/client-installation/#Installation), hosted automatically on our game server. However, in the Kaboom project type on Replit, we don't have direct access to change the underlying HTML files. Therefore, we need to add the script programmatically. We can do it by accessing the [`document`](https://developer.mozilla.org/en-US/docs/Web/API/Document) object available in every browser, and insert a new element with our script.
 
@@ -433,7 +433,7 @@ We've created a new starting scene, and we have a fixed size for the game window
 
 Click the dropdown next to the Kaboom menu. Set the "Start Scene" to "StartGame". Uncheck "Full Screen", and set the Width to 1000 and Height to 600. Set the scale to "1". Then choose dark blue or black as the "Clear Color". 
 
-![Kaboom setup](/images/tutorials/27-tictactoe-kaboom/kaboomSettings.gif)
+![Kaboom setup](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/kaboomSettings.gif)
 
 ## Adding the game board 
 
@@ -466,7 +466,7 @@ This adds 4 rectangles with a width of 1 pixel and length of 400 pixels to the s
 
 If you run the game, and enter your name, you should see the board layout like this:
 
-![board layout](/images/tutorials/27-tictactoe-kaboom/boardLayout.png)
+![board layout](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/boardLayout.png)
 
 Now we need to add a way to draw the _X_ and _O_ symbols in each block. To do this, we'll add objects with text components in each block of the board. First, we'll make an array containing the location and size of each block: 
 
@@ -534,7 +534,7 @@ Here we add 3 objects with [`text`](https://kaboomjs.com/doc#text) components. T
 
 To connect to the game server, we need to initialize the Socket.IO library we dynamically added earlier. We need to provide the URL to the server repl, so copy that from the output window:
 
-![Copying server url](/images/tutorials/27-tictactoe-kaboom/server-url.png)
+![Copying server url](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/server-url.png)
 
 Now add this code along with the server URL: 
 
@@ -621,9 +621,9 @@ Next we update the player name text boxes. First we reset them, in case one of t
 
 Now that we're done with updating from the game state, let's try running the game again. Open the game window in a new tab so that requests to the repl server don't get blocked by the browser due to the CORS header 'Access-Control-Allow-Origin' not matching in the embedded window. Make sure the server is also running, and enter your name. You should see something like this:
 
-![Open in new tab](/images/tutorials/27-tictactoe-kaboom/open-in-new-tab.png)
+![Open in new tab](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/open-in-new-tab.png)
 
-![Waiting for another player](/images/tutorials/27-tictactoe-kaboom/waiting.png)
+![Waiting for another player](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/waiting.png)
 
 You can connect to your game in another browser tab, and enter another name. Then you should see both names come up, and the status message change to allow a player to make a move. Of course, we haven't yet implemented the code to enable making a move from the UI, so let's do that now. 
 
@@ -663,7 +663,7 @@ charInput((ch) => {
 
 Now you can run the game (and the server), and open the game in another tab, and you should be able to play tic-tac-toe against yourself! Send a link to the game to a friend, and see if they can join and play against you. 
 
-![playing tic tac toe](/images/tutorials/27-tictactoe-kaboom/playing.png) 
+![playing tic tac toe](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/playing.png) 
 
 ## Next Steps
 

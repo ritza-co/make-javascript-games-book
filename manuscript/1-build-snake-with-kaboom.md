@@ -28,7 +28,7 @@ That's a lot to think about! Let's get started and create a project in [Replit](
 
 Log into your [Replit](https://replit.com) account and create a new repl. Choose **Kaboom** as your project type. Now, give this repl a name, like "snake-kaboom".
 
-![New repl](https://docs.replit.com//images/tutorials/21-snake-kaboom/new-repl.png)
+![New repl](https://docs.replit.com/images/tutorials/21-snake-kaboom/new-repl.png)
 
 After the repl has booted up, you should see a `main.js` file under the "Scenes" section. This is where we'll start coding.
 
@@ -267,7 +267,7 @@ Now all that remains is to remove a block at the tail end of the snake, using th
 
 Running the project now and clicking into the game screen should allow you to move the snake around. Note that there isn't collision detection yet, so the snake can go out of bounds without consequence. 
 
-![Moving the snake](https://docs.replit.com//images/tutorials/21-snake-kaboom/snake-move.gif)
+![Moving the snake](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-move.gif)
 
 
 ## Adding Snake Food
