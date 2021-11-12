@@ -4,7 +4,7 @@ The *Mario* series is one of the most known and loved game series of all time. T
 
 Tons of games still use the basic side-scroller formula of *Mario*, so it's a good game to build to learn the basics of game making. We'll build it in the new [Kaboom](https://kaboomjs.com) game engine. Kaboom has many useful functions for building platform games, and we'll try to go through as many as we can in this tutorial.
 
-![Game functionality](/images/tutorials/32-mario-kaboom/bigger-kill-scenes.gif)
+![Game functionality](https://docs.replit.com/images/tutorials/32-mario-kaboom/bigger-kill-scenes.gif)
 
 ## Designing the game
 
@@ -25,7 +25,7 @@ Head over to [Replit](https://replit.com) and create a new repl. Choose **Kaboom
 
 After the repl has booted up, you should see a `main.js` file under the "Code" section. This is where we'll start coding. It already has some code in it, but we'll replace that. 
 
-Download [this archive of sprite and asset files](/tutorial-files/mario-kaboom/mario-resources.zip) that we'll need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprite and asset files into the "sprites" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
+Download [this archive of sprite and asset files](https://docs.replit.com/tutorial-files/mario-kaboom/mario-resources.zip) that we'll need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprite and asset files into the "sprites" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 
 <img src="/images/tutorials/32-mario-kaboom/upload-assets.gif"
     alt="Uploading assets"
@@ -49,7 +49,7 @@ To start, we need to set up Kaboom with the screen size and colors we want for t
 
 This creates a new Kaboom canvas with a nice *Mario* sky-blue background. We also set the size of the view to 320x240 pixels, which is a very low resolution for a modern game, but the right kind of pixelation for a *Mario*-type remake. We use `scale` to make the background twice the size on screen - you can increase this value if you have a monitor with very high resolution. Click the "Run" button, and you should see a lovely blue sky in the output window. 
 
-![blue sky](/images/tutorials/32-mario-kaboom/blue-sky.png)
+![blue sky](https://docs.replit.com/images/tutorials/32-mario-kaboom/blue-sky.png)
 
 Now, let's load up some of the sprites so we can add them to the blue sky scene. This code loads each of the graphic elements we'll use, and gives them a name so we can refer to them when we build the game characters:
 
@@ -342,7 +342,7 @@ Press Command + S or Control + S now, and push enter at the start screen prompt.
 
 You should also see the enemy character wobble its feet, like it's trying to walk. This is because when we added the enemy definition `E` in the level config, we specified in the `sprite` component that it must use the `Walking` animation, which is defined in the `enemies.json` file. Kaboom starts the character using that animation.
 
-![static mario world](/images/tutorials/32-mario-kaboom/mario-world.gif)
+![static mario world](https://docs.replit.com/images/tutorials/32-mario-kaboom/mario-world.gif)
 
 Ok, back to looking at the code we added and what it does. First, we define a new [`scene`](https://kaboomjs.com/#scene) like we did for the start scene. This time, we specify a parameter `levelNumber` that can be passed to the scene. We give this parameter a default value of `0`. This will be the first level in our `LEVELS` array - remember, arrays start at index 0, so 0 is level 1. This parameter will let us call the same scene again when we get to the end of the level, but with `1` as the parameter so that we can play the next level. You can specify any parameters you like or need when creating a scene, and you can pass values from one scene to another. This is very useful, for example if you want to pass the player score to an end game scene, or pass in player options from the start scene. 
 
@@ -390,7 +390,7 @@ When a player releases the space key, we want to make Mario jump. To do this, we
 
 Press Command + S or Control + S to update the output, and test it out. Mario should move around, but it doesn't look very natural and *Mario*-like - yet! Another thing you'll notice is that the screen does not scroll when Mario walks to the right, so we can't get to the rest of the level. Let's fix that first.
 
-![Mario moving](/images/tutorials/32-mario-kaboom/mario-move.gif)
+![Mario moving](https://docs.replit.com/images/tutorials/32-mario-kaboom/mario-move.gif)
 
 ## Adding scrolling
 
@@ -412,7 +412,7 @@ Here we add a handler to the [`action`](https://kaboomjs.com/#action) event for 
 
 Update the output again and test it out. As you move Mario past the center of the screen, the camera should start following him, giving the sense of scrolling. 
 
-![Scrolling](/images/tutorials/32-mario-kaboom/scrolling.gif)
+![Scrolling](https://docs.replit.com/images/tutorials/32-mario-kaboom/scrolling.gif)
 
 ## Creating a custom component
 
@@ -469,7 +469,7 @@ The `update()` method is called for each frame. In it, we first check if the cha
 
 Now that we've created this component, let's use it on a character. Uncomment the lines `//patrol` wherever you see it in the `levelConf` setup we created. Update the output and test it out. You should see the enemy character walk back and forth. 
 
-![Patrol component](/images/tutorials/32-mario-kaboom/patrol.gif)
+![Patrol component](https://docs.replit.com/images/tutorials/32-mario-kaboom/patrol.gif)
 
 You'll notice we also make use of the `patrol` component on the `bigMushy` character, which we'll use to make Mario grow from small Mario to big Mario. We'll get to that in a bit. 
 
@@ -477,7 +477,7 @@ You'll notice we also make use of the `patrol` component on the `bigMushy` chara
 
 Now that the enemies are moving around, we can give them some more behaviors and properties. One of the most important things to do is to squash the enemies if Mario jumps on them. If you take a look at the `enemies.png` sprite file, you'll see that the 3rd frame (index 2) is an image of the enemy, but squashed. 
 
-![Enemies-index](/images/tutorials/32-mario-kaboom/enemies-index.png)
+![Enemies-index](https://docs.replit.com/images/tutorials/32-mario-kaboom/enemies-index.png)
 
 
 We can swap out the animation that is played when the enemy is patrolling for this frame. Kaboom has a built in [`lifespan`](https://kaboomjs.com/#lifespan) component that also has a fade out function. This component allows us to slowly fade out the squashed enemy from the scene, and then automatically remove it entirely once the specified lifetime is reached. Kaboom also allows us to dynamically add and remove components from characters using the `use` and `unuse` methods. These methods are not yet documented, but you can find them (and more tricks!) by looking at the [Kaboom source code](https://github.com/replit/kaboom). Let's use this knowledge to build a custom component to handle the enemy getting squashed and fading out of the scene:
@@ -508,7 +508,7 @@ We define the custom component as we did before. Because we need to stop the ene
 
 As a side note, pressing F1 in the game turns on Kaboom debugging, which will draw the [`area`](https://kaboomjs.com/#area) box around each game element, so you can easily see when characters collide. It also shows other handy info, like the frame rate and character properties. 
 
-![debug mode](/images/tutorials/32-mario-kaboom/debug-mode.png)
+![debug mode](https://docs.replit.com/images/tutorials/32-mario-kaboom/debug-mode.png)
 
 Back to our code. We execute our enemy squash in the `squash` method. We have a flag called `isAlive`, which we'll use to determine if the enemy is able to hurt Mario. This is usually `true`, but set to `false` once the enemy is squashed and harmless. We also `unuse` the patrol component so that the enemy stops walking back and forth. Then we call `stop`, which is a method added by the [`sprite`](https://kaboomjs.com/#sprite) component. Calling `stop` stops playing the current animation. Then we set the `frame` of the sprite to use to `2`, which is the squashed enemy frame, and update the [`area`](https://kaboomjs.com/#area) width and height to be the same size as the frame. Finally, we call `use` to add the [`lifespan`](https://kaboomjs.com/#lifespan) component so that the character is removed from the scene after `0.5` seconds, and fades out for `0.1` seconds. 
 
@@ -556,7 +556,7 @@ This code will reset the `canSquash` variable so that the player will not squash
 
 Update the output and test our game out. If you jump on an enemy, it should be squashed and then disappear after half a second. 
 
-![Squash enemy](/images/tutorials/32-mario-kaboom/squash.gif)
+![Squash enemy](https://docs.replit.com/images/tutorials/32-mario-kaboom/squash.gif)
 
 ## Headbutting surprise boxes
 
@@ -643,7 +643,7 @@ Then, to replace the `questionBox` with an empty box, we first record its positi
 
 Cool, time to update the output and test this out. When you jump up using the `space` key and headbutt the question boxes now, they should move and have things pop out!
 
-![question-boxes](/images/tutorials/32-mario-kaboom/question-box.gif)
+![question-boxes](https://docs.replit.com/images/tutorials/32-mario-kaboom/question-box.gif)
 
 ## Adding special behaviors to Mario
 
@@ -860,7 +860,7 @@ keyPress("space", () => {
 
 Time to update the output and test all these changes out! First thing to test is if Mario grows bigger by eating the mushroom. Second thing to check is if Mario then gets smaller again by colliding with an enemy. Also check if Mario is killed when colliding with an enemy when he is small, or when falling off the platform. 
 
-![Mario bigger and killed](/images/tutorials/32-mario-kaboom/bigger-kill-scenes.gif)
+![Mario bigger and killed](https://docs.replit.com/images/tutorials/32-mario-kaboom/bigger-kill-scenes.gif)
 
 ## Ending when we get to the castle
 
@@ -879,7 +879,7 @@ We can use a regular collision handler to check if Mario is at the castle. Notic
 
 This is so that the collision between Mario and the castle is only registered when Mario gets to the center of the castle, where the door is. We can visualize this by pressing F1 in the game to enable the debugger and look at the area box at the castle:
 
-![castle area](/images/tutorials/32-mario-kaboom/castle.png)
+![castle area](https://docs.replit.com/images/tutorials/32-mario-kaboom/castle.png)
 
 The reason we make the area box the height of the screen is make sure the player can't accidentally jump over the ending point and fall off the end of the level. 
 

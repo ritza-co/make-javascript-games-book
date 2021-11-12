@@ -4,13 +4,13 @@ Tic-tac-toe, or noughts and crosses, or Xs and Os, is a simple classic game for 
 
 In this tutorial, we'll create a 2-player online tic-tac-toe game using a [Node.js](https://nodejs.org/en/) server. [Socket.IO](https://socket.io) will enable realtime gameplay across the internet. We'll use Kaboom.js to create the game interface. 
 
-![Game play](/images/tutorials/27-tictactoe-kaboom/gameplay.gif)
+![Game play](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/gameplay.gif)
 
 ## How do multiplayer games work?
 
 Multiplayer games have an architecture that typically looks something like this:
 
-![Game server architecture](/images/tutorials/27-tictactoe-kaboom/architecture.png)
+![Game server architecture](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/architecture.png)
 
 Players (clients) connect to a _game server_ over the internet. The game runs on the game server, where all the game rules, scores and other data are processed. The players' computers render the graphics for the game, and send player commands (from the keyboard, mouse, gamepad, or other input device) back to the game server. The game server checks if these commands are valid, and then updates the _game state_. The game state is a representation of all the variables, players, data and information about the game. This game state is then transmitted back to all the players and the graphics are updated. 
 
@@ -24,9 +24,9 @@ With the [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) proto
 
 For this project, we'll need to create 2 repls - 1 using Node.js for the game server, and 1 using Kaboom for the players. Head over to [Replit](https://replit.com) and create a two new repls:
 - To create the server project, choose "Node.js" as your project type. Give this repl a name, like "tic-tac-toe-server".
-  ![Server repl](/images/tutorials/27-tictactoe-kaboom/server-new-repl.png)
+  ![Server repl](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/server-new-repl.png)
 - To create the player project, choose "Kaboom" as your project type. Give this repl a name, like "tic-tac-toe".
-  ![New Player repl](/images/tutorials/27-tictactoe-kaboom/player-new-repl.png)
+  ![New Player repl](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/player-new-repl.png)
 
 We'll code in the server repl to start, and then switch between repls as we build the game. 
 
@@ -101,7 +101,7 @@ let gameState = {
 
 First, we have a representation of the tic-tac-toe board as an array with 9 elements. This is how the array elements are mapped to the board:
 
-![Tic Tac Toe board mapped to array indices](/images/tutorials/27-tictactoe-kaboom/board.png)
+![Tic Tac Toe board mapped to array indices](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/board.png)
 
 
 Each number in the blocks represents the index at which the board position is represented in the array. Initially, we fill all the elements of the array with `null` to indicate that the block is open. When players make a move to occupy an open space, we'll add a reference to the player instead. That way we can keep track of which blocks are empty, and which are occupied by which player. 
