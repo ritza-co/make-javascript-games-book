@@ -4,9 +4,7 @@ Snake was an incredibly popular game, mostly remembered from 1990s era cell phon
 
 In this tutorial, we'll implement Snake using [Kaboom.js](https://kaboomjs.com) built into [Replit](https://replit.com) 
 
-<img src="/images/tutorials/21-snake-kaboom/updated-graphic.gif"
-     alt="game functionality"
-     style="width: 550px !important;"/>
+![](/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
 
 ## Overview and Requirements
@@ -93,9 +91,7 @@ Then Kaboom.js allows us to specify what to draw for each symbol in the text map
 
 If we run this code, we should see the outline of a red square on the screen, representing the map. 
 
-<img src="/images/tutorials/21-snake-kaboom/boundary-wall.png"
-     alt="Boundary wall from map"
-     style="width: 650px !important;"/>
+![](/images/tutorials/21-snake-kaboom/boundary-wall.png)
 
 ## Adding the Snake 
 
@@ -169,9 +165,7 @@ You'll notice that we also add in a function `respawn_all`, and a call to the fu
 
 Running the code now, you should see a blue line at the top-left side of the map. 
 
-<img src="/images/tutorials/21-snake-kaboom/static-snake.png"
-     alt="static snake"
-     style="width: 650px !important;"/>
+![](/images/tutorials/21-snake-kaboom/static-snake.png)
 
 
 ## Moving the Snake
@@ -326,9 +320,7 @@ function respawn_all(){
 
 Running the game now shows a green food block positioned somewhere randomly on the map: 
 
-<img src="/images/tutorials/21-snake-kaboom/food-added.png"
-     alt="food added"
-     style="width: 650px !important;"/>
+![](/images/tutorials/21-snake-kaboom/food-added.png)
 
 ## Detecting Collisions
 
@@ -349,9 +341,7 @@ We set up the `collides` function with tags for the snake, and the food object. 
 
 Running this, and eating the food, you should see the snake grow each time, and the food re-appear on another block:
 
-<img src="/images/tutorials/21-snake-kaboom/eat-food.gif"
-     alt="eating food"
-     style="width: 650px !important;"/>
+![](/images/tutorials/21-snake-kaboom/eat-food.gif)
 
 Now, we can add similar code to detect if the snake has hit the wall: 
 
@@ -376,9 +366,7 @@ collides("snake", "snake", (s, t) => {
 
 Running the game now, and crashing into the wall should look something like this:
 
-<img src="/images/tutorials/21-snake-kaboom/snake-prang.gif"
-     alt="snake prang"
-     style="width: 650px !important;"/>
+![](/images/tutorials/21-snake-kaboom/snake-prang.gif)
 
 
 Congratulations! You've finished creating Snake in Kaboom.js! 
@@ -391,11 +379,9 @@ We have a working snake game, but it does look a bit bland. Kaboom.js has good s
 Using sprites, let's give the snake something nicer to eat than a green block. Right click and select "Save image as" on the pizza slice below, and save it to your computer. Then, in Replit, click the upload button next to "Sprites" and upload the pizza to your repl. 
 
 
-<img src="/images/tutorials/21-snake-kaboom/pizza.png"
-     alt="pizza"
-     style="width: 50px !important;"/>
+![](/images/tutorials/21-snake-kaboom/pizza.png)
 
-![add pizza sprite](/images/tutorials/21-snake-kaboom/add-pizza-sprite.gif)
+![add pizza sprite](images/tutorials/21-snake-kaboom/add-pizza-sprite.gif)
 
 
 Now, we can update the `respawn_food` function to use this sprite, instead of drawing a green block. Remove the lines `rect` and `color`, and replace with a call to add the pizza sprite, like this:
@@ -444,37 +430,22 @@ This sets up our 2 layers, and makes the `game` layer the default layer to draw 
 
 Next, we can update the boundaries to look a bit better. Recall that in our map we add with [`addLevel`](https://kaboomjs.com/doc#addLevel), each different symbol we use can map to a different game object. Using this, we can create a good looking border fence, with different elements for each side and corners. Download the following 8 sprites as before, and upload them to your repl:
 
-<img src="/images/tutorials/21-snake-kaboom/fence-bottom.png"
-     alt="fence bottom"
-     style="width: 50px !important;"/>
+![](/images/tutorials/21-snake-kaboom/fence-bottom.png)
 
-<img src="/images/tutorials/21-snake-kaboom/fence-left.png"
-     alt="fence left"
-     style="width: 50px !important;"/>
 
-<img src="/images/tutorials/21-snake-kaboom/fence-right.png"
-     alt="fence right"
-     style="width: 50px !important;"/>
+![](/images/tutorials/21-snake-kaboom/fence-left.png)
 
-<img src="/images/tutorials/21-snake-kaboom/fence-top.png"
-     alt="fence top"
-     style="width: 50px !important;"/>
+![](/images/tutorials/21-snake-kaboom/fence-right.png)
 
-<img src="/images/tutorials/21-snake-kaboom/post-bottom-left.png"
-     alt="post bottom left"
-     style="width: 50px !important;"/>
+![](/images/tutorials/21-snake-kaboom/fence-top.png)
 
-<img src="/images/tutorials/21-snake-kaboom/post-bottom-right.png"
-     alt="post bottom right"
-     style="width: 50px !important;"/>
+![](/images/tutorials/21-snake-kaboom/post-bottom-left.png)
 
-<img src="/images/tutorials/21-snake-kaboom/post-top-left.png"
-     alt="post top left"
-     style="width: 50px !important;"/>
+![](/images/tutorials/21-snake-kaboom/post-bottom-right.png)
 
-<img src="/images/tutorials/21-snake-kaboom/post-top-right.png"
-     alt="post top right"
-     style="width: 50px !important;"/>
+![](/images/tutorials/21-snake-kaboom/post-top-left.png)
+
+![](/images/tutorials/21-snake-kaboom/post-top-right.png)
 
 Now, we can update the level map to use these. Replace the previous `addLevel` code with the following code: 
 
@@ -545,9 +516,7 @@ const map = addLevel([
 The last thing is to upgrade the snake itself. Download the skin below, and upload to the repl as before.
 
 
-<img src="/images/tutorials/21-snake-kaboom/snake-skin.png" 
-     alt="snake skin" 
-     style="width: 50px !important;"/>
+![](/images/tutorials/21-snake-kaboom/snake-skin.png)
 
 
 We create snake pieces in 2 places: in the `respawn_snake` function, and in the draw loop. Update both to use the snake skin sprite instead of a blue block. The `respawn_snake` function should look like this:
@@ -602,9 +571,7 @@ loadSprite("pizza", "sprites/pizza.png");
 
 If you run the game now, you should see it looking much better!
 
-<img src="/images/tutorials/21-snake-kaboom/updated-graphic.gif"
-     alt="game functionality"
-     style="width: 550px !important;"/>
+![](/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
 
 ## Things to Try
