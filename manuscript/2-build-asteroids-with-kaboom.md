@@ -698,8 +698,3 @@ We've covered a lot of ground in this tutorial and touched on a lot of Kaboom's 
 * Enemy spaceships that fire at the player.
 * A third, even smaller size of asteroid.
 * More animations, for explosions and laser firing.
-
-You can find the game repl below:
-
-<iframe height="400px" width="100%" src="https://replit.com/@ritza/asteroids?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-

@@ -671,12 +671,6 @@ Now that you know the basics of creating a multiplayer online game, try your han
 
 Happy coding!
 
-## Tic-tac-toe repl
-<iframe height="400px" width="100%" src="https://replit.com/@ritza/tic-tac-toe?embed=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-## Tic-tac-toe server repl
-<iframe height="400px" width="100%" src="https://replit.com/@ritza/tic-tac-toe-server?embed=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
 
 
 

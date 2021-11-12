@@ -575,4 +575,3 @@ The spaceship cockpit was made by Ritza.
 
 Thank you to all the creators for putting their assets up with a Creative Commons license and allowing us to use them.
 
-<iframe height="400px" width="100%" src="https://replit.com/@ritza/3d-space-shooter?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

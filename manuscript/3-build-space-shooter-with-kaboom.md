@@ -765,9 +765,3 @@ Here are a few things you can try to add to the game and polish it up:
 - An intro scene, explaining the game and the controls.
 - Different types of alien bugs. Perhaps a large "boss" bug that can also shoot back.
 
-You can find the code for this tutorial in the repl below:
-
-<iframe height="400px" width="100%" src="https://replit.com/@ritza/space-shooter?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-
-

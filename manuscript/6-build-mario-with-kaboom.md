@@ -923,7 +923,3 @@ There are few things left to do to complete the game:
 
  [https://twitter.com/Arrow_N_TheKnee](https://twitter.com/Arrow_N_TheKnee) for the [Mario Visual Assets](https://dotstudio.itch.io/super-mario-1-remade-assets)
 
-You can find the code for this tutorial here:
-
-<iframe height="400px" width="100%" src="https://replit.com/@ritza/Mario?embed=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
