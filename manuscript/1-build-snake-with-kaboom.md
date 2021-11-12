@@ -4,7 +4,7 @@ Snake was an incredibly popular game, mostly remembered from 1990s era cell phon
 
 In this tutorial, we'll implement Snake using [Kaboom.js](https://kaboomjs.com) built into [Replit](https://replit.com) 
 
-![](/images/tutorials/21-snake-kaboom/updated-graphic.gif)
+![](images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
 
 ## Overview and Requirements
