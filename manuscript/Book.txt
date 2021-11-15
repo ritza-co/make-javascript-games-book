@@ -1,3 +1,1 @@
-4-build-3d-game-with-kaboom.md
-5-build-tictactoe-with-websockets-kaboom.md
-6-build-mario-with-kaboom.md
+1-build-snake-with-kaboom.md
