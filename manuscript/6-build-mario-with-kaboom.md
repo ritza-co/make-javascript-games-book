@@ -21,15 +21,13 @@ For the graphics, we will use a [tile set from this creator](https://dotstudio.i
 
 Head over to [Replit](https://replit.com) and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "Mario".
 
-![New mario repl](/images/tutorials/32-mario-kaboom/new-repl.png)
+![New mario repl](https://docs.replit.com/images/tutorials/32-mario-kaboom/new-repl.png)
 
 After the repl has booted up, you should see a `main.js` file under the "Code" section. This is where we'll start coding. It already has some code in it, but we'll replace that. 
 
 Download [this archive of sprite and asset files](https://docs.replit.com/tutorial-files/mario-kaboom/mario-resources.zip) that we'll need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprite and asset files into the "sprites" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 
-<img src="/images/tutorials/32-mario-kaboom/upload-assets.gif"
-    alt="Uploading assets"
-    style="width: 500px !important;"/>
+![upload assets](https://docs.replit.com/images/tutorials/32-mario-kaboom/upload-assets.gif)
 
 
 ## Setting up Kaboom
@@ -75,7 +73,7 @@ The first line, [`loadRoot`](https://kaboomjs.com/#loadRoot), specifies which fo
 
 Notice that the `mario` and `enemies` sprites are loaded with the function [`loadAseprite`](https://kaboomjs.com/#loadAseprite), and have an extra parameter specifying a `.json` file. This extra file is in a file format made by [Aseprite](https://www.aseprite.org), which is a pixel art and animation app. If you open the `Mario.png` file, you'll see that it has many different images of Mario in different positions, which are frames of Mario animations. The `.json` file from Aseprite contains all the information needed to animate Mario in our game. Kaboom knows how to interpret this file, and we can pick which animation we want to run at any time by choosing one from the `frameTags` list in the `.json` file and using the [`.play()`](https://kaboomjs.com/#sprite) method on a sprite. We can also choose a particular frame to show at any time, using the sprite's [`.frame`](https://kaboomjs.com/#sprite) property, and specifying the frame number to use, starting from 0.
 
-![Mario Aseprite file](/images/tutorials/32-mario-kaboom/aseprite-contents.png)
+![Mario Aseprite file](https://docs.replit.com/images/tutorials/32-mario-kaboom/aseprite-contents.png)
 
 ## Creating the level maps
 
@@ -282,9 +280,8 @@ Finally, we use the [`go`](https://kaboomjs.com/#go) function to go to the start
 
 After copying the code into your repl, press Command + S (Mac) or Control + S (Windows/Linux) to update the output window. You should see something like this: 
 
-<img src="/images/tutorials/32-mario-kaboom/start-scene.png"
-alt="start game screen"
-style="width: 600px !important;"/>
+![start scene](https://docs.replit.com/images/tutorials/32-mario-kaboom/start-scene.png)
+
 
 Note that if you push enter now to start the game, you'll get an error message. Don't worry, we'll sort that out soon.
 
