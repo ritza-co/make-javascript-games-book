@@ -12,6 +12,7 @@ Our finished game will look like this:
 
 ![Complete game](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/asteroids-game.gif)
 
+
 We will use these [Asteroids sprites](https://opengameart.org/content/asteroids-game-sprites-atlas) and this [space background](https://opengameart.org/content/space-background) from OpenGameArt.org, and the following sounds from FreeSound.org:
 
 * [Laser](https://freesound.org/people/Daleonfire/sounds/376694/)
