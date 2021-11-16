@@ -10,7 +10,9 @@ Following our [previous tutorial on building Snake](https://docs.replit.com/tuto
 
 Our finished game will look like this:
 
-![Complete game](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/asteroids-game.gif)
+![Complete game](resources/2-asteroids-game.png)
+
+[Click to open gif](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/asteroids-game.gif)
 
 
 We will use these [Asteroids sprites](https://opengameart.org/content/asteroids-game-sprites-atlas) and this [space background](https://opengameart.org/content/space-background) from OpenGameArt.org, and the following sounds from FreeSound.org:
@@ -33,7 +35,9 @@ Kaboom repls are quite different from other kinds of repls you may have seen bef
 
 Before we start coding, we need to upload our sprites and sounds. Download [this ZIP file](/tutorial-files/asteroids-kaboom/asteroids-resources.zip) and extract it on your computer. Then, upload everything in Sounds folder to the Sounds section of your repl, and everything in the Sprites folder to the Sprites section of your repl.
 
-![Uploading files](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/upload-sprites.gif)
+![Uploading files](resources/2-upload-asteroid-sprites.png)
+
+[Click to open gif](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/upload-sprites.gif)
 
 Once you've uploaded everything, click on "main" under Scenes, and we'll start writing some code.
 

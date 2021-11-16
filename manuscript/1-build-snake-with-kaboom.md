@@ -4,7 +4,9 @@ Snake was an incredibly popular game, mostly remembered from 1990s era cell phon
 
 In this tutorial, we'll implement Snake using [Kaboom.js](https://kaboomjs.com) built into [Replit](https://replit.com) 
 
-![updated graphic](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
+![Update graphic](resources/1-updated-graphic.png)
+
+[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
 
 ## Overview and Requirements
@@ -267,7 +269,9 @@ Now all that remains is to remove a block at the tail end of the snake, using th
 
 Running the project now and clicking into the game screen should allow you to move the snake around. Note that there isn't collision detection yet, so the snake can go out of bounds without consequence. 
 
-![Moving the snake](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-move.gif)
+![Moving the snake](resources/1-snake-move.png)
+
+[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-move.gif)
 
 
 ## Adding Snake Food
@@ -341,7 +345,9 @@ We set up the `collides` function with tags for the snake, and the food object. 
 
 Running this, and eating the food, you should see the snake grow each time, and the food re-appear on another block:
 
-![eat food](https://docs.replit.com/images/tutorials/21-snake-kaboom/eat-food.gif)
+![eat food](resources/1-eat-food.png)
+
+[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/eat-food.gif)
 
 Now, we can add similar code to detect if the snake has hit the wall: 
 
@@ -366,7 +372,9 @@ collides("snake", "snake", (s, t) => {
 
 Running the game now, and crashing into the wall should look something like this:
 
-![snake prang](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-prang.gif)
+![Snake prang](resources/1-snake-prang.png)
+
+[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-prang.gif)
 
 
 Congratulations! You've finished creating Snake in Kaboom.js! 
@@ -381,7 +389,9 @@ Using sprites, let's give the snake something nicer to eat than a green block. R
 
 ![pizza](https://docs.replit.com/images/tutorials/21-snake-kaboom/pizza.png)
 
-![add pizza sprite](https://docs.replit.com/images/tutorials/21-snake-kaboom/add-pizza-sprite.gif)
+![add pizza sprite](resources/1-add-pizza-sprite.png)
+
+[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/add-pizza-sprite.gif)
 
 
 Now, we can update the `respawn_food` function to use this sprite, instead of drawing a green block. Remove the lines `rect` and `color`, and replace with a call to add the pizza sprite, like this:
@@ -431,7 +441,6 @@ This sets up our 2 layers, and makes the `game` layer the default layer to draw 
 Next, we can update the boundaries to look a bit better. Recall that in our map we add with [`addLevel`](https://kaboomjs.com/doc#addLevel), each different symbol we use can map to a different game object. Using this, we can create a good looking border fence, with different elements for each side and corners. Download the following 8 sprites as before, and upload them to your repl:
 
 ![fence bottom](https://docs.replit.com/images/tutorials/21-snake-kaboom/fence-bottom.png)
-
 
 ![fence left](https://docs.replit.com/images/tutorials/21-snake-kaboom/fence-left.png)
 
@@ -571,7 +580,9 @@ loadSprite("pizza", "sprites/pizza.png");
 
 If you run the game now, you should see it looking much better!
 
-![updated graphic](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
+![updated graphic](resources/1-updated-graphic1.png)
+
+[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
 
 ## Things to Try

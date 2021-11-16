@@ -4,7 +4,8 @@ Tic-tac-toe, or noughts and crosses, or Xs and Os, is a simple classic game for 
 
 In this tutorial, we'll create a 2-player online tic-tac-toe game using a [Node.js](https://nodejs.org/en/) server. [Socket.IO](https://socket.io) will enable realtime gameplay across the internet. We'll use Kaboom.js to create the game interface. 
 
-![Game play](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/gameplay.gif)
+![Game play](resources/5-tictactoe-gameplay.png)
+[Click to open gif](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/gameplay.gif)
 
 ## How do multiplayer games work?
 
@@ -379,7 +380,8 @@ Now we have all the functionality we need on the server, let's move on to buildi
 
 The first thing we need to do is create an opening scene in Kaboom that will prompt for the player's name, and setup Socket.IO so we can connect to the server. Head over to the Kaboom repl we created earlier, and add a new scene called `startGame`: 
 
-![add new scene](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/startGameScene.gif)
+![add new scene](resources/5-startGameScene.png)
+[Click to open gif](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/startGameScene.gif)
 
 Now we can add a reference to Socket.IO. Normally, in a plain HTML project, we could add a [`<script>`](https://www.w3schools.com/tags/tag_script.asp) tag and reference the Socket.IO [client script](https://socket.io/docs/v4/client-installation/#Installation), hosted automatically on our game server. However, in the Kaboom project type on Replit, we don't have direct access to change the underlying HTML files. Therefore, we need to add the script programmatically. We can do it by accessing the [`document`](https://developer.mozilla.org/en-US/docs/Web/API/Document) object available in every browser, and insert a new element with our script.
 
@@ -433,7 +435,8 @@ We've created a new starting scene, and we have a fixed size for the game window
 
 Click the dropdown next to the Kaboom menu. Set the "Start Scene" to "StartGame". Uncheck "Full Screen", and set the Width to 1000 and Height to 600. Set the scale to "1". Then choose dark blue or black as the "Clear Color". 
 
-![Kaboom setup](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/kaboomSettings.gif)
+![Kaboom setup](resources/5-kaboomSettings.png)
+[Click to open gif](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/kaboomSettings.gif)
 
 ## Adding the game board 
 
