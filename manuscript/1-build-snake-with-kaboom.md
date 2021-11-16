@@ -6,7 +6,7 @@ In this tutorial, we'll implement Snake using [Kaboom.js](https://kaboomjs.com) 
 
 ![Update graphic](resources/1-updated-graphic.png)
 
-[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
 
 ## Overview and Requirements
@@ -271,7 +271,7 @@ Running the project now and clicking into the game screen should allow you to mo
 
 ![Moving the snake](resources/1-snake-move.png)
 
-[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-move.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-move.gif)
 
 
 ## Adding Snake Food
@@ -347,7 +347,7 @@ Running this, and eating the food, you should see the snake grow each time, and 
 
 ![eat food](resources/1-eat-food.png)
 
-[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/eat-food.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/eat-food.gif)
 
 Now, we can add similar code to detect if the snake has hit the wall: 
 
@@ -374,7 +374,7 @@ Running the game now, and crashing into the wall should look something like this
 
 ![Snake prang](resources/1-snake-prang.png)
 
-[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-prang.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-prang.gif)
 
 
 Congratulations! You've finished creating Snake in Kaboom.js! 
@@ -391,7 +391,7 @@ Using sprites, let's give the snake something nicer to eat than a green block. R
 
 ![add pizza sprite](resources/1-add-pizza-sprite.png)
 
-[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/add-pizza-sprite.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/add-pizza-sprite.gif)
 
 
 Now, we can update the `respawn_food` function to use this sprite, instead of drawing a green block. Remove the lines `rect` and `color`, and replace with a call to add the pizza sprite, like this:
@@ -582,7 +582,7 @@ If you run the game now, you should see it looking much better!
 
 ![updated graphic](resources/1-updated-graphic1.png)
 
-[*click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
 
 ## Things to Try
