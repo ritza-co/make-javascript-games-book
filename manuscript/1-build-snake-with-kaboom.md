@@ -204,7 +204,7 @@ onKeyPress("right", () => {
 
 For each of the named "arrow" keys, we set up a function to call if the key is pressed. In each of these functions, we check to ensure that the new direction input is not the complete opposite direction to which the snake is currently moving. This is because we don't want to allow the snake to reverse. If the input direction is a legal move, we update the `current_direction` property to the new direction.
 
-Now we need to think about how to make the snake appear to move on the screen. A way to do this is to check which direction the snake is heading, and add a block in front of the snake in that direction. Then we'll need to remove a block at the tail-end of the snake. We'll need to do this a few times in a second so that the snake appears to be moving smoothly. Kaboom.js has a function [`onUpdate`](https://kaboomjs.com/doc/#onUpdate) REMOVEME Kaboom.js has a function [`onUpdate`](https://kaboomjs.com/doc\#onUpdate)  which can be used to update game objects on each frame. Add the following code, which uses the `onUpdate` function, to move the snake:
+Now we need to think about how to make the snake appear to move on the screen. A way to do this is to check which direction the snake is heading, and add a block in front of the snake in that direction. Then we'll need to remove a block at the tail-end of the snake. We'll need to do this a few times in a second so that the snake appears to be moving smoothly. Kaboom.js has a function [`onUpdate`](https://kaboomjs.com/doc/#onUpdate) which can be used to update game objects on each frame. Add the following code, which uses the `onUpdate` function, to move the snake:
 
 ```javascript
 
