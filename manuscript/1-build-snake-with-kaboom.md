@@ -46,7 +46,7 @@ Using Kaboom.js in Replit takes care of all the boilerplate initialisation code,
 
 To start, we can get our game board, or _map_ drawn on the screen. This will define the edges of the board so that if the snake crashes into them, we can detect and end the game.
 
-Kaboom.js has built-in support for defining game maps, using a text array and the function [`addLevel`](https://kaboomjs.com/doc#addLevel). This takes away a lot of the hassle normally involved in loading and rendering maps.
+Kaboom.js has built-in support for defining game maps, using a text array and the function [`addLevel`](https://kaboomjs.com/doc/#addLevel). This takes away a lot of the hassle normally involved in loading and rendering maps.
 
 Replace the example code in `main.js` file with the following to create the game board:
 
@@ -157,13 +157,13 @@ respawn_all();
 
 ```
 
-First, the function gets rid of any existing snake segment objects by using the Kaboom.js [`destroyAll` function](https://kaboomjs.com/doc#destroyAll). This removes any object with the given tag from the game. Then we reset our segment array to an empty array, and the snake length back to the default.
+First, the function gets rid of any existing snake segment objects by using the Kaboom.js [`destroyAll` function](https://kaboomjs.com/doc/#destroyAll). This removes any object with the given tag from the game. Then we reset our segment array to an empty array, and the snake length back to the default.
 
-Then the function sets up a loop to create new snake segments, up to the length we specified. It does this by calling the Kaboom.js [`add`](https://kaboomjs.com/doc#add) method, which adds a new object to the game. `add` takes a few parameters, as components of the object to create. We pass in components to specify how to draw the object (using [`rect`](https://kaboomjs.com/doc#rect)), its color, and a tag "snake" to identify the segments when we are checking collisions, and updating/removing segments. We also specify the position for the segment we create. To create the starting snake, we just ensure it is at least one `block_size`, or block, from the left side, and then add each subsequent segment one more block down per loop. This gives a straight snake pointing down to start. Then we add the new segment to our `snake_body` array to keep track of it.
+Then the function sets up a loop to create new snake segments, up to the length we specified. It does this by calling the Kaboom.js [`add`](https://kaboomjs.com/doc/#add) method, which adds a new object to the game. `add` takes a few parameters, as components of the object to create. We pass in components to specify how to draw the object (using [`rect`](https://kaboomjs.com/doc/#rect)), its color, and a tag "snake" to identify the segments when we are checking collisions, and updating/removing segments. We also specify the position for the segment we create. To create the starting snake, we just ensure it is at least one `block_size`, or block, from the left side, and then add each subsequent segment one more block down per loop. This gives a straight snake pointing down to start. Then we add the new segment to our `snake_body` array to keep track of it.
 
 Finally, we set a default starting direction for the snake to move in.
 
-You'll notice that we also add in a function `respawn_all`, and a call to the function `respawn_snake`. We'll use the `respawn_all` function to call all of our other respawn functions. Currently we have one for the snake, but we'll also need one for the food when we add it. In the `respawn_all` function, we also take care to set the `run_action` flag to false, so that no updates are made while we are setting up or resetting objects. We also wrap the calls in a Kaboom.js [`wait` function](https://kaboomjs.com/doc#wait), with a small delay of 0.5 seconds. This is because when we detect a "game over" condition, we don't immediately want to reset the game, as it could be a bit disorienting to a player.
+You'll notice that we also add in a function `respawn_all`, and a call to the function `respawn_snake`. We'll use the `respawn_all` function to call all of our other respawn functions. Currently we have one for the snake, but we'll also need one for the food when we add it. In the `respawn_all` function, we also take care to set the `run_action` flag to false, so that no updates are made while we are setting up or resetting objects. We also wrap the calls in a Kaboom.js [`wait` function](https://kaboomjs.com/doc/#wait), with a small delay of 0.5 seconds. This is because when we detect a "game over" condition, we don't immediately want to reset the game, as it could be a bit disorienting to a player.
 
 Running the code now, you should see a blue line at the top-left side of the map.
 
@@ -173,7 +173,7 @@ Running the code now, you should see a blue line at the top-left side of the map
 
 Now that we've got map boundaries, and a snake drawn on the screen, we can work on getting player input and moving the snake around.
 
-Kaboom.js has a function [`onKeyPress`](https://kaboomjs.com/doc#onKeyPress), which can call a supplied function whenever a particular key is pressed. We'll use that to determine which way the player wants the snake to go. Add this code to get user direction input:
+Kaboom.js has a function [`onKeyPress`](https://kaboomjs.com/doc/#onKeyPress), which can call a supplied function whenever a particular key is pressed. We'll use that to determine which way the player wants the snake to go. Add this code to get user direction input:
 
 ```javascript
 onKeyPress("up", () => {
@@ -204,7 +204,7 @@ onKeyPress("right", () => {
 
 For each of the named "arrow" keys, we set up a function to call if the key is pressed. In each of these functions, we check to ensure that the new direction input is not the complete opposite direction to which the snake is currently moving. This is because we don't want to allow the snake to reverse. If the input direction is a legal move, we update the `current_direction` property to the new direction.
 
-Now we need to think about how to make the snake appear to move on the screen. A way to do this is to check which direction the snake is heading, and add a block in front of the snake in that direction. Then we'll need to remove a block at the tail-end of the snake. We'll need to do this a few times in a second so that the snake appears to be moving smoothly. Kaboom.js has a function [`onUpdate`](https://kaboomjs.com/doc#onUpdate) which can be used to update game objects on each frame. Add the following code, which uses the `onUpdate` function, to move the snake:
+Now we need to think about how to make the snake appear to move on the screen. A way to do this is to check which direction the snake is heading, and add a block in front of the snake in that direction. Then we'll need to remove a block at the tail-end of the snake. We'll need to do this a few times in a second so that the snake appears to be moving smoothly. Kaboom.js has a function [`onUpdate`](https://kaboomjs.com/doc/#onUpdate) which can be used to update game objects on each frame. Add the following code, which uses the `onUpdate` function, to move the snake:
 
 ```javascript
 
@@ -258,13 +258,13 @@ onUpdate(()=> {
 
 ```
 
-We set the action to run every 0.2 seconds, or 5 times a second to get smooth movement. Since the `action` function updates game objects on each frame we use the [`dt()` function](https://kaboomjs.com/doc#dt) to get the time that has elapsed between the previous and current frame, so that we can keep track if 0.2 seconds has elapsed for us to move the snake. If the desired delay has not elapsed we exit early without updating anything otherwise we reset the timer and execute the code to move the snake.  You can try experiment with different times to see the effect on the game by adjusting the value of the `move_delay` variable. We also check the flag variable `run_action` we defined earlier – if it is false, we exit early without updating anything. Then, the function defines 2 local variables, `move_x` and `move_y`, which is used to determine where to place the 'next' block relative to the head of the snake.
+We set the action to run every 0.2 seconds, or 5 times a second to get smooth movement. Since the `action` function updates game objects on each frame we use the [`dt()` function](https://kaboomjs.com/doc/#dt) to get the time that has elapsed between the previous and current frame, so that we can keep track if 0.2 seconds has elapsed for us to move the snake. If the desired delay has not elapsed we exit early without updating anything otherwise we reset the timer and execute the code to move the snake.  You can try experiment with different times to see the effect on the game by adjusting the value of the `move_delay` variable. We also check the flag variable `run_action` we defined earlier – if it is false, we exit early without updating anything. Then, the function defines 2 local variables, `move_x` and `move_y`, which is used to determine where to place the 'next' block relative to the head of the snake.
 
 Then the function switches on the value of the current direction the snake is heading in. For each direction, the `move_x` and `move_y` are set to either 0, block_size or -1 * block_size. If the snake is moving left or right, we add or subtract a block from the x dimension accordingly. The same occurs if the snake is moving up or down, but in the y dimension.
 
 After the switch, we get the current snake head by indexing the last element in the snake body array. Now that we have both the current snake head position, and the position amount relative to the snake head to move in, we can create the new snake head by adding a new block game object. This is similar to the code we used in `respawn_snake`.
 
-Now all that remains is to remove a block at the tail end of the snake, using the built-in array [`shift` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift), which removes the first element from an array, and returns that element. Because our 'oldest' part of the snake, also known as a tail, is the first element, we call shift on the array, and then the Kaboom.js [`destroy` function](https://kaboomjs.com/doc#destroy) to get rid of the segment. We only do this if the current length of the snake body array is greater than our determined snake length. This means if we increase `snake_length`, the overall length of the snake on the screen will also increase. We can use this when we add food to the game.
+Now all that remains is to remove a block at the tail end of the snake, using the built-in array [`shift` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift), which removes the first element from an array, and returns that element. Because our 'oldest' part of the snake, also known as a tail, is the first element, we call shift on the array, and then the Kaboom.js [`destroy` function](https://kaboomjs.com/doc/#destroy) to get rid of the segment. We only do this if the current length of the snake body array is greater than our determined snake length. This means if we increase `snake_length`, the overall length of the snake on the screen will also increase. We can use this when we add food to the game.
 
 Running the project now and clicking into the game screen should allow you to move the snake around. Note that there isn't collision detection yet, so the snake can go out of bounds without consequence.
 
@@ -302,11 +302,11 @@ function respawn_food(){
 
 Firstly, we set up a variable `food` so that we can keep track of food objects we create. You can move this variable up to where we declared other variables, like `block_size` and `snake_body` if you want to keep them all neatly in the same place.
 
-Then the function `respawn_food` does a few things. In the game of snake, once a food block is eaten, another one appears at a random location on the grid. This means we'll need a random number generator to determine the location to place the food. Kaboom.js has a function called [`rand`](https://kaboomjs.com/doc#rand) which we can use to find a random position on the screen to place the food. We need both random `x` and `y` co-ordinates – conveniently, the `rand` function can accept 2D vectors as the start and end amount for the random range to generate numbers in, and will then return another 2D vector as a result.
+Then the function `respawn_food` does a few things. In the game of snake, once a food block is eaten, another one appears at a random location on the grid. This means we'll need a random number generator to determine the location to place the food. Kaboom.js has a function called [`rand`](https://kaboomjs.com/doc/#rand) which we can use to find a random position on the screen to place the food. We need both random `x` and `y` co-ordinates – conveniently, the `rand` function can accept 2D vectors as the start and end amount for the random range to generate numbers in, and will then return another 2D vector as a result.
 
-Why do we choose a range of 1-13 for the random position of the food? If you look at the map we added earlier, it is 14 spaces across and 14 spaces down. These are the dimensions of our screen in grid blocks. Because we don't want to draw the food over the boundaries, we use 1-13 to choose blocks within the map. Now, the `rand` function returns real numbers, with decimals, not integers. This means we need to add the `Math.floor` call to truncate any decimals off the random numbers, as we don't want to place the food halfway through a particular grid block. We also need to convert from our grid co-ordinates to regular screen pixels. This is done by multiplying each co-ordinate by the `block_size`, which specifies the size of each grid block in pixels. We make use of the Kaboom.js [`scale` method](https://kaboomjs.com/doc#vec2) on the `vec2` class to perform the multiplication.
+Why do we choose a range of 1-13 for the random position of the food? If you look at the map we added earlier, it is 14 spaces across and 14 spaces down. These are the dimensions of our screen in grid blocks. Because we don't want to draw the food over the boundaries, we use 1-13 to choose blocks within the map. Now, the `rand` function returns real numbers, with decimals, not integers. This means we need to add the `Math.floor` call to truncate any decimals off the random numbers, as we don't want to place the food halfway through a particular grid block. We also need to convert from our grid co-ordinates to regular screen pixels. This is done by multiplying each co-ordinate by the `block_size`, which specifies the size of each grid block in pixels. We make use of the Kaboom.js [`scale` method](https://kaboomjs.com/doc/#vec2) on the `vec2` class to perform the multiplication.
 
-The next part of the function checks if the `food` variable already contains an existing food object. If it does, we call [`destroy`](https://kaboomjs.com/doc#destroy) to remove that food from the game. Finally, the function creates a new food object by calling the Kaboom.js [`add`](https://kaboomjs.com/doc#add) function to create a new food object at the random position we made.
+The next part of the function checks if the `food` variable already contains an existing food object. If it does, we call [`destroy`](https://kaboomjs.com/doc/#destroy) to remove that food from the game. Finally, the function creates a new food object by calling the Kaboom.js [`add`](https://kaboomjs.com/doc/#add) function to create a new food object at the random position we made.
 
 To call this new `respawn_food` function, we need to update our `respawn_all` function, like this:
 
@@ -329,7 +329,7 @@ Running the game now shows a green food block positioned somewhere randomly on t
 
 Now that we have all the objects our game needs – a boundary wall, a snake, and food – we can move on to detecting interactions, or collisions, between these objects.
 
-Kaboom.js has a useful function for helping with this: [`onCollide`](https://kaboomjs.com/doc#onCollide). The function takes in 2 tags for different game object types, and calls a provided callback function if there is a collision of the objects.
+Kaboom.js has a useful function for helping with this: [`onCollide`](https://kaboomjs.com/doc/#onCollide). The function takes in 2 tags for different game object types, and calls a provided callback function if there is a collision of the objects.
 
 Let's start with detecting if the snake moves over a food block. Add the code below:
 
@@ -357,7 +357,7 @@ onCollide("snake", "wall", (s, w) => {
     respawn_all();
 });
 ```
-In the callback function, we immediately set the `run_action` flag to false. This is so that the code in the move loop does not run and create the appearance of the snake stuck in the wall. Then the code calls a cool Kaboom.js effect function [`shake`](https://kaboomjs.com/doc#shake), which "shakes" the screen in a way that makes it feel like the snake has crashed heavily, and communicates quite effectively that the game is over. Finally, we call `respawn_all` to reset all the game objects.
+In the callback function, we immediately set the `run_action` flag to false. This is so that the code in the move loop does not run and create the appearance of the snake stuck in the wall. Then the code calls a cool Kaboom.js effect function [`shake`](https://kaboomjs.com/doc/#shake), which "shakes" the screen in a way that makes it feel like the snake has crashed heavily, and communicates quite effectively that the game is over. Finally, we call `respawn_all` to reset all the game objects.
 
 We can use the same code to detect if the snake has hit itself – we just replace the `wall` tag with another `snake` tag:
 
@@ -416,7 +416,7 @@ function respawn_food(){
 }
 ```
 
-We can also update the background to be more interesting. To do this, we can make use of Kaboom.js' [layers](https://kaboomjs.com/doc#layers) concept. This allows us to create different graphic layers, for example one for a static background image, another one for the active game objects over that, and another top layer for stats and scores etc.
+We can also update the background to be more interesting. To do this, we can make use of Kaboom.js' [layers](https://kaboomjs.com/doc/#layers) concept. This allows us to create different graphic layers, for example one for a static background image, another one for the active game objects over that, and another top layer for stats and scores etc.
 
 We'll create 2 layers, background and game, to support a background. Download and add the background grass image below to your repl as you did for the pizza slice:
 
@@ -437,9 +437,9 @@ add([
 
 ```
 
-This sets up our 2 layers, and makes the `game` layer the default layer to draw on. Whenever we call [`add`](https://kaboomjs.com/doc#add), we can optionally specify a layer to put the object on – if we don't specify a layer, it uses whatever we set as default in the call to [`layers`](https://kaboomjs.com/doc#layers). Then we add our background sprite to the background layer.
+This sets up our 2 layers, and makes the `game` layer the default layer to draw on. Whenever we call [`add`](https://kaboomjs.com/doc/#add), we can optionally specify a layer to put the object on – if we don't specify a layer, it uses whatever we set as default in the call to [`layers`](https://kaboomjs.com/doc/#layers). Then we add our background sprite to the background layer.
 
-Next, we can update the boundaries to look a bit better. Recall that in our map we add with [`addLevel`](https://kaboomjs.com/doc#addLevel), each different symbol we use can map to a different game object. Using this, we can create a good looking border fence, with different elements for each side and corners. Download the following 8 sprites as before, and upload them to your repl:
+Next, we can update the boundaries to look a bit better. Recall that in our map we add with [`addLevel`](https://kaboomjs.com/doc/#addLevel), each different symbol we use can map to a different game object. Using this, we can create a good looking border fence, with different elements for each side and corners. Download the following 8 sprites as before, and upload them to your repl:
 
 ![fence bottom](https://docs.replit.com/images/tutorials/21-snake-kaboom/fence-bottom.png)
 
@@ -592,7 +592,7 @@ There is a lot of good functionality in [Kaboom.js](https://kaboomjs.com/) to tr
 - Create a 2 player version.
 - Add obstacles for the snake.
 - Incrementally speed up the game as it goes on, to make it harder. You can do this by adjusting the delay parameter of the `loop` function as the game progresses.
-- Add [sound effects](https://kaboomjs.com/doc#play) and background music.
+- Add [sound effects](https://kaboomjs.com/doc/#play) and background music.
 
 
 
