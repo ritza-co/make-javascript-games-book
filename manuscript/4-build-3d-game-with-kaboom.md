@@ -33,11 +33,10 @@ The Kaboom interface on Replit is specialised for game-making. Besides the Space
 
 If you haven't already, download this [zip file](/tutorial-files/3d-game-kaboom/3d-game-resources.zip) containing all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" folder, and the sounds to the "Sounds" folder.
 
-<img src="resources/4-upload-sprites.png"
-    alt="Uploading sprites"
-    style="width: 50% !important;"/>
+![upload sprites](resources/4-upload-sprites.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/upload-sprites.gif)
+
 
 To set up the game play environment, we need to set up Kaboom with the screen size and colors we want for the game window. Replace the code in `main.js` with the code below:
 
