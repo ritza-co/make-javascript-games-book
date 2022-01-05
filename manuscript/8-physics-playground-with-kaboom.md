@@ -1,8 +1,10 @@
-# Build a physics playground with Kaboom.js
+# Build a Physics playground with Kaboom.js
 
 In this tutorial, we will be building a simple physics playground with [Kaboom.js](https://kaboomjs.com/). This will be a 2D side-view platformer in which the player can use a [gravity gun](https://en.wikipedia.org/wiki/Gravity_gun) to pick up and shoot objects in the world, similar to games like *Half-Life 2* and *Rochard*.
 
-![Game play](/images/tutorials/36-physics-playground/gameplay.gif)
+![The finished game](resources/8-gameplay.png)
+
+![Click to open gif](https://docs.replit.com/images/tutorials/36-physics-playground/gameplay.gif)
 
 By the end of this tutorial, you will:
 
@@ -14,7 +16,7 @@ By the end of this tutorial, you will:
 
 Log into your [Replit](https://replit.com) account and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "gravity".
 
-![Creating a new Repl](/images/tutorials/36-physics-playground/create-repl.png)
+![Creating a new Repl](https://docs.replit.com/images/tutorials/36-physics-playground/create-repl.png)
 
 Kaboom repls are quite different from other kinds of repls you may have seen before: instead of dealing directly with files in folders, you'll be dealing with code, sounds and sprites, the latter of which you can draw directly in Replit's image editor.
 
@@ -181,7 +183,7 @@ Note the following:
 
 Run your repl now, and you'll see your level, with player, crates and walls. As we've placed the player in mid-air, you should see them fall to the platform below, confirming the presence of gravity.
 
-![Level](/images/tutorials/36-physics-playground/level.png)
+![Level](https://docs.replit.com/images/tutorials/36-physics-playground/level.png)
 
 
 ## Moving the player
@@ -453,13 +455,13 @@ When we launch an object, we'll give it a direction and a non-zero speed. We use
 
 Run your repl now and try out the gravity gun. You should be able to pull crates into the holding position, and then move them around your head.
 
-![Gravity gun pull](/images/tutorials/36-physics-playground/gravity-gun-pull.png)
+![Gravity gun pull](https://docs.replit.com/images/tutorials/36-physics-playground/gravity-gun-pull.png)
 
 ### Fixing the wall-clipping bugs
 
 If you play around with the game, you should notice a couple of wall clipping bugs. When holding an object, you can force it to teleport below the platform you're standing on by aiming them. Similarly, objects will teleport through platforms if you pull them from the other side.
 
-![Wall clip](/images/tutorials/36-physics-playground/wall-clip.png)
+![Wall clip](https://docs.replit.com/images/tutorials/36-physics-playground/wall-clip.png)
 
 In both cases, this is because Kaboom's `moveTo()` function does not take solid objects into account, so we'll have to do that ourselves.
 

@@ -56,7 +56,7 @@ The first argument in each `load` function is the name we want to use to refer t
 - The main game, where we play.
 - An endgame, or game over scene, which gives the player their score or overall result, and allows them to start again. 
 
-{width: 75%, height: 40%, align: middle}
+{width: 35%, height: 40%, align: middle}
 ![Game scenes](https://docs.replit.com/images/tutorials/35-flappy-bird/game-scenes.png)
 
 For this tutorial, we'll omit the intro scene, since we already know what Flappy bird is and how to play it, but you can add your own intro scene later!
@@ -356,9 +356,9 @@ This gives a margin of 30 pixels above or below the window, to take account of F
 
 Update the game output window again and test it out. If you fly into a pipe now, or flap too high, or fall out of the sky, you should be taken to the game over screen: 
 
-![game over screen](resources/7-game-over.jpg)
+![game over screen](resources/7-game-over.png)
 
-[Clcik to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/game-over.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/game-over.gif)
 
 
 ## Next steps

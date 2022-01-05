@@ -34,7 +34,7 @@ The Kaboom interface on Replit is specialised for game-making. Besides the Space
 If you haven't already, download this [zip file](https://docs.replit.com/tutorial-files/3d-game-kaboom/3d-game-resources.zip) containing all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" folder, and the sounds to the "Sounds" folder.
 
 {width: 50%, align: middle}
-![upload sprites](resources/4-upload-sprites.png)
+![Uploading sprites](resources/4-upload-sprites.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/upload-sprites.gif)
 
