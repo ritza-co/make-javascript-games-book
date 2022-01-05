@@ -47,7 +47,7 @@ Using Kaboom.js in Replit takes care of all the boilerplate initialisation code,
 
 To start, we can get our game board, or _map_ drawn on the screen. This will define the edges of the board so that if the snake crashes into them, we can detect and end the game.
 
-Kaboom.js has built-in support for defining game maps, using a text array and the function [`addLevel`](https://kaboomjs.com/doc/#addLevel). This takes away a lot of the hassle normally involved in loading and rendering maps.
+Kaboom.js has built-in support for defining game maps, using a text array and the function [`addLevel`](<https://kaboomjs.com/doc/#addLevel>). This takes away a lot of the hassle normally involved in loading and rendering maps.
 
 Replace the example code in `main.js` file with the following to create the game board:
 
