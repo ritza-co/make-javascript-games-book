@@ -621,8 +621,3 @@ We've built a rudimentary physics-based platform engine. From here, there's a lo
 * Add more movable objects of different sizes and masses.
 * Add puzzles that can be solved by arranging crates in specific patterns, and launching them from specific angles.
 * Improve the physics simulation with 2D collisions, rotating objects, and objects with different behaviors, such as bouncing and shattering.
-
-You can find our repl here:
-
-<iframe height="400px" width="100%" src="https://replit.com/@ritza/Gravity?embed=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-

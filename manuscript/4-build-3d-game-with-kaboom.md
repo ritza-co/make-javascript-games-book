@@ -4,11 +4,11 @@ Three-dimensional games became popular in the late 80's and early 90's with game
 
 [Kaboom.js](https://kaboomjs.com) is a 2D game engine, but we can use some of those early game designers' techniques to create a pseudo-3D game. This game is roughly based on our [2D space shooter game tutorial](https://docs.replit.com/tutorials/24-build-space-shooter-with-kaboom), but we'll use a view from the cockpit of the spaceship instead of the side-scrolling view.
 
-![Game functionality](resources/4-gameplay.png)
+![The finished game](resources/4-gameplay.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/gameplay.gif)
 
-You can download this [zip file](/tutorial-files/3d-game-kaboom/3d-game-resources.zip) with all the sprites and sounds you'll need for this tutorial.
+You can download this [zip file](https://docs.replit.com/tutorial-files/3d-game-kaboom/3d-game-resources.zip) with all the sprites and sounds you'll need for this tutorial.
 
 ## Game design
 
@@ -23,7 +23,7 @@ We'll make use of Kaboom's [scale component](https://kaboomjs.com/doc/#scale) to
 
 Head over to [Replit](https://replit.com) and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "3D Space Shooter".
 
-![New repl](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/new-repl.png)
+![Creating a new repl](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/new-repl.png)
 
 After the repl has booted up, you should see a `main.js` file under the "Code" section. This is where we'll start coding.
 
@@ -31,7 +31,7 @@ After the repl has booted up, you should see a `main.js` file under the "Code" s
 
 The Kaboom interface on Replit is specialised for game-making. Besides the Space Invader icon, you'll notice a few special folders in the file try, like "Code", '"Sprites", and "Sounds". These special folders take care of loading up assets, and all the necessary code to start scenes and direct the game. You can read up more about the Kaboom interface [here](https://docs.replit.com/tutorials/kaboom).
 
-If you haven't already, download this [zip file](/tutorial-files/3d-game-kaboom/3d-game-resources.zip) containing all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" folder, and the sounds to the "Sounds" folder.
+If you haven't already, download this [zip file](https://docs.replit.com/tutorial-files/3d-game-kaboom/3d-game-resources.zip) containing all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" folder, and the sounds to the "Sounds" folder.
 
 {width: 50%, align: middle}
 ![upload sprites](resources/4-upload-sprites.png)
@@ -91,6 +91,7 @@ To create this effect, we'll start by making the alien bugs small and spread out
 
 We need a 3D coordinate system to work out how our elements should move. We'll create a system like the one in the image below, with 0 for all three dimension axes in the center. This is how we'll track the movements of the aliens in code. When we draw them to the screen, we'll convert these coordinates into the 2D screen coordinate system.
 
+{align: middle}
 ![3D co-ordinate system](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/3d-system.png)
 
 Let's add the following code to the `main` scene file to achieve this:
@@ -176,7 +177,8 @@ First we add a new event handler onto the [`onUpdate`](https://kaboomjs.com/doc/
 
 Remember that screen coordinates start with (0,0) in the top left corner of the screen, and our 3D coordinate system starts with (0,0,0) in the 'center' of the system. To translate between the 2 systems, we need to find the center of the screen so that we can center the 3D system over it. We do this by by halving the screen `WIDTH` and `HEIGHT` by 2. The screen is the red rectangle in the image below, showing how the 3D system will be centered on it.
 
-![overlay 3d system over 2d system](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/overlay.png)
+{align: middle}
+![Overlay 3d system over 2d system](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/overlay.png)
 
 
 Now we can add the alien's `x` and `y` positions in 3D coordinate space relative to the center point of the screen. We bias the center point "up" a bit, as this will seem to be the center of the spaceship's view when we add the cockpit later. We also modify each of these `x` and `y` positions by a factor relating to the alien's `z` position: As the alien approaches, its `zpos` value decreases, and our factor uses this value to draw the alien nearer to the center of the screen. This enhances the depth illusion and makes it feel to the player that the aliens are coming at them.
@@ -185,7 +187,7 @@ Finally, we see if the alien is very close by seeing if the `zpos < 1`. If it is
 
 If you run the code now, you should see the aliens start to move toward you.
 
-![aliens coming at you](resources/4-aliens-coming.png)
+![Aliens coming at you](resources/4-aliens-coming.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/alieans-coming.gif)
 
@@ -273,7 +275,7 @@ This adds the `cockpit` sprite (image) to the `ui` layer. We also add the [`rota
 
 Run the game now and you should see the view from inside the spaceship.
 
-![spaceship view](resources/4-spaceship-view.png)
+![Spaceship view](resources/4-spaceship-view.png)
 
 [Click top open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/spaceship-view.gif)
 
@@ -350,7 +352,7 @@ In the event handlers for `left` and `right` keys, we also make use of the Kaboo
 
 Give the game a run, and you should be able to control the spaceship.
 
-![flying controls](resources/4-fly-controls.png)
+![Flying controls](resources/4-fly-controls.png)
 
 [Clcik to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/fly-controls.gif)
 
@@ -612,13 +614,13 @@ Happy coding and have fun!
 
 The game art and sounds used in this tutorial are from the following sources:
 
-Laser : https://freesound.org/people/sunnyflower/sounds/361471/
+Laser : [https://freesound.org/people/sunnyflower/sounds/361471/](https://freesound.org/people/sunnyflower/sounds/361471/)
 
-Explosion: https://freesound.org/people/tommccann/sounds/235968/
+Explosion: [https://freesound.org/people/tommccann/sounds/235968/](https://freesound.org/people/tommccann/sounds/235968/)
 
-Alien Bug: https://opengameart.org/content/8-bit-alien-assets
+Alien Bug: [https://opengameart.org/content/8-bit-alien-assets](https://opengameart.org/content/8-bit-alien-assets)
 
-The spaceship cockpit was made by Ritza.
+The spaceship cockpit was made by [Ritza](https://ritza.co).
 
 Thank you to all the creators for putting their assets up with a Creative Commons license and allowing us to use them.
 

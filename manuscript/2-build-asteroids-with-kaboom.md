@@ -10,7 +10,7 @@ Following our [previous tutorial on building Snake](https://docs.replit.com/tuto
 
 Our finished game will look like this:
 
-![Complete game](resources/2-asteroids-game.png)
+![The finished game](resources/2-asteroids-game.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/asteroids-game.gif)
 
@@ -22,7 +22,7 @@ We will use these [Asteroids sprites](https://opengameart.org/content/asteroids-
 
 We will also be using [music by Eric Matyas of Soundimage.org](https://soundimage.org/sci-fi/).
 
-We've created a single ZIP file with the sprites and sounds you will need for this tutorial, which you can download [here](/tutorial-files/asteroids-kaboom/asteroids-resources.zip).
+We've created a single ZIP file with the sprites and sounds you will need for this tutorial, which you can download [here](https://docs.replit.com/tutorial-files/asteroids-kaboom/asteroids-resources.zip).
 
 ## Creating a new project and loading assets
 
@@ -32,9 +32,10 @@ Log into your [Replit](https://replit.com) account and create a new repl. Choose
 
 Kaboom repls are quite different from other kinds of repls you may have seen before: instead of dealing directly with files in folders, you'll be dealing with scenes, sounds and sprites.
 
-Before we start coding, we need to upload our sprites and sounds. Download [this ZIP file](/tutorial-files/asteroids-kaboom/asteroids-resources.zip) and extract it on your computer. Click the "Files" icon on the sidebar then, upload everything in Sounds folder to the "sounds" section of your repl, and everything in the Sprites folder to the "sprites" section of your repl.
+Before we start coding, we need to upload our sprites and sounds. Download [this ZIP file](https://docs.replit.com/tutorial-files/asteroids-kaboom/asteroids-resources.zip) and extract it on your computer. Click the "Files" icon on the sidebar then, upload everything in Sounds folder to the "sounds" section of your repl, and everything in the Sprites folder to the "sprites" section of your repl.
 
-![upload sprites](resources/2-upload-asteroid-sprites.png)
+{width: 55%, align: middle}
+![Uploading sprites](resources/2-upload-asteroid-sprites.png)
 
 [Click to open gif]("https://docs.replit.com/images/tutorials/23-asteroids-kaboom/upload-sprites.gif")
 

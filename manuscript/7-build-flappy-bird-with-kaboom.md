@@ -4,7 +4,7 @@ Flappy Bird was a smash hit game for mobile phones back in 2013-2014. The inspir
 
 Let's take a trip back to 2014 and create our own clone of Flappy Bird using Kaboom! By remaking a game, you can not only learn how to make games, but also extend and change the game in any way you like. 
 
-![Flappy game](resources/7-gameplay.png)
+![The finished game](resources/7-gameplay.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/game-play.gif)
 
@@ -19,11 +19,12 @@ Head over to [Replit](https://replit.com) and create a new repl. Choose **Kaboom
 
 After the repl has booted up, you should see a `main.js` file under the "Code" section. This is where we'll start coding. There is already some code in this file, but we'll replace that. 
 
-Download the [sprites and asset files](/tutorial-files/flappy-bird-kaboom/flappy-assets.zip) we need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprites (image files) into the "sprites" folder, and all the sounds (MP3 files) into the "sounds" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
+Download the [sprites and asset files](https://docs.replit.com/tutorial-files/flappy-bird-kaboom/flappy-assets.zip) we need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprites (image files) into the "sprites" folder, and all the sounds (MP3 files) into the "sounds" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 
-![upload sprites](resources/7-upload-sprites.png)
+{width: 80%, align: middle}
+![Upload sprites](resources/7-upload-sprites.png)
 
-[Clickto open](https://docs.replit.com/images/tutorials/35-flappy-bird/upload-sprites.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/upload-sprites.gif)
 
 ## Initializing Kaboom
 
@@ -55,7 +56,8 @@ The first argument in each `load` function is the name we want to use to refer t
 - The main game, where we play.
 - An endgame, or game over scene, which gives the player their score or overall result, and allows them to start again. 
 
-![game scenes](https://docs.replit.com/images/tutorials/35-flappy-bird/game-scenes.png)
+{width: 75%, height: 40%, align: middle}
+![Game scenes](https://docs.replit.com/images/tutorials/35-flappy-bird/game-scenes.png)
 
 For this tutorial, we'll omit the intro scene, since we already know what Flappy bird is and how to play it, but you can add your own intro scene later!
 
@@ -126,7 +128,7 @@ You'll also notice that the character we are adding here has many more component
 
 Press `command + s` (Mac) or `control + s` (Windows/Linux) to update the game output window. You should see Flappy added and fall out of the sky very quickly:
 
-![flappy falling out of the sky](resources/7-flappy-falls.png)
+![Flappy falling out of the sky](resources/7-flappy-falls.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/flappy-falls.gif)
 
@@ -145,7 +147,7 @@ In the callback handler, we first [`play`](https://kaboomjs.com/#play) a sound o
 
 Update the game output window, and if you press the spacebar now, you'll be able to keep Flappy in the air! Remember to quickly click in the output window as the game starts, so that it gains focus and can detect player input such as pressing the `space` key.
 
-![flying-flappy](resources/7-flappy-fly.png)
+![Flying-flappy](resources/7-flappy-fly.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/flappy-fly.gif)
 
@@ -156,8 +158,8 @@ Now we can get to the main part of the game – adding in the moving pipes that 
 
 Here is a diagram of the layout of the pipes in the game.  
 
-
-![pipe gap](https://docs.replit.com/images/tutorials/35-flappy-bird/pipe-gap.png)
+{width: 75%, align: middle}
+![Pipe gap](https://docs.replit.com/images/tutorials/35-flappy-bird/pipe-gap.png)
 
 
 We want to move the pipe gap, and therefore the pipes, up and down for each new pipe pair that is created. This is so we don't have the gap at the center point of the screen constantly – we want it to be slightly different for each pipe pair that comes along. We do want to keep the gap size consistent though.
@@ -232,9 +234,9 @@ This calls our `producePipes()` function every `1.5` seconds. You can adjust thi
 
 Update the game output window now and you should see the pipes being generated and moving across the screen. You can also fly Flappy, although crashing into the pipes does nothing for now.
 
-![moving pipes](resources/7-moving-pipes.png)
+![Moving pipes](resources/7-moving-pipes.png)
 
-[Click to open](https://docs.replit.com/images/tutorials/35-flappy-bird/moving-pipes.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/moving-pipes.gif)
 
 Flappy is flapping and the pipes are piling on. The next task is to detect when Flappy flies past a pipe, increasing the player's score.
 
@@ -293,7 +295,7 @@ This checks any pipe that we haven't marked as `passed` (`passed === false`) to 
 
 If you update the game output window now, you should see the score increase as you fly past each pipe.
 
-![Score increasing](resources/7-score-increase.png)
+![Score increasing](resources/7-score-increase.jpg)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/score-increase.gif)
 
@@ -354,7 +356,7 @@ This gives a margin of 30 pixels above or below the window, to take account of F
 
 Update the game output window again and test it out. If you fly into a pipe now, or flap too high, or fall out of the sky, you should be taken to the game over screen: 
 
-![game over screen](resources/7-game-over.png)
+![game over screen](resources/7-game-over.jpg)
 
 [Clcik to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/game-over.gif)
 

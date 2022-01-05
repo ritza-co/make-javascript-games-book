@@ -6,9 +6,9 @@ Here's how the game will look when we're done:
 
 ![The finished game](resources/3-gameplay.png)
 
-[Click to open](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/gameplay.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/gameplay.gif)
 
-You can download this [zip file](/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) with all the sprites and sounds you'll need for this tutorial.
+You can download this [zip file](https://docs.replit.com/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) with all the sprites and sounds you'll need for this tutorial.
 
 
 ## Game Design
@@ -36,8 +36,9 @@ After the repl has booted up, you should see a `main.js` file under the "Code" s
 
 The Replit Kaboom interface is specialised for game-making. Besides the Space Invader icon, you'll notice a few special folders in the file tray, like "Code", "Sprites", and "Sounds". These special folders take care of loading up assets, and all the necessary code to start scenes and direct the game. You can read up more about this interface [here](https://docs.replit.com/tutorials/kaboom).
 
-If you haven't already, download this [zip file](/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) which contains all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" section in the Replit editor, and the sounds to the "Sounds" section.
+If you haven't already, download this [zip file](https://docs.replit.com/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) which contains all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" section in the Replit editor, and the sounds to the "Sounds" section.
 
+{width: 55%, align: middle}
 ![upload sprites](resources/3-upload-sprites.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/upload-sprites.gif)
@@ -825,15 +826,15 @@ Congratulations, you've finished making this Kaboom game! Try running and playin
 
 The game art and sounds used in this tutorial are from the following sources:
 
-- Music : https://freemusicarchive.org/music/Komiku/Captain_Glouglous_Incredible_Week_Soundtrack/pog
-- Laser : https://freesound.org/people/sunnyflower/sounds/361471/
-- Explosion: https://freesound.org/people/tommccann/sounds/235968/
-- Point Beep : https://freesound.org/people/LittleRobotSoundFactory/sounds/270303/
-- Gem: https://opengameart.org/content/planetcute-gem-bluepng
-- Space Background: https://opengameart.org/content/space-background-8
-- Alien Bug: https://opengameart.org/content/8-bit-alien-assets
+- Music : [https://freemusicarchive.org/music/Komiku/Captain_Glouglous_Incredible_Week_Soundtrack/pog](https://freemusicarchive.org/music/Komiku/Captain_Glouglous_Incredible_Week_Soundtrack/pog)
+- Laser : [https://freesound.org/people/sunnyflower/sounds/361471/](https://freesound.org/people/sunnyflower/sounds/361471/)
+- Explosion: [https://freesound.org/people/tommccann/sounds/235968/](https://freesound.org/people/tommccann/sounds/235968/)
+- Point Beep : [https://freesound.org/people/LittleRobotSoundFactory/sounds/270303/](https://freesound.org/people/LittleRobotSoundFactory/sounds/270303/)
+- Gem: [https://opengameart.org/content/planetcute-gem-bluepng](https://opengameart.org/content/planetcute-gem-bluepng)
+- Space Background: [https://opengameart.org/content/space-background-8](https://opengameart.org/content/space-background-8)
+- Alien Bug: [https://opengameart.org/content/8-bit-alien-assets](https://opengameart.org/content/8-bit-alien-assets)
 
- The spaceship was made by Ritza.
+ The spaceship was made by [Ritza](https://ritza.co).
 
  Thank you to all the creators for putting their assets up with a Creative Commons license and allowing us to use them.
 

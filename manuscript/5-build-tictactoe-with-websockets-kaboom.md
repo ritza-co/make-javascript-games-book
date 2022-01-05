@@ -4,7 +4,7 @@ Tic-tac-toe, or noughts and crosses, or Xs and Os, is a simple classic game for 
 
 In this tutorial, we'll create a 2-player online tic-tac-toe game using a [Node.js](https://nodejs.org/en/) server. [Socket.IO](https://socket.io) will enable realtime gameplay across the internet. We'll use Kaboom.js to create the game interface.
 
-![Game play](resources/5-gameplay.png)
+![The finished game](resources/5-gameplay.png)
 [Click to open gif](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/gameplay.gif)
 
 ## How do multiplayer games work?
@@ -102,7 +102,8 @@ let gameState = {
 
 First, we have a representation of the tic-tac-toe board as an array with 9 elements. This is how the array elements are mapped to the board:
 
-![Tic Tac Toe board mapped to array indices](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/board.png)
+{width: 75%, align: middle}
+![Tic-Tac-Toe board mapped to array indices](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/board.png)
 
 
 Each number in the blocks represents the index at which the board position is represented in the array. Initially, we fill all the elements of the array with `null` to indicate that the block is open. When players make a move to occupy an open space, we'll add a reference to the player instead. That way we can keep track of which blocks are empty, and which are occupied by which player.
@@ -484,7 +485,8 @@ This adds 4 rectangles with a width of 1 pixel and length of 400 pixels to the s
 
 If you run the game, and enter your name, you should see the board layout like this:
 
-![board layout](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/boardLayout.png)
+{width: 80%, align: middle}
+![Board layout](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/boardLayout.png)
 
 Now we need to add a way to draw the _X_ and _O_ symbols in each block. To do this, we'll add objects with text components in each block of the board. First, we'll make an array containing the location and size of each block. Add the following code snippets within the "main" scene we created above:
 
@@ -683,7 +685,7 @@ charInput((ch) => {
 
 Now you can run the game (and the server), and open the game in another tab, and you should be able to play tic-tac-toe against yourself! Send a link to the game to a friend, and see if they can join and play against you.
 
-![playing tic tac toe](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/playing.png)
+![Playing tic tac toe](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/playing.png)
 
 ## Next Steps
 
