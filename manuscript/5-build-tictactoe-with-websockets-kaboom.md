@@ -25,7 +25,7 @@ With the [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) proto
 
 For this project, we'll need to create 2 repls - 1 using Node.js for the game server, and 1 using Kaboom for the players. Head over to [Replit](https://replit.com) and create a two new repls:
 - To create the server project, choose "Node.js" as your project type. Give this repl a name, like "tic-tac-toe-server".
-  ![Server repl](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/server-new-repl.png)
+  ![New Server repl](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/server-new-repl.png)
 - To create the player project, choose "Kaboom" as your project type. Give this repl a name, like "tic-tac-toe".
   ![New Player repl](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/player-new-repl.png)
 

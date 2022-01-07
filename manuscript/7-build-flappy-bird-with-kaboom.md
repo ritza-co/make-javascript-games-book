@@ -15,7 +15,7 @@ This article is based on this [video tutorial](https://www.youtube.com/watch?v=h
 
 Head over to [Replit](https://replit.com) and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "Flappy!".
 
-![new repl](https://docs.replit.com/images/tutorials/35-flappy-bird/new-repl.png)
+![Creating a new repl](https://docs.replit.com/images/tutorials/35-flappy-bird/new-repl.png)
 
 After the repl has booted up, you should see a `main.js` file under the "Code" section. This is where we'll start coding. There is already some code in this file, but we'll replace that. 
 
@@ -356,7 +356,7 @@ This gives a margin of 30 pixels above or below the window, to take account of F
 
 Update the game output window again and test it out. If you fly into a pipe now, or flap too high, or fall out of the sky, you should be taken to the game over screen: 
 
-![game over screen](resources/7-game-over.png)
+![Game over screen](resources/7-game-over.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/game-over.gif)
 

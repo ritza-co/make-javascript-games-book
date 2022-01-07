@@ -37,7 +37,7 @@ Before we start coding, we need to upload our sprites and sounds. Download [this
 {width: 55%, align: middle}
 ![Uploading sprites](resources/2-upload-asteroid-sprites.png)
 
-[Click to open gif]("https://docs.replit.com/images/tutorials/23-asteroids-kaboom/upload-sprites.gif")
+[Click to open gif]("https://docs.replit.com/images/tutorials/23-asteroids-kaboom/upload-sprites.gif)
 
 Once you've uploaded the files, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 

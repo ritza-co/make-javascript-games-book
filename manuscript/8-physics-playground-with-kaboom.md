@@ -4,7 +4,7 @@ In this tutorial, we will be building a simple physics playground with [Kaboom.j
 
 ![The finished game](resources/8-gameplay.png)
 
-![Click to open gif](https://docs.replit.com/images/tutorials/36-physics-playground/gameplay.gif)
+[Click to open gif](https://docs.replit.com/images/tutorials/36-physics-playground/gameplay.gif)
 
 By the end of this tutorial, you will:
 

@@ -23,7 +23,7 @@ For the graphics, we will use a [tile set from this creator](https://dotstudio.i
 
 Head over to [Replit](https://replit.com) and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "Mario".
 
-![New mario repl](https://docs.replit.com/images/tutorials/32-mario-kaboom/new-repl.png)
+![New Mario repl](https://docs.replit.com/images/tutorials/32-mario-kaboom/new-repl.png)
 
 After the repl has booted up, you should see a `main.js` file under the "Code" section. This is where we'll start coding. It already has some code in it, but we'll replace that.
 

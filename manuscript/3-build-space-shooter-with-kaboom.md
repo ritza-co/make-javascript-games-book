@@ -39,7 +39,7 @@ The Replit Kaboom interface is specialised for game-making. Besides the Space In
 If you haven't already, download this [zip file](https://docs.replit.com/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) which contains all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" section in the Replit editor, and the sounds to the "Sounds" section.
 
 {width: 55%, align: middle}
-![upload sprites](resources/3-upload-sprites.png)
+![Uploading sprites](resources/3-upload-sprites.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/upload-sprites.gif)
 

@@ -7,7 +7,7 @@ In this tutorial, we'll implement Snake using [Kaboom.js](https://kaboomjs.com) 
 {width: 75%, align: middle}
 ![The finished game](resources/1-updated-graphic.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.png)
+[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
 
 ## Overview and Requirements
@@ -352,7 +352,7 @@ Running this, and eating the food, you should see the snake grow each time, and 
 {width: 75%, align: middle}
 ![Eating food](resources/1-eat-food.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/eat-food.gif")
+[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/eat-food.gif)
 
 Now, we can add similar code to detect if the snake has hit the wall:
 
@@ -380,7 +380,7 @@ Running the game now, and crashing into the wall should look something like this
 {width: 75%, align: middle}
 ![Snake prang](resources/1-snake-prang.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-prang.gif")
+[Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-prang.gif)
 
 
 Congratulations! You've finished creating Snake in Kaboom.js!
