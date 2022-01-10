@@ -1,4 +1,4 @@
-# Building a pseudo-3D game in Kaboom
+# Building a pseudo-3D game with Kaboom.js
 
 Three-dimensional games became popular in the late 80's and early 90's with games like the early Flight Simulator and Wolfenstein 3D. But these early games were really [2.5D, or pseudo-3D](https://en.wikipedia.org/wiki/2.5D): the action takes place in 2 dimensions, and the world only appears to be 3D.
 
@@ -624,5 +624,5 @@ The spaceship cockpit was made by [Ritza](https://ritza.co).
 
 Thank you to all the creators for putting their assets up with a Creative Commons license and allowing us to use them.
 
-# Code
+## Code
 You can find the code for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/4-3d-game-with-kaboom.md) or [replit](https://replit.com/@ritza/3d-space-shooter-new)

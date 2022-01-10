@@ -1,4 +1,4 @@
-# Building Flappy Bird in Kaboom.js
+# Building Flappy Bird with Kaboom.js
 
 Flappy Bird was a smash hit game for mobile phones back in 2013-2014. The inspiration behind the app was the challenge of bouncing a ping pong ball on a paddle for as long as possible without letting it drop to the ground or shoot off into the air. At the peak of its success, the game creator unexpectedly removed it from all app stores, saying that he felt guilty that the game had become addictive for many people. In the wake of the removal, many clones were made to fill the gap left by the original Flappy Bird. After a few months, the original author released new versions of the game. 
 
@@ -370,7 +370,7 @@ Here are some ideas you can try to improve your clone of the Flappy Bird game:
 - Use the [Kaboom sprite editor](https://docs.replit.com/tutorials/kaboom-editor) to create your own graphics for your Flappy world!
 - Add in some more sound effects and play some game music using the [`play`](https://kaboomjs.com/#play) function.
 
-# Code
+## Code
 You can find the code for this tutorial on [github](hhttps://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/7-flappy-bird-with-kaboom.md) or [replit](https://replit.com/@ritza/Flappy-Bird)
 
 

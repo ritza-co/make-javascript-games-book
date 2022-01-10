@@ -1,4 +1,4 @@
-# Building Snake in Kaboom.js
+# Building Snake with Kaboom.js
 
 Snake was an incredibly popular game, mostly remembered from 1990s era cell phones. At the time, it was often the only game you'd find on a phone. In the most basic form, it's a super simple game, but still wildly entertaining. It's also a great game to build when you are learning the basics of game making.
 
@@ -602,7 +602,7 @@ There is a lot of good functionality in [Kaboom.js](https://kaboomjs.com/) to tr
 - Incrementally speed up the game as it goes on, to make it harder. You can do this by adjusting the delay parameter of the `loop` function as the game progresses.
 - Add [sound effects](https://kaboomjs.com/doc/#play) and background music.
 
-# Code 
+## Code 
 You can find the code for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/1-snake-with-kaboom.md) or [replit](https://replit.com/@ritza/snake-kaboom)
 
 
