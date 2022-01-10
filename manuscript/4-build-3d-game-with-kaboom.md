@@ -624,4 +624,5 @@ The spaceship cockpit was made by [Ritza](https://ritza.co).
 
 Thank you to all the creators for putting their assets up with a Creative Commons license and allowing us to use them.
 
-You can find the code sample for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/4-3d-game-with-kaboom.md) or [replit](https://replit.com/@ritza/3d-space-shooter-new)
+# Code
+You can find the code for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/4-3d-game-with-kaboom.md) or [replit](https://replit.com/@ritza/3d-space-shooter-new)
