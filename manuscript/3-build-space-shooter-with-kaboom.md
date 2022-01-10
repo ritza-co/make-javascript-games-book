@@ -847,4 +847,7 @@ Here are a few things you can try to add to the game and polish it up:
 - An intro scene, explaining the game and the controls.
 - Different types of alien bugs. Perhaps a large "boss" bug that can also shoot back.
 
+You can find the code sample for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/3-space-shooter-with-kaboom.md) or see the embedded repl below:
 
+
+<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@ritza/Space-Shooter-new?embed=true"></iframe>
