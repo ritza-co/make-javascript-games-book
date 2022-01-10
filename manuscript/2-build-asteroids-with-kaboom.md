@@ -790,7 +790,4 @@ We've covered a lot of ground in this tutorial and touched on a lot of Kaboom's 
 * A third, even smaller size of asteroid.
 * More animations, for explosions and laser firing.
 
-You can find the code sample for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/2-asteroids-with-kaboom.md) or see the embedded repl below:
-
-
-<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@ritza/Asteroids-new?embed=true"></iframe>
+You can find the code sample for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/2-asteroids-with-kaboom.md) or [replit](https://replit.com/@ritza/Asteroids-new)

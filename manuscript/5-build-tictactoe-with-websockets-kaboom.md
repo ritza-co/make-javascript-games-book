@@ -693,7 +693,4 @@ Now that you know the basics of creating a multiplayer online game, try your han
 
 Happy coding!
 
-You can find the code sample for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/5-tictactoe-with-websockets-kaboom.md) or see the embedded repl below:
-
-
-<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@ritza/tic-tac-toe-new?embed=true"></iframe>
+You can find the code sample for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/5-tictactoe-with-websockets-kaboom.md) or [replit](https://replit.com/@ritza/tic-tac-toe-new)

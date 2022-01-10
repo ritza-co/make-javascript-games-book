@@ -624,7 +624,4 @@ We've built a rudimentary physics-based platform engine. From here, there's a lo
 * Add puzzles that can be solved by arranging crates in specific patterns, and launching them from specific angles.
 * Improve the physics simulation with 2D collisions, rotating objects, and objects with different behaviors, such as bouncing and shattering.
 
-You can find the code sample for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/8-physics-playground-with-kaboom.md) or see the embedded repl below:
-
-
-<iframe height="400px" width="100%" src="https://replit.com/@ritza/Gravity?embed=true" ></iframe>
+You can find the code sample for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/8-physics-playground-with-kaboom.md) or [replit](https://replit.com/@ritza/Gravity)
