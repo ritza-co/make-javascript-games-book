@@ -692,4 +692,4 @@ Now you can run the game (and the server), and open the game in another tab, and
 Now that you know the basics of creating a multiplayer online game, try your hand at making some different games, like checkers or chess or go.
 
 ## Code
-You can find the code for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/5-tictactoe-with-websockets-kaboom.md) or [replit](https://replit.com/@ritza/tic-tac-toe-new)
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/tic-tac-toe-new)

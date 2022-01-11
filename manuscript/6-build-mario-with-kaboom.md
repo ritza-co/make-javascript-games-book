@@ -940,4 +940,4 @@ There are few things left to do to complete the game:
  [https://twitter.com/Arrow_N_TheKnee](https://twitter.com/Arrow_N_TheKnee) for the [Mario Visual Assets](https://dotstudio.itch.io/super-mario-1-remade-assets)
 
 ## Code
-You can find the code for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/6-mario-with-kaboom.md) or [replit](https://replit.com/@ritza/Mario)
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Mario)

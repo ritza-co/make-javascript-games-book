@@ -791,4 +791,4 @@ We've covered a lot of ground in this tutorial and touched on a lot of Kaboom's 
 * More animations, for explosions and laser firing.
 
 ## Code
-You can find the code for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/2-asteroids-with-kaboom.md) or [replit](https://replit.com/@ritza/Asteroids-new)
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Asteroids-new)

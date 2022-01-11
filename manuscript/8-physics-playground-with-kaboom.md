@@ -625,4 +625,4 @@ We've built a rudimentary physics-based platform engine. From here, there's a lo
 * Improve the physics simulation with 2D collisions, rotating objects, and objects with different behaviors, such as bouncing and shattering.
 
 ## Code
-You can find the code for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/8-physics-playground-with-kaboom.md) or [replit](https://replit.com/@ritza/Gravity)
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Gravity)

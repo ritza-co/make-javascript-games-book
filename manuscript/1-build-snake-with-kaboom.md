@@ -603,7 +603,7 @@ There is a lot of good functionality in [Kaboom.js](https://kaboomjs.com/) to tr
 - Add [sound effects](https://kaboomjs.com/doc/#play) and background music.
 
 ## Code 
-You can find the code for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/1-snake-with-kaboom.md) or [replit](https://replit.com/@ritza/snake-kaboom)
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/snake-kaboom)
 
 
 

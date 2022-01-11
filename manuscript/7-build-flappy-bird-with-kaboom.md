@@ -371,6 +371,6 @@ Here are some ideas you can try to improve your clone of the Flappy Bird game:
 - Add in some more sound effects and play some game music using the [`play`](https://kaboomjs.com/#play) function.
 
 ## Code
-You can find the code for this tutorial on [github](hhttps://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/7-flappy-bird-with-kaboom.md) or [replit](https://replit.com/@ritza/Flappy-Bird)
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Flappy-Bird)
 
 

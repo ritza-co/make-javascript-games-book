@@ -848,4 +848,4 @@ Here are a few things you can try to add to the game and polish it up:
 - Different types of alien bugs. Perhaps a large "boss" bug that can also shoot back.
 
 ## Code
-You can find the code for this tutorial on [github](https://github.com/ritza-co/make-javascript-games-book-code-samples/blob/main/manuscript/3-space-shooter-with-kaboom.md) or [replit](https://replit.com/@ritza/Space-Shooter-new)
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Space-Shooter-new)
