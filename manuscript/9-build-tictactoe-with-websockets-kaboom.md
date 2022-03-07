@@ -4,7 +4,7 @@ Tic-tac-toe, or noughts and crosses, or Xs and Os, is a simple classic game for 
 
 In this tutorial, we'll create a 2-player online tic-tac-toe game using a [Node.js](https://nodejs.org/en/) server. [Socket.IO](https://socket.io) will enable realtime gameplay across the internet. We'll use Kaboom.js to create the game interface.
 
-![The finished game](resources/5-gameplay.png)
+![The finished game](resources/9-gameplay.png)
 [Click to open gif](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/gameplay.gif)
 
 ## How do multiplayer games work?

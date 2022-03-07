@@ -4,7 +4,7 @@ The *Mario* series is one of the most known and loved game series of all time. T
 
 Tons of games still use the basic side-scroller formula of *Mario*, so it's a good game to build to learn the basics of game making. We'll build it in the new [Kaboom](https://kaboomjs.com) game engine. Kaboom has many useful functions for building platform games, and we'll try to go through as many as we can in this tutorial.
 
-![The finished game](resources/6-gameplay.png)
+![The finished game](resources/7-gameplay.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/32-mario-kaboom/bigger-kill-scenes.gif)
 
@@ -30,7 +30,7 @@ After the repl has booted up, you should see a `main.js` file under the "Code" s
 Download [this archive of sprite and asset files](https://docs.replit.com/tutorial-files/mario-kaboom/mario-resources.zip) that we'll need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprite and asset files into the "sprites" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 
 {width: 55%, align: middle}
-![Uploading sprites](resources/6-upload-sprites.png)
+![Uploading sprites](resources/7-upload-sprites.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/32-mario-kaboom/upload-assets.gif)
 
@@ -344,7 +344,7 @@ Press Command + S or Control + S now, and push enter at the start screen prompt.
 
 You should also see the enemy character wobble its feet, like it's trying to walk. This is because when we added the enemy definition `E` in the level config, we specified in the `sprite` component that it must use the `Walking` animation, which is defined in the `enemies.json` file. Kaboom starts the character using that animation.
 
-![Static Mario world](resources/6-mario-world.png)
+![Static Mario world](resources/7-mario-world.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/32-mario-kaboom/mario-world.gif)
 
@@ -394,7 +394,7 @@ When a player releases the space key, we want to make Mario jump. To do this, we
 
 Press Command + S or Control + S to update the output, and test it out. Mario should move around, but it doesn't look very natural and *Mario*-like - yet! Another thing you'll notice is that the screen does not scroll when Mario walks to the right, so we can't get to the rest of the level. Let's fix that first.
 
-![Mario moving](resources/6-mario-move.png)
+![Mario moving](resources/7-mario-move.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/32-mario-kaboom/mario-move.gif)
 
@@ -418,7 +418,7 @@ Here we add a handler to the [`onUpdate`](https://kaboomjs.com/#onUpdate) event 
 
 Update the output again and test it out. As you move Mario past the center of the screen, the camera should start following him, giving the sense of scrolling.
 
-![Scrolling](resources/6-scrolling.png)
+![Scrolling](resources/7-scrolling.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/32-mario-kaboom/scrolling.gif)
 
@@ -477,7 +477,7 @@ The `update()` method is called for each frame. In it, we first check if the cha
 
 Now that we've created this component, let's use it on a character. Uncomment the lines `//patrol` wherever you see it in the `levelConf` setup we created. Update the output and test it out. You should see the enemy character walk back and forth.
 
-![Patrol component](resources/6-patrol.png)
+![Patrol component](resources/7-patrol.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/32-mario-kaboom/patrol.gif)
 
@@ -566,7 +566,7 @@ This code will reset the `canSquash` variable so that the player will not squash
 
 Update the output and test our game out. If you jump on an enemy, it should be squashed and then disappear after half a second.
 
-![Squash enemy](resources/6-squash.png)
+![Squash enemy](resources/7-squash.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/32-mario-kaboom/squash.gif)
 
@@ -655,7 +655,7 @@ Then, to replace the `questionBox` with an empty box, we first record its positi
 
 Cool, time to update the output and test this out. When you jump up using the `space` key and headbutt the question boxes now, they should move and have things pop out!
 
-![Question-boxes](resources/6-question-box.png)
+![Question-boxes](resources/7-question-box.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/32-mario-kaboom/question-box.gif)
 
@@ -874,7 +874,7 @@ onKeyPress("space", () => {
 
 Time to update the output and test all these changes out! First thing to test is if Mario grows bigger by eating the mushroom. Second thing to check is if Mario then gets smaller again by colliding with an enemy. Also check if Mario is killed when colliding with an enemy when he is small, or when falling off the platform.
 
-![Mario bigger and killed](resources/6-bigger-kill-scenes.png)
+![Mario bigger and killed](resources/7-bigger-kill-scenes.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/32-mario-kaboom/bigger-kill-scenes.gif)
 

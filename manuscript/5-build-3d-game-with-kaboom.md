@@ -4,7 +4,7 @@ Three-dimensional games became popular in the late 80's and early 90's with game
 
 [Kaboom.js](https://kaboomjs.com) is a 2D game engine, but we can use some of those early game designers' techniques to create a pseudo-3D game. This game is roughly based on our [2D space shooter game tutorial](https://docs.replit.com/tutorials/24-build-space-shooter-with-kaboom), but we'll use a view from the cockpit of the spaceship instead of the side-scrolling view.
 
-![The finished game](resources/4-gameplay.png)
+![The finished game](resources/5-gameplay.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/gameplay.gif)
 
@@ -34,7 +34,7 @@ The Kaboom interface on Replit is specialised for game-making. Besides the Space
 If you haven't already, download this [zip file](https://docs.replit.com/tutorial-files/3d-game-kaboom/3d-game-resources.zip) containing all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" folder, and the sounds to the "Sounds" folder.
 
 {width: 50%, align: middle}
-![Uploading sprites](resources/4-upload-sprites.png)
+![Uploading sprites](resources/5-upload-sprites.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/upload-sprites.gif)
 
@@ -187,7 +187,7 @@ Finally, we see if the alien is very close by seeing if the `zpos < 1`. If it is
 
 If you run the code now, you should see the aliens start to move toward you.
 
-![Aliens coming at you](resources/4-aliens-coming.png)
+![Aliens coming at you](resources/5-aliens-coming.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/alieans-coming.gif)
 
@@ -275,7 +275,7 @@ This adds the `cockpit` sprite (image) to the `ui` layer. We also add the [`rota
 
 Run the game now and you should see the view from inside the spaceship.
 
-![Spaceship view](resources/4-spaceship-view.png)
+![Spaceship view](resources/5-spaceship-view.png)
 
 [Click top open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/spaceship-view.gif)
 
@@ -352,7 +352,7 @@ In the event handlers for `left` and `right` keys, we also make use of the Kaboo
 
 Give the game a run, and you should be able to control the spaceship.
 
-![Flying controls](resources/4-fly-controls.png)
+![Flying controls](resources/5-fly-controls.png)
 
 [Clcik to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/fly-controls.gif)
 
@@ -494,7 +494,7 @@ Finally, we have an event handler for the `space` key, which calls the `spawnBul
 
 Try this out now, and you should be able to shoot some laser bullets into space.
 
-![Shooting](resources/4-shooting.png)
+![Shooting](resources/5-shooting.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/shooting.gif)
 
@@ -563,7 +563,7 @@ We won't explain this code here, but if you'd like to know how it works, visit t
 
 Run this now, and you should be able to shoot the alien bugs down.
 
-![Shooting explosions](resources/4-shooting-explosion.png)
+![Shooting explosions](resources/5-shooting-explosion.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/shooting-explosion.gif)
 
@@ -599,7 +599,7 @@ We've modified the code to check if the alien is really close to us (`alien.zpos
 
 If the alien is close enough, and within our strike zone, we use the [`shake`](https://kaboomjs.com/#shake) effect to make it "feel" like we've been hit. Then we create an explosion at the point of impact for some visual effects.
 
-![Colliding](resources/4-colliding.png)
+![Colliding](resources/5-colliding.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/colliding.gif)
 

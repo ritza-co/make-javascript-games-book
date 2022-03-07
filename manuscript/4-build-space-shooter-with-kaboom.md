@@ -4,7 +4,7 @@ In this tutorial, we'll build a space shooter game with a platformer feel. We'll
 
 Here's how the game will look when we're done:
 
-![The finished game](resources/3-gameplay.png)
+![The finished game](resources/4-gameplay.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/gameplay.gif)
 
@@ -39,7 +39,7 @@ The Replit Kaboom interface is specialised for game-making. Besides the Space In
 If you haven't already, download this [zip file](https://docs.replit.com/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) which contains all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" section in the Replit editor, and the sounds to the "Sounds" section.
 
 {width: 55%, align: middle}
-![Uploading sprites](resources/3-upload-sprites.png)
+![Uploading sprites](resources/4-upload-sprites.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/upload-sprites.gif)
 
@@ -363,7 +363,7 @@ onCollide("bullet","platform", (bullet, platform) =>{
 
 Run the code now, and you should be able to shoot.
 
-![Laser firing](resources/3-laser-firing.png)
+![Laser firing](resources/4-laser-firing.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/laser-firing.gif)
 
@@ -445,7 +445,7 @@ Then the function checks to see if the alien has moved out of bounds of the map 
 
 Run the code now, you should see moving aliens.
 
-![Aliens](resources/3-aliens.png)
+![Aliens](resources/4-aliens.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/aliens.gif)
 
@@ -531,7 +531,7 @@ Let's first look at the custom component `grow`. This is used to create the effe
 
 This brings us to the `lifespan` component. This is implemented to automatically [`destroy`](https://kaboomjs.com/doc/#destroy) the object after a short time, to solve the ever-growing explosion problem. It works by having a `timer` variable, which is updated each frame with the difference in time from the last frame, using the Kaboom [`dt`](https://kaboomjs.com/doc/#dt) function again. When the `timer` count is more than the `time` parameter passed into the component, the object is automatically [`destroyed`](https://kaboomjs.com/doc/#destroy). This creates the impression of a quick explosion blast.
 
-![Shooting Aliens](resources/3-shooting-aliens.png)
+![Shooting Aliens](resources/4-shooting-aliens.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/shooting-aliens.gif)
 
@@ -802,7 +802,7 @@ This fires whenever the spaceship and a gem collides. We [`destroy`](https://kab
 
 Run the code now and start collecting gems.
 
-![Collecting gems](resources/3-collecting-gems.png)
+![Collecting gems](resources/4-collecting-gems.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/collecting-gems.gif)
 

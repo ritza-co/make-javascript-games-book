@@ -1,8 +1,9 @@
-1-build-snake-with-kaboom.md
-2-build-asteroids-with-kaboom.md
-3-build-space-shooter-with-kaboom.md
-4-build-3d-game-with-kaboom.md
-5-build-tictactoe-with-websockets-kaboom.md
-6-build-mario-with-kaboom.md
-7-build-flappy-bird-with-kaboom.md
+1-build-flappy-bird-with-kaboom.md
+2-build-snake-with-kaboom.md
+3-build-breakout-with-kaboom.md
+4-build-space-shooter-with-kaboom.md
+5-build-3d-game-with-kaboom.md
+6-build-asteroids-with-kaboom.md
+7-build-mario-with-kaboom.md
 8-physics-playground-with-kaboom.md
+9-build-tictactoe-with-websockets-kaboom.md

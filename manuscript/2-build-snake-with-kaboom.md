@@ -5,7 +5,7 @@ Snake was an incredibly popular game, mostly remembered from 1990s era cell phon
 In this tutorial, we'll implement Snake using [Kaboom.js](https://kaboomjs.com) built into [Replit](https://replit.com)
 
 {width: 75%, align: middle}
-![The finished game](resources/1-updated-graphic.png)
+![The finished game](resources/2-updated-graphic.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
@@ -272,7 +272,7 @@ Now all that remains is to remove a block at the tail end of the snake, using th
 Running the project now and clicking into the game screen should allow you to move the snake around. Note that there isn't collision detection yet, so the snake can go out of bounds without consequence.
 
 {width: 75%, align: middle}
-![Moving the snake](resources/1-snake-move.png)
+![Moving the snake](resources/2-snake-move.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-move.gif)
 
@@ -350,7 +350,7 @@ We set up the `onCollide` function with tags for the snake, and the food object.
 Running this, and eating the food, you should see the snake grow each time, and the food re-appear on another block:
 
 {width: 75%, align: middle}
-![Eating food](resources/1-eat-food.png)
+![Eating food](resources/2-eat-food.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/eat-food.gif)
 
@@ -378,7 +378,7 @@ onCollide("snake", "snake", (s, t) => {
 Running the game now, and crashing into the wall should look something like this:
 
 {width: 75%, align: middle}
-![Snake prang](resources/1-snake-prang.png)
+![Snake prang](resources/2-snake-prang.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/snake-prang.gif)
 
@@ -396,7 +396,7 @@ Using sprites, let's give the snake something nicer to eat than a green block. R
 ![Pizza](https://docs.replit.com/images/tutorials/21-snake-kaboom/pizza.png)
 
 
-![Adding a pizza sprite](resources/1-add-pizza-sprite.png)
+![Adding a pizza sprite](resources/2-add-pizza-sprite.png)
 
 
 [Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/add-pizza-sprite.gif)
@@ -589,7 +589,7 @@ loadSprite("pizza", "sprites/pizza.png);
 If you run the game now, you should see it looking much better!
 
 {width: 75%, align: middle}
-![Game graphics](resources/1-updated-graphic1.png)
+![Game graphics](resources/2-updated-graphic1.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
