@@ -439,7 +439,7 @@ You'll recall that we set the ball's `hspeed` and `vspeed` in its object definit
 
 If the ball goes off the left or right edges of the screen, we reverse its horizontal direction, and if it goes off the top or bottom of the screen, we reverse its vertical direction. Run your repl now to see this effect in action.
 
-![Moving the paddle](resources/3-move-ball.png)
+![Moving the ball](resources/3-move-ball.png)
 
 [Click to open gif](https://docs.replit.com/images/tutorials/37-breakout-kaboom/move-ball.gif)
 
