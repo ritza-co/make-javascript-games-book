@@ -7,3 +7,4 @@
 7-build-mario-with-kaboom.md
 8-physics-playground-with-kaboom.md
 9-build-tictactoe-with-websockets-kaboom.md
+10-build-space-invaders-with-kaboom.md
