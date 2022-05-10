@@ -26,7 +26,8 @@ Download the [sprites and asset files](https://docs.replit.com/tutorial-files/fl
 
 [Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/upload-sprites.gif)
 
-## Initializing Kaboom
+
+## Setting up kaboom
 
 In the "main" code file, delete all the example code. Now we can add reference to Kaboom, and initialize it:
 
@@ -48,7 +49,7 @@ loadSound("wooosh", "sounds/wooosh.mp3");
 
 The first argument in each `load` function is the name we want to use to refer to the asset later on in our code. The second parameter is the location of the asset to load. 
 
-## Adding scenes
+## Setting up scenes
 
 [Scenes](https://kaboomjs.com/#scene) are like different stages in a Kaboom game. There are generally three scenes in games:
 
@@ -152,7 +153,7 @@ Update the game output window, and if you press the spacebar now, you'll be able
 [Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/flappy-fly.gif)
 
 
-## Adding in the pipes
+## Adding the pipes
 
 Now we can get to the main part of the game – adding in the moving pipes that Flappy needs to fly through. 
 
@@ -240,7 +241,7 @@ Update the game output window now and you should see the pipes being generated a
 
 Flappy is flapping and the pipes are piling on. The next task is to detect when Flappy flies past a pipe, increasing the player's score.
 
-## Adding in scoring 
+## Adding the scoring 
 
 When Flappy flies past a pipe, the player's score is incremented. To do this, we'll need to keep track of which pipes have gone past Flappy. Let's modify the pipe-generating function `producePipes` to add a custom property called `passed` to the pipes. It should look like this now:
 
@@ -299,7 +300,7 @@ If you update the game output window now, you should see the score increase as y
 
 [Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/score-increase.gif)
 
-## Collision detection
+## Detecting collisions
 
 Now that we have scoring, the last thing to do is collision detection – that is, checking if Flappy has splatted into a pipe. Kaboom has a [`collides`](https://kaboomjs.com/#onCollide) method that is added with the [`area`](https://kaboomjs.com/#area) collider component. We can use that to call a function when the player collides with any character with the `"pipe"` tag. Add this code to the `game` scene:
 
@@ -361,7 +362,9 @@ Update the game output window again and test it out. If you fly into a pipe now,
 [Click to open gif](https://docs.replit.com/images/tutorials/35-flappy-bird/game-over.gif)
 
 
-## Next steps
+## Things to try
+
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Flappy-Bird)
 
 Here are some ideas you can try to improve your clone of the Flappy Bird game:
 
@@ -370,7 +373,7 @@ Here are some ideas you can try to improve your clone of the Flappy Bird game:
 - Use the [Kaboom sprite editor](https://docs.replit.com/tutorials/kaboom-editor) to create your own graphics for your Flappy world!
 - Add in some more sound effects and play some game music using the [`play`](https://kaboomjs.com/#play) function.
 
-## Code
-You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Flappy-Bird)
+
+
 
 

@@ -22,17 +22,10 @@ We will use these [Asteroids sprites](https://opengameart.org/content/asteroids-
 
 We will also be using [music by Eric Matyas of Soundimage.org](https://soundimage.org/sci-fi/).
 
-We've created a single ZIP file with the sprites and sounds you will need for this tutorial, which you can download [here](https://docs.replit.com/tutorial-files/asteroids-kaboom/asteroids-resources.zip).
 
-## Creating a new project and loading assets
+## Getting started
 
-Log into your [Replit](https://replit.com) account and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "asteroids".
-
-![Creating an REPL](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/create-repl.png)
-
-Kaboom repls are quite different from other kinds of repls you may have seen before: instead of dealing directly with files in folders, you'll be dealing with scenes, sounds and sprites.
-
-Before we start coding, we need to upload our sprites and sounds. Download [this ZIP file](https://docs.replit.com/tutorial-files/asteroids-kaboom/asteroids-resources.zip) and extract it on your computer. Click the "Files" icon on the sidebar then, upload everything in Sounds folder to the "sounds" section of your repl, and everything in the Sprites folder to the "sprites" section of your repl.
+Download [this ZIP file](https://docs.replit.com/tutorial-files/asteroids-kaboom/asteroids-resources.zip) and extract it on your computer. Click the "Files" icon on the sidebar then, upload everything in Sounds folder to the "sounds" section of your repl, and everything in the Sprites folder to the "sprites" section of your repl.
 
 {width: 55%, align: middle}
 ![Uploading sprites](resources/6-upload-asteroid-sprites.png)
@@ -81,7 +74,7 @@ loadSound("Steamtech-Mayhem_Looping","Steamtech-Mayhem_Looping.mp3");
 
 The first line, [`loadRoot`](https://kaboomjs.com/#loadRoot), specifies which folder to load all the sprites and game elements from, so we don't have to keep typing it in for each sprite. Then each line loads a game sprite and gives it a name so that we can refer to it in code later. We also use similar code to load sound elements for our game using the [`loadSound`](https://kaboomjs.com/#loadSound) function.
 
-## Setting the scene
+## Setting up the main scene
 
 A Kaboom.js game is made up of scenes, which you can think of as different screens, levels or stages. You can use scenes for game levels, menus, cut-scenes and any other screens your game might contain. In this tutorial, we'll just use one scene, which will contain the entire game logic.
 
@@ -152,7 +145,7 @@ Run your repl now and marvel at the vast emptiness of space.
 
 ![Empty with score](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/empty-with-score.png)
 
-## The player's ship
+## Creating the player's ship
 
 Now let's populate that empty space. Enter the following code below the UI drawing code to create the player:
 
@@ -201,7 +194,7 @@ If you run your repl now, you should see the ship sprite in the middle of a blan
 
 ![Ship in space](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/ship-in-space.png)
 
-### Movement controls
+### Adding movement controls
 
 In this game, our player will turn the nose of the spaceship with the left and right arrow keys, and thrust forward and backward with the up and down arrow keys. We'll handle movement in two phases: user input, and actually moving the ship. First, let's allow the player to turn their ship to the left and right. Add the following code:
 
@@ -247,7 +240,7 @@ onKeyDown("down", () => {
 
 If you run your repl now and try to accelerate or decelerate, the sound will play, but the ship will go nowhere. This is because we're manipulating `player.speed`, which is a custom property that Kaboom hasn't attached any special behavior to (unlike `player.angle`). Let's add some movement parameters now.
 
-### Movement
+### Updating movement
 
 Movement in Kaboom and most other 2D game development systems is handled using X and Y coordinates on a plane. To move an object left, you subtract from its X coordinate, and to move it right, you add to its X coordinate. To move an object up, you subtract from its Y coordinate, and to move it down, you add to its Y coordinate. Therefore, basic four-directional movement in games like Snake or Pacman is quite straightforward. The directional movement we need for Asteroids (commonly called [tank controls](https://en.wikipedia.org/wiki/Tank_controls)) is more complex, requiring some calculations.
 
@@ -311,7 +304,7 @@ onUpdate("wraps", (e) => {
 
 This is a fairly straightforward piece of code that checks whether an object's position is outside of the room and, if so, places it on the other side. The [`width()`](https://kaboomjs.com/doc/#width) and [`height()`](https://kaboomjs.com/doc/#height) functions are Kaboom built-ins that return the size of the game canvas. Run your repl now and try it out.
 
-### Rocket animation
+### Animating the rocket
 
 Our ship can move now, but it would be nice to see its rockets firing when the player presses the up arrow key, as well as hear them. Reactive animations like these make games feel more responsive and look more dynamic.
 
@@ -380,7 +373,7 @@ That's it! Run your repl and move your ship around.
 
 ![Ship thrusting](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/ship-thrusting.png)
 
-### Shooting
+### Shooting lasers
 
 To make our ship fire laser bullets, we need to create bullet objects just in front of the ship's nose, and have them travel in the same direction the ship is pointing. Here we can reuse our new `pointAt()` function. Add the following code beneath the existing movement control code:
 
@@ -444,11 +437,9 @@ Run your repl and test whether the ship's laser fires at the expected intervals.
 
 ![Laser rate](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/laser.png)
 
-## The asteroids
+## Creating asteroids
 
 Now that we've added shooting, we need to add something to shoot at. It's time to create the asteroids this game gets its name from.
-
-### Creation
 
 Add the following code at the bottom of the main scene:
 
@@ -653,7 +644,7 @@ This code draws a number of scaled down player spaceships equal to the number of
 
 ![Lives](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/lives.png)
 
-## Final touches
+## Adding some Final touches
 
 Our game is fully playable now, but it's still missing some niceties, and one core gameplay feature that you should be able to identify if you've played *Asteroids* before. In this final section, we'll add the following:
 
@@ -781,14 +772,12 @@ onUpdate(() => {
 });
 ```
 
-## Where to next?
+## Things to try
 
-We've covered a lot of ground in this tutorial and touched on a lot of Kaboom's features. From here, you can start making your own games with Kaboom, or if you want to extend this one, here are some ideas:
-
-* Power-ups, such as extra lives and time-limited weapon upgrades.
-* Enemy spaceships that fire at the player.
-* A third, even smaller size of asteroid.
-* More animations, for explosions and laser firing.
-
-## Code
 You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Asteroids-new)
+
+Here are some ideas you can try out to make the game more entertaining:
+
+* add power-ups, such as extra lives and time-limited weapon upgrades.
+* create enemy spaceships that fire at the player.
+* add more animations, for explosions and laser firing.

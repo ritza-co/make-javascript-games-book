@@ -19,13 +19,7 @@ We'd like to make a game that has the *Mario* essence. This means we need a few 
 
 For the graphics, we will use a [tile set from this creator](https://dotstudio.itch.io/super-mario-1-remade-assets).
 
-## Creating a new project in Replit
-
-Head over to [Replit](https://replit.com) and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "Mario".
-
-![New Mario repl](https://docs.replit.com/images/tutorials/32-mario-kaboom/new-repl.png)
-
-After the repl has booted up, you should see a `main.js` file under the "Code" section. This is where we'll start coding. It already has some code in it, but we'll replace that.
+## Getting started
 
 Download [this archive of sprite and asset files](https://docs.replit.com/tutorial-files/mario-kaboom/mario-resources.zip) that we'll need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprite and asset files into the "sprites" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 

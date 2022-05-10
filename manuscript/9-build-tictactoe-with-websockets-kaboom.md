@@ -1,4 +1,4 @@
-# Building tic-tac-toe with WebSocket and Kaboom.js
+ ,# Building tic-tac-toe with WebSocket and Kaboom.js
 
 Tic-tac-toe, or noughts and crosses, or Xs and Os, is a simple classic game for 2 players. It's usually played with paper and pen, but it also makes a good first game to write for networked multiplayer.
 
@@ -21,7 +21,7 @@ With the [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) proto
 
 [WebSocket](https://en.wikipedia.org/wiki/WebSocket) is an advanced internet protocol that allows us to create a 2-way, persistent connection between a browser and a server. We'll use the [Socket.IO](https://socket.io) package to help us manage WebSocket connections in this project.
 
-## Creating a new project
+## Getting started
 
 For this project, we'll need to create 2 repls - 1 using Node.js for the game server, and 1 using Kaboom for the players. Head over to [Replit](https://replit.com) and create a two new repls:
 - To create the server project, choose "Node.js" as your project type. Give this repl a name, like "tic-tac-toe-server".
@@ -688,8 +688,10 @@ Now you can run the game (and the server), and open the game in another tab, and
 ![Playing tic tac toe](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/playing.png)
 
 ## Next Steps
-
-Now that you know the basics of creating a multiplayer online game, try your hand at making some different games, like checkers or chess or go.
-
-## Code
 You can find the code for this tutorial on [Replit](https://replit.com/@ritza/tic-tac-toe-new)
+
+Here are similar classic games you can try out:
+
+- create checkers
+- chess 
+- go
