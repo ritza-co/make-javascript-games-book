@@ -11,7 +11,7 @@ Here's how the game will look when we're done:
 You can download this [zip file](https://docs.replit.com/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) with all the sprites and sounds you'll need for this tutorial.
 
 
-## Game Design
+## Designing the game
 
 Here's what we're aiming for in this game:
 
@@ -22,21 +22,10 @@ Here's what we're aiming for in this game:
 
 In our game, a player flies a spaceship around a faraway planet, collecting gems and dodging or shooting alien bugs that explode on contact. The spaceship will lose shield strength each time an alien bug hits it. With every 1000 points the player earns, the game gets faster and more bugs appear.
 
-## Creating a New Project on Replit
 
-Let's head over to [Replit](https://replit.com) and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "Space Shooter".
+## Getting Started
 
-![Creating an Repl](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/create-repl.png)
-
-After the repl has booted up, you should see a `main.js` file under the "Code" section. This is where we'll start coding.
-
-## Getting Started with Kaboom.js
-
-[Kaboom.js](https://kaboomjs.com) is a JavaScript library that contains a lot of useful features for making simple browser games. It has functionality to draw shapes and sprites (the images of characters and game elements) to the screen, get user input, play sounds, and more. We'll use some of these features in our game to explore how Kaboom works.
-
-The Replit Kaboom interface is specialised for game-making. Besides the Space Invader icon, you'll notice a few special folders in the file tray, like "Code", "Sprites", and "Sounds". These special folders take care of loading up assets, and all the necessary code to start scenes and direct the game. You can read up more about this interface [here](https://docs.replit.com/tutorials/kaboom).
-
-If you haven't already, download this [zip file](https://docs.replit.com/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) which contains all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" section in the Replit editor, and the sounds to the "Sounds" section.
+Download this [zip file](https://docs.replit.com/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) which contains all the sprites and sounds for the game. Extract the file on your computer, then add the sprites to the "Sprites" section in the Replit editor, and the sounds to the "Sounds" section.
 
 {width: 55%, align: middle}
 ![Uploading sprites](resources/4-upload-sprites.png)
@@ -840,12 +829,11 @@ The game art and sounds used in this tutorial are from the following sources:
 
 ## Things to Try Next
 
-Here are a few things you can try to add to the game and polish it up:
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Space-Shooter-new)
+
+Here are a few things you can add to the game and to make it more entertaining:
 
 - Self healing on the shield. Perhaps add back 1 or 2 shield points every 10 seconds, so that players can go further if they dodge the aliens.
 - A better ending screen, with the player's score.
 - An intro scene, explaining the game and the controls.
 - Different types of alien bugs. Perhaps a large "boss" bug that can also shoot back.
-
-## Code
-You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Space-Shooter-new)

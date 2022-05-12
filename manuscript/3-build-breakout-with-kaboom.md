@@ -15,17 +15,9 @@ Our finished game will look like this:
 
 We will be using [this set of sprites](https://opengameart.org/content/breakout-set) by [Michele Bucelli](https://opengameart.org/users/buch) and sound effects from [this pack](https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a) by [Jaymin Covy](https://opengameart.org/users/damaged-panda). We'll also use [music](https://soundimage.org/chiptunes-4/) by [Eric Matyas](https://soundimage.org/chiptunes-4/) of Soundimage.org.
 
-We've created a single ZIP file with the sprites and sounds you will need for this tutorial, which you can download [here](https://docs.replit.com/tutorial-files/breakout-kaboom/breakout-resources.zip).
-
 ## Getting started
 
-Log into your [Replit](https://replit.com/login) account and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "blockbreaker".
-
-![Create a new repl](resources/3-create-repl.png)
-
-Kaboom repls are quite different from other kinds of repls you may have seen before: instead of dealing directly with files in folders, you'll be dealing with code, sounds and sprites, the latter of which you can draw directly in Replit's [image editor](https://docs.replit.com/tutorials/kaboom-editor).
-
-Before we start coding, we need to upload our sprites and sounds. Download [this ZIP file](https://docs.replit.com/tutorial-files/breakout-kaboom/breakout-resources.zip) and extract it on your computer. Click the "Files" icon on the sidebar and upload everything in the extracted file's Sounds folder to the "sounds" section of your repl, and everything in the Sprites folder to the "sprites" section of your repl.
+Download [this ZIP file](https://docs.replit.com/tutorial-files/breakout-kaboom/breakout-resources.zip) and extract it on your computer. Click the "Files" icon on the sidebar and upload everything in the extracted file's Sounds folder to the "sounds" section of your repl, and everything in the Sprites folder to the "sprites" section of your repl.
 
 {width: 50%, align: middle}
 ![Uploading assets](resources/3-upload-assets.png)
@@ -35,7 +27,7 @@ Before we start coding, we need to upload our sprites and sounds. Download [this
 
 Once you've uploaded the files, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 
-## Loading assets
+## Setting up kaboom
 
 When you first open your new Kaboom repl, you'll be greeted by a file containing the sample code below.
 
@@ -444,7 +436,7 @@ If the ball goes off the left or right edges of the screen, we reverse its horiz
 [Click to open gif](https://docs.replit.com/images/tutorials/37-breakout-kaboom/move-ball.gif)
 
 
-## Collisions
+## Adding collisions
 
 Now that the ball can move and bounce off the screen's edges, we need it to also bounce off the paddle and the blocks. To achieve this, we'll write an [`onCollide()`](https://kaboomjs.com/#onCollide) event handler for the tags "ball" and "bouncy". Add the following code to the "game" scene, below your ball movement code:
 
@@ -715,14 +707,12 @@ music.loop();
 
 `loop()` will ensure that the music plays continuously.
 
-## Where next?
+## Things to try
 
-We've built a simple but polished block-breaking game. From here, you might want to make the following additions:
-
-* Extra levels.
-* New powerups, such as a longer paddle, multiple balls, or even a paddle-mounted laser gun.
-* Bigger and smaller blocks, blocks that can take multiple hits, or moving blocks.
-
-## Code
 You can find the code for this tutorial on [Replit](https://replit.com/@ritza/blockbreaker)
 
+We've built a simple but polished block-breaking game. Here are some other ideas to try to make the game mre entertaining:
+
+- add more levels
+- create new powerups, such as a longer paddle, multiple balls, or even a paddle-mounted laser gun
+- create different types of blocks that differ in size, take multiple hits or move 

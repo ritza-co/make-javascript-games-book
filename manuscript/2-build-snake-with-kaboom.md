@@ -10,32 +10,7 @@ In this tutorial, we'll implement Snake using [Kaboom.js](https://kaboomjs.com) 
 [Click to open gif](https://docs.replit.com/images/tutorials/21-snake-kaboom/updated-graphic.gif)
 
 
-## Overview and Requirements
-
-We'll use the [Replit](https://replit.com) web IDE to create our version of Snake. If you don't already have a Replit account, [create one now](https://replit.com/signup).
-
-Let's think a bit about what we need to do. Snake, at its core, is a series of blocks representing a snake moving around a grid, with the player controlling the direction. It also has simple rules – when the snake touches the sides of the screen, it dies. If the snake crosses itself, it also dies. If the snake eats some food (a different type of block), it grows by 1 block. The food then re-appears at another random place on the screen.
-
-A few components we will need to build are:
-- A way to draw the blocks and move them on the screen.
-- A way to get steering directions from the player to the snake.
-- A way to determine if the snake has gone out of bounds of the screen.
-- A way to determine if the snake has crossed over itself (or "bitten itself", as another analogy).
-- A way to randomly place the food on the screen.
-- A way to determine if the snake has eaten, or touched, the food.
-- A way to grow the snake.
-
-That's a lot to think about! Let's get started and create a project in [Replit](https://replit.com).
-
-## Creating a New Project
-
-Log into your [Replit](https://replit.com) account and create a new repl. Choose **Kaboom** as your project type. Now, give this repl a name, like "snake-kaboom".
-
-![Creating a new repl](https://docs.replit.com/images/tutorials/21-snake-kaboom/new-repl.png)
-
-After the repl has booted up, you should see a `main.js` file under the "Scenes" section. This is where we'll start coding.
-
-## Getting Started with Kaboom.js
+## Getting Started
 
 [Kaboom.js](https://kaboomjs.com) is a JavaScript library that contains many useful features to make simple in-browser games. It has functionality to draw shapes and sprites (the images of characters and game elements) to the screen, get user input, play sounds, and more. We'll explore these features and learn how they work by using some of them in our game.
 
@@ -43,7 +18,18 @@ Kaboom.js also makes good use of JavaScript's support for [callbacks](https://de
 
 Using Kaboom.js in Replit takes care of all the boilerplate initialisation code, as well as asset loading, so we can concentrate on writing the game logic and making game graphics and sound.
 
-## Creating the Game Map
+## Setting up kaboom
+
+In the "main" code file, delete all the example code and initialize kaboom with the following code:
+
+```javascript
+import kaboom from "kaboom";
+
+kaboom();
+```
+
+
+## Building the Game Map
 
 To start, we can get our game board, or _map_ drawn on the screen. This will define the edges of the board so that if the snake crashes into them, we can detect and end the game.
 
@@ -52,9 +38,6 @@ Kaboom.js has built-in support for defining game maps, using a text array and th
 Replace the example code in `main.js` file with the following to create the game board:
 
 ```javascript
-import kaboom from "kaboom";
-
-kaboom();
 
 const block_size = 20;
 
@@ -595,15 +578,15 @@ If you run the game now, you should see it looking much better!
 
 
 ## Things to Try
-There is a lot of good functionality in [Kaboom.js](https://kaboomjs.com/) to try out, and make the game more entertaining. Here are some suggestions:
+
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/snake-kaboom)
+
+Here are some suggestions to try out, and make the game more entertaining:
 
 - Create a 2 player version.
 - Add obstacles for the snake.
 - Incrementally speed up the game as it goes on, to make it harder. You can do this by adjusting the delay parameter of the `loop` function as the game progresses.
 - Add [sound effects](https://kaboomjs.com/doc/#play) and background music.
-
-## Code 
-You can find the code for this tutorial on [Replit](https://replit.com/@ritza/snake-kaboom)
 
 
 

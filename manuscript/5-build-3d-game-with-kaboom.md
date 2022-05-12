@@ -8,9 +8,7 @@ Three-dimensional games became popular in the late 80's and early 90's with game
 
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/gameplay.gif)
 
-You can download this [zip file](https://docs.replit.com/tutorial-files/3d-game-kaboom/3d-game-resources.zip) with all the sprites and sounds you'll need for this tutorial.
-
-## Game design
+## Designing the game
 
 Here's what we want from this game:
 
@@ -19,15 +17,12 @@ Here's what we want from this game:
 
 We'll make use of Kaboom's [scale component](https://kaboomjs.com/doc/#scale) to achieve the sense of depth, representing our sprites as smaller if they are meant to be further away, and larger when they are closer. We'll  create a feeling of moving through space using an algorithm to generate a star field, like the early Windows screensavers.
 
-## Creating a new project
+## Getting started
 
-Head over to [Replit](https://replit.com) and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "3D Space Shooter".
+Download this [zip file](https://docs.replit.com/tutorial-files/3d-game-kaboom/3d-game-resources.zip) that we'll need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprite and asset files into the "sprites" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 
-![Creating a new repl](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/new-repl.png)
 
-After the repl has booted up, you should see a `main.js` file under the "Code" section. This is where we'll start coding.
-
-## Setting up the Kaboom environment
+## Setting up Kaboom
 
 The Kaboom interface on Replit is specialised for game-making. Besides the Space Invader icon, you'll notice a few special folders in the file try, like "Code", '"Sprites", and "Sounds". These special folders take care of loading up assets, and all the necessary code to start scenes and direct the game. You can read up more about the Kaboom interface [here](https://docs.replit.com/tutorials/kaboom).
 
@@ -568,7 +563,7 @@ Run this now, and you should be able to shoot the alien bugs down.
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/shooting-explosion.gif)
 
 
-## Checking if alien bugs hit the spaceship
+## Checking alien bug collisions with the spaceship
 
 Now we can add functionality to check if an alien bug makes it past our laser and explodes into the spaceship. Since the cockpit covers the entire screen, we can't make use of the [`onCollide`](https://kaboomjs.com/doc/#onCollide) function to check if an alien has hit the cockpit, as it would always be colliding. Instead, we can check the `z` value of the alien, plus if it is within an area of the spacecraft that would cause damage. We'll use a "strike zone" in the center of the cockpit view as the area that aliens can do damage to the craft. Outside that area, we'll assume that the aliens go around or up and over the spacecraft.
 
@@ -604,9 +599,16 @@ If the alien is close enough, and within our strike zone, we use the [`shake`](h
 [Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/colliding.gif)
 
 
-## Finishing up the game
+## Things to try
 
-Congratulations, we've got all the main elements of flying and shooting and damage in the game. The next thing to do would be to add a scoring system, and a way to reduce the spaceship's health or shield when it gets hit. You can look at the [tutorial for the 2D version of this game](https://docs.replit.com/tutorials/24-build-space-shooter-with-kaboom), and copy the scoring and health code from there into this game. You can also copy the code for background music and more sound effects.
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/3d-space-shooter-new)
+
+Here are a few things you can try to make the game more entertaining:
+
+- add a scoring system
+- reduce the spaceship's health or shield when it gets hit
+ You can look at the [tutorial for the 2D version of this game](https://docs.replit.com/tutorials/24-build-space-shooter-with-kaboom) and copy the scoring and health code from there into this game. 
+ - add background music and more sound effects
 
 Happy coding and have fun!
 
@@ -623,6 +625,3 @@ Alien Bug: [https://opengameart.org/content/8-bit-alien-assets](https://opengame
 The spaceship cockpit was made by [Ritza](https://ritza.co).
 
 Thank you to all the creators for putting their assets up with a Creative Commons license and allowing us to use them.
-
-## Code
-You can find the code for this tutorial on [Replit](https://replit.com/@ritza/3d-space-shooter-new)

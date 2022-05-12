@@ -8,7 +8,7 @@ Of course, *Space Invaders* was such a popular game, there were many clones and 
 
 ![gameplay](resources/10-gameplay.png "gameplay")
 
-## Game mechanics
+## Designing the game
 
 *Space Invaders* features alien enemies that move across the screen from one side to the other in a grid formation. The player moves left and right along the bottom of the screen and shoots at the aliens from below. Once the aliens reach the end of the screen, they move down one row and start moving in the opposite direction. In this way, the aliens get closer and closer to the player. Shooting an alien will destroy it and score points for the player. The aliens in the bottom row can shoot downwards towards the player. 
 
@@ -17,13 +17,7 @@ If the player gets shot, they lose a life. Players have three lives, and the gam
 When the aliens reach the bottom of the screen, the game is immediately over, as the alien invasion was a success! To win, the player has to destroy all the aliens before they reach the bottom of the screen. 
 
 
-## Getting started on Replit
-
-Head over to [Replit](https://replit.com/) and create a new repl, using "Kaboom" as the template. Name it something like "Space Invaders", and click "Create Repl". 
-
-![Creating a new repl](https://docs.replit.com/images/tutorials/41-space-invaders-kaboom/newrepl.png "Creating a new repl")
-
-After the repl has booted up, you should see a `main.js` file under the "Scenes" section. This is where we'll start coding. It already has some code in it, but we'll replace that. 
+## Getting started 
 
 Download [this archive of sprites and asset files](/tutorial-files/space-invaders-kaboom/space-invaders-resources.zip) we'll need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprite files (image files) into the "sprites" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 
@@ -113,7 +107,7 @@ Then we load the sprite sheets. The first argument is the path to the sprite she
 * `speed` is how many frames to show per second.
 * `loop` is a boolean that tells Kaboom if the animation should loop, or only play once.
 
-## Making a scene
+## Setting up scenes
 
 [Scenes](https://kaboomjs.com/#scene) are like different stages in a Kaboom game. Generally, there are three scenes in games:
 
@@ -430,7 +424,7 @@ If you run the game now, you should be able to shoot bullets. They won't kill th
 
 ![Shooting](resources/10-shooting.png "Shooting")
 
-## Bullet collisions with aliens
+## Detecting bullet collisions with aliens
 
 Now that we have bullets and they move, we need to add collision detection and handling code to check when the bullet hits an alien. For this, we can use the Kaboom [`onCollide`](https://kaboomjs.com/#onCollide) function. First add the constant below to the other constants:
 
@@ -482,7 +476,7 @@ If you run the game now, you should be able to shoot at an alien, destroy it, an
 
 ![Destroy alien](resources/10-destroy-alien.png "Destroy alien")
 
-## The aliens fight back
+## Making the aliens shoot back
 
 It's not fair that only the player can shoot the aliens - we've got to give the aliens a chance to shoot back! Since we don't want the aliens to be shooting each other, we need to only allow aliens with a clear shot to the ground to be able to shoot. In other words, an alien that shoots must not have another alien in front of them. Recall that when we added the aliens, we created a 2D array that stores a reference to each alien. When an alien gets hit, we set the entry in the array to null. Therefore we can use this array to find an alien that has a clear shot to the ground to shoot at the player. 
 
@@ -527,7 +521,7 @@ If you run the game now, you should see a random alien shoot at the player every
 
 ![Aliens shooting](resources/10-aliens-shooting.png "Aliens shooting")
 
-## Bullet collisions with the player
+## Detecting bullet collisions with the player
 
 Now that the aliens can shoot, we can add code to determine if one of their bullets hit the player. To do this, we can use the Kaboom [`onCollide`](https://kaboomjs.com/#onCollide) function again. Add the following code to the `"game"` scene:
 
@@ -607,15 +601,13 @@ In the `"gameOver"` scene, we add a big, size 40 "Game Over" banner. The score i
 
 All the elements for the game are now defined. Give it a go, and see how you do!
 
-## Next steps
+## Things to try
 
-There are a number of things you can add to this game to make it more interesting.
+You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Space-Invaders).
 
-1. Once the player shoots all the aliens and wins, nothing happens. Try making the screen fill with more aliens, and make them move or shoot faster for each level the player reaches.
-2. Add some sound effects and music. Kaboom has the [`play`](https://kaboomjs.com/#play) function to play audio files. You can add effects for shooting, explosions, points scored, etc.
-3. Add different types of aliens. In many *Space Invaders* versions, a "boss" ship flies across the top of the screen at random intervals. Shooting this ship gives the player lots of bonus points. 
-4. Try giving the player a bonus life if they reach a certain score.
+Here are some things to try to make this game more entertaining:
 
-What other features can you add to this game? Have fun, and happy coding!
-
-<iframe height="400px" width="100%" src="https://replit.com/@ritza/Space-Invaders?embed=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+- make the aliens move or shoot faster for each level the player reaches
+- add some sound effects and music. Kaboom has the [`play`](https://kaboomjs.com/#play) function to play audio files. Try adding effects for shooting, explosions, points scored, etc
+- add different types of aliens. In many *Space Invaders* versions, a "boss" ship flies across the top of the screen at random intervals. Shooting this ship gives the player lots of bonus points
+-give the player a bonus life if they reach a certain score

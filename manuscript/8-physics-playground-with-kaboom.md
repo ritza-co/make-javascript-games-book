@@ -12,15 +12,8 @@ By the end of this tutorial, you will:
 * Be able to build a simple 2D physics engine.
 * Have the basis for a physics-based platformer, which you can extend into a full game.
 
-## Getting started
 
-Log into your [Replit](https://replit.com) account and create a new repl. Choose **Kaboom** as your project type. Give this repl a name, like "gravity".
-
-![Creating a new Repl](https://docs.replit.com/images/tutorials/36-physics-playground/create-repl.png)
-
-Kaboom repls are quite different from other kinds of repls you may have seen before: instead of dealing directly with files in folders, you'll be dealing with code, sounds and sprites, the latter of which you can draw directly in Replit's image editor.
-
-## Setting the scene
+## Setting up kaboom
 
 When you first open your new Kaboom repl, you'll be greeted by a file containing the sample code below.
 
@@ -42,14 +35,10 @@ add([
 ]);
 ```
 
-This code loads a sprite for Kaboom's mascot Bean, and places Bean near the top of the screen. Before we start coding, we'll remove the code for adding Bean, leaving the following lines:
+The code above loads a sprite for Kaboom's mascot Bean, and places Bean near the top of the screen. Before we start coding, we'll remove the code for adding Bean, leaving the following lines:
 
-```javascript
-import kaboom from "kaboom";
 
-// initialize context
-kaboom();
-```
+## Creating levels
 
 Our edited code initialises Kaboom and gives us a blank canvas to work with. We'll start by defining a level containing walls, movable crates, and the player object. Add the following code beneath `kaboom();`: 
 
