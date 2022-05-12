@@ -1,4 +1,4 @@
- # Building tic-tac-toe with WebSocket and Kaboom.js
+ # Building tic-tac-toe with WebSocket and Kaboom
 
 Tic-tac-toe, or noughts and crosses, or Xs and Os, is a simple classic game for 2 players. It's usually played with paper and pen, but it also makes a good first game to write for networked multiplayer.
 

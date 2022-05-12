@@ -1,4 +1,4 @@
-# Build a Physics playground with Kaboom.js
+# Build a Physics playground with Kaboom
 
 In this tutorial, we will be building a simple physics playground with [Kaboom.js](https://kaboomjs.com/). This will be a 2D side-view platformer in which the player can use a [gravity gun](https://en.wikipedia.org/wiki/Gravity_gun) to pick up and shoot objects in the world, similar to games like *Half-Life 2* and *Rochard*.
 

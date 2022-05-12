@@ -1,4 +1,4 @@
-# Building Asteroids with Kaboom.js
+# Building Asteroids with Kaboom
 
 Following our [previous tutorial on building Snake](https://docs.replit.com/tutorials/21-build-snake-with-kaboom), in this tutorial we'll implement Asteroids, one of the first major arcade game hits, developed by Atari in 1979. We'll use Replit's built-in game development platform, [Kaboom.js](https://kaboomjs.com/), and cover the following topics:
 

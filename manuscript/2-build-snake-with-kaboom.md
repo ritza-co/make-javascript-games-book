@@ -1,4 +1,4 @@
-# Building Snake with Kaboom.js
+# Building Snake with Kaboom
 
 Snake was an incredibly popular game, mostly remembered from 1990s era cell phones. At the time, it was often the only game you'd find on a phone. In the most basic form, it's a super simple game, but still wildly entertaining. It's also a great game to build when you are learning the basics of game making.
 

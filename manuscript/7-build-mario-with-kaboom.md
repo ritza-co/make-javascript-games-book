@@ -1,4 +1,4 @@
-# Building a *Mario*-like side-scroller with Kaboom.js
+# Building a *Mario*-like side-scroller with Kaboom
 
 The *Mario* series is one of the most known and loved game series of all time. The first *Mario* game was released by Nintendo in the mid-80s, and people haven't stopped playing *Mario* since.
 

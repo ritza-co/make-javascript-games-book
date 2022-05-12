@@ -1,4 +1,4 @@
-# Building a pseudo-3D game with Kaboom.js
+# Building a pseudo-3D game with Kaboom
 
 Three-dimensional games became popular in the late 80's and early 90's with games like the early Flight Simulator and Wolfenstein 3D. But these early games were really [2.5D, or pseudo-3D](https://en.wikipedia.org/wiki/2.5D): the action takes place in 2 dimensions, and the world only appears to be 3D.
 

@@ -1,4 +1,4 @@
-# Building *Space Invaders* with Kaboom.js
+# Building *Space Invaders* with Kaboom
 
 *Space Invaders* is a classic shoot 'em up arcade game created by Taito Corporation in Japan way back in 1978. It was an absolute monster hit, making nearly $4 billion in sales (that's the equivalent of over $13 billion today)!
 
