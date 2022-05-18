@@ -37,6 +37,14 @@ add([
 
 The code above loads a sprite for Kaboom's mascot Bean, and places Bean near the top of the screen. Before we start coding, we'll remove the code for adding Bean, leaving the following lines:
 
+```javascript
+import kaboom from "kaboom";
+
+// initialize context
+kaboom();
+
+```
+
 
 ## Creating levels
 
