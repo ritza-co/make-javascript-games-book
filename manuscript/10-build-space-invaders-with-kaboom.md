@@ -52,11 +52,11 @@ Similarly, we'll use a sprite sheet for the player's ship, so that we can animat
 
 This is what the two sprite sheets look like, for the aliens and the player:
 
-<img src="https://docs.replit.com/images/tutorials/41-space-invaders-kaboom/alien-sprite.png"
+<img src="https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/alien-sprite.png"
     alt="Alien sprite sheet"
     style="Width: 30% !important;"/>
 
-<img src="https://docs.replit.com/images/tutorials/41-space-invaders-kaboom/player-sprite.png"
+<img src="https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/player-sprite.png"
     alt="Player sprite sheet"
     style="Width: 30% !important;"/>
 
@@ -117,7 +117,7 @@ Then we load the sprite sheets. The first argument is the path to the sprite she
 
 For this tutorial, we'll omit the intro scene, since we already know what *Space Invaders* is and how to play it. You might like to add your own intro scene in later!
 
-<img src="https://docs.replit.com/images/tutorials/41-space-invaders-kaboom/game-scenes.png"
+<img src="https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/game-scenes.png"
     alt="game scenes"
     style="width: 350px !important; height: 40% !important;"/>
 
@@ -180,7 +180,7 @@ We can also add a `tag` to the game objects. This is not too useful on the playe
 
 In *Space Invaders*, the aliens operate as a unit in a tightly formed grid. They all move in sync with each other. This is what that looks like: 
 
-![alien grid](https://docs.replit.com/images/tutorials/41-space-invaders-kaboom/alien-grid.png "alien grid")
+![alien grid](https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/alien-grid.png "alien grid")
 
 To create this grid, we could add each alien one at a time, but that would be a lot of code. Instead, we can use a [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loop to cut down on the amount of code we need to write. We just need to decide how many rows and columns of aliens we want.
 

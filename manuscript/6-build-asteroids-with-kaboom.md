@@ -12,7 +12,7 @@ Our finished game will look like this:
 
 ![The finished game](resources/6-asteroids-game.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/asteroids-game.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/asteroids-game.gif)
 
 We will use these [Asteroids sprites](https://opengameart.org/content/asteroids-game-sprites-atlas) and this [space background](https://opengameart.org/content/space-background) from OpenGameArt.org, and the following sounds from FreeSound.org:
 
@@ -30,7 +30,7 @@ Download [this ZIP file](https://docs.replit.com/tutorial-files/asteroids-kaboom
 {width: 55%, align: middle}
 ![Uploading sprites](resources/6-upload-asteroid-sprites.png)
 
-[Click to open gif]("https://docs.replit.com/images/tutorials/23-asteroids-kaboom/upload-sprites.gif)
+[Click to open gif]("https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/upload-sprites.gif)
 
 Once you've uploaded the files, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 
@@ -143,7 +143,7 @@ Callbacks are a key concept in JavaScript and Kaboom makes heavy use of them. So
 
 Run your repl now and marvel at the vast emptiness of space.
 
-![Empty with score](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/empty-with-score.png)
+![Empty with score](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/empty-with-score.png)
 
 ## Creating the player's ship
 
@@ -192,7 +192,7 @@ Finally, we assign a number of custom properties to our player object. We'll use
 
 If you run your repl now, you should see the ship sprite in the middle of a blank screen. In the next section, we'll implement movement controls.
 
-![Ship in space](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/ship-in-space.png)
+![Ship in space](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/ship-in-space.png)
 
 ### Adding movement controls
 
@@ -257,7 +257,7 @@ First, we move our object, using the function `pointAt()`, which takes a speed a
 
 Now we need to create the `pointAt()` function. Before we jump into the code, let's think about the problem. Our movement can be drawn as an angled line on a plane, and its X and Y coordinates as horizontal and vertical lines connected to it, giving us a right-angled triangle.
 
-![Triangle](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/triangle.png)
+![Triangle](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/triangle.png)
 
 We know the values of the triangle's angles: one is 90 degrees, and the other two are equal to `player.angle`. The length of the triangle's hypotenuse (the red line in the diagram above) is `player.speed`: this is the *distance* our ship will be traveling.
 
@@ -371,7 +371,7 @@ onUpdate(() => {
 
 That's it! Run your repl and move your ship around.
 
-![Ship thrusting](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/ship-thrusting.png)
+![Ship thrusting](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/ship-thrusting.png)
 
 ### Shooting lasers
 
@@ -401,7 +401,7 @@ Here we're creating a bullet object at the tip of the ship's nose. We calculate 
 
 Try the game out now, and hold down the spacebar to shoot. Do you notice anything about your ship's firing rate?
 
-![Too many bullets](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/too-many-bullets.png)
+![Too many bullets](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/too-many-bullets.png)
 
 At the moment, a bullet object will be created in every frame while space is down. That's a lot of bullets, and might make the game too easy, as well as slowing it to a crawl on less capable devices. We need to add a cooldown period, and we can do so by altering our shooting code to look like this:
 
@@ -435,7 +435,7 @@ Here, we use two of the properties we defined in the player object above, `can_s
 
 Run your repl and test whether the ship's laser fires at the expected intervals.
 
-![Laser rate](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/laser.png)
+![Laser rate](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/laser.png)
 
 ## Creating asteroids
 
@@ -557,7 +557,7 @@ This code makes the asteroids appear to bounce off each other by reversing their
 
 Run the game now and see what happens when you ram your ship into some asteroids!
 
-![Asteroids](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/asteroids.png)
+![Asteroids](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/asteroids.png)
 
 ## Ending the game
 
@@ -642,7 +642,7 @@ ui.on("draw", () => {
 
 This code draws a number of scaled down player spaceships equal to the number of remaining lives.
 
-![Lives](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/lives.png)
+![Lives](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/lives.png)
 
 ## Adding some Final touches
 
@@ -720,7 +720,7 @@ onCollide("bullet", "asteroid", (b, a) => {
 });
 ```
 
-![Small asteroids](https://docs.replit.com/images/tutorials/23-asteroids-kaboom/small-asteroids.png)
+![Small asteroids](https://replit-docs-images.bardia.repl.co/images/tutorials/23-asteroids-kaboom/small-asteroids.png)
 
 ### Temporary invulnerability
 

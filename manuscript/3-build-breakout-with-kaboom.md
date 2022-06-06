@@ -11,7 +11,7 @@ Our finished game will look like this:
 
 ![The finished game](resources/3-gameplay.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/37-breakout-kaboom/gameplay.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/37-breakout-kaboom/gameplay.gif)
 
 We will be using [this set of sprites](https://opengameart.org/content/breakout-set) by [Michele Bucelli](https://opengameart.org/users/buch) and sound effects from [this pack](https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a) by [Jaymin Covy](https://opengameart.org/users/damaged-panda). We'll also use [music](https://soundimage.org/chiptunes-4/) by [Eric Matyas](https://soundimage.org/chiptunes-4/) of Soundimage.org.
 
@@ -22,7 +22,7 @@ Download [this ZIP file](https://docs.replit.com/tutorial-files/breakout-kaboom/
 {width: 50%, align: middle}
 ![Uploading assets](resources/3-upload-assets.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/37-breakout-kaboom/upload-assets.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/37-breakout-kaboom/upload-assets.gif)
 
 
 Once you've uploaded the files, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
@@ -397,7 +397,7 @@ Rerun your repl now and try out the controls. If you have a touch screen on your
 
 ![Moving the paddle](resources/3-move-paddle.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/37-breakout-kaboom/move-paddle.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/37-breakout-kaboom/move-paddle.gif)
 
 
 ## Moving the ball
@@ -433,7 +433,7 @@ If the ball goes off the left or right edges of the screen, we reverse its horiz
 
 ![Moving the ball](resources/3-move-ball.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/37-breakout-kaboom/move-ball.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/37-breakout-kaboom/move-ball.gif)
 
 
 ## Adding collisions

@@ -67,7 +67,7 @@ Since the background doesn't need to do much, just stay in the back and look pre
 
 If you press the "Run" button at the top of your repl now, you should see the background of the Flappy world come up in the output section of the repl: 
 
-![Flappy background with buildings, trees and building sky line](https://docs.replit.com/images/tutorials/35-flappy-bird/flappy-background.png)
+![Flappy background with buildings, trees and building sky line](https://replit-docs-images.bardia.repl.co/images/tutorials/35-flappy-bird/flappy-background.png)
 
 Great! Now let's add in the Flappy Bird. Add this code to the `game` scene:
 
@@ -95,7 +95,7 @@ Press `command + s` (Mac) or `control + s` (Windows/Linux) to update the game ou
 
 ![Flappy falling out of the sky](resources/1-flappy-falls.png)
 
-Take a look at the GIF here: https://docs.replit.com/images/tutorials/35-flappy-bird/flappy-falls.gif
+Take a look at the GIF here: https://replit-docs-images.bardia.repl.co/images/tutorials/35-flappy-bird/flappy-falls.gif
 
 ## Making Flappy fly
 
@@ -115,7 +115,7 @@ Update the game output window, and if you press the spacebar now, you'll be able
 
 ![Flying-flappy](resources/1-flappy-fly.png)
 
-Take a look at the GIF here: https://docs.replit.com/images/tutorials/35-flappy-bird/flappy-fly.gif
+Take a look at the GIF here: https://replit-docs-images.bardia.repl.co/images/tutorials/35-flappy-bird/flappy-fly.gif
 
 
 ## Adding the pipes
@@ -125,7 +125,7 @@ Now we can get to the main part of the game – adding in the moving pipes that 
 Here is a diagram of the layout of the pipes in the game.  
 
 {width: 75%, align: middle}
-![Pipe gap](https://docs.replit.com/images/tutorials/35-flappy-bird/pipe-gap.png)
+![Pipe gap](https://replit-docs-images.bardia.repl.co/images/tutorials/35-flappy-bird/pipe-gap.png)
 
 
 We want to move the pipe gap, and therefore the pipes, up and down for each new pipe pair that is created. This is so we don't have the gap at the center point of the screen constantly – we want it to be slightly different for each pipe pair that comes along. We do want to keep the gap size consistent though.
@@ -202,7 +202,7 @@ Update the game output window now and you should see the pipes being generated a
 
 ![Moving pipes](resources/1-moving-pipes.png)
 
-Take a look at the GIF here: https://docs.replit.com/images/tutorials/35-flappy-bird/moving-pipes.gif
+Take a look at the GIF here: https://replit-docs-images.bardia.repl.co/images/tutorials/35-flappy-bird/moving-pipes.gif
 
 Flappy is flapping and the pipes are piling on. The next task is to detect when Flappy flies past a pipe, increasing the player's score.
 
@@ -263,7 +263,7 @@ If you update the game output window now, you should see the score increase as y
 
 ![Score increasing](resources/1-score-increase.jpg)
 
-Take a look at the GIF here: https://docs.replit.com/images/tutorials/35-flappy-bird/score-increase.gif
+Take a look at the GIF here: https://replit-docs-images.bardia.repl.co/images/tutorials/35-flappy-bird/score-increase.gif
 
 ## Detecting collisions
 
@@ -324,7 +324,7 @@ Update the game output window again and test it out. If you fly into a pipe now,
 
 ![Game over screen](resources/1-game-over.png)
 
-Take a look at the GIF here: https://docs.replit.com/images/tutorials/35-flappy-bird/game-over.gif
+Take a look at the GIF here: https://replit-docs-images.bardia.repl.co/images/tutorials/35-flappy-bird/game-over.gif
 
 
 ## Things to try

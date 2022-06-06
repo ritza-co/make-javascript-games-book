@@ -6,7 +6,7 @@ Here's how the game will look when we're done:
 
 ![The finished game](resources/4-gameplay.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/gameplay.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/24-space-shooter-kaboom/gameplay.gif)
 
 You can download this [zip file](https://docs.replit.com/tutorial-files/space-shooter-kaboom/space-shooter-resources.zip) with all the sprites and sounds you'll need for this tutorial.
 
@@ -30,7 +30,7 @@ Download this [zip file](https://docs.replit.com/tutorial-files/space-shooter-ka
 {width: 55%, align: middle}
 ![Uploading sprites](resources/4-upload-sprites.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/upload-sprites.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/24-space-shooter-kaboom/upload-sprites.gif)
 
 
 Kaboom makes good use of JavaScript's support for [callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function): instead of writing loops to read keyboard input and check if game objects have collided, Kaboom uses an event model that tells us when these events have happened. We can then write [callback functions](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) to act on these events.
@@ -192,7 +192,7 @@ In this code, we have 3 different type of fixed map elements: `=` representing t
 
 If we run the code, we should see the game map, like this:
 
-![Game map](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/game-map.png)
+![Game map](https://replit-docs-images.bardia.repl.co/images/tutorials/24-space-shooter-kaboom/game-map.png)
 
 ## Adding the Spaceship
 
@@ -354,7 +354,7 @@ Run the code now, and you should be able to shoot.
 
 ![Laser firing](resources/4-laser-firing.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/laser-firing.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/24-space-shooter-kaboom/laser-firing.gif)
 
 ## Adding Alien Space Bugs
 
@@ -436,7 +436,7 @@ Run the code now, you should see moving aliens.
 
 ![Aliens](resources/4-aliens.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/aliens.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/24-space-shooter-kaboom/aliens.gif)
 
 ## Shooting the Aliens
 
@@ -522,7 +522,7 @@ This brings us to the `lifespan` component. This is implemented to automatically
 
 ![Shooting Aliens](resources/4-shooting-aliens.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/shooting-aliens.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/24-space-shooter-kaboom/shooting-aliens.gif)
 
 ## Exploding the Alien Bugs on Contact
 
@@ -793,7 +793,7 @@ Run the code now and start collecting gems.
 
 ![Collecting gems](resources/4-collecting-gems.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/24-space-shooter-kaboom/collecting-gems.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/24-space-shooter-kaboom/collecting-gems.gif)
 
 ## Adding Background Music
 

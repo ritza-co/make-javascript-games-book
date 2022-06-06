@@ -5,13 +5,13 @@ Tic-tac-toe, or noughts and crosses, or Xs and Os, is a simple classic game for 
 In this tutorial, we'll create a 2-player online tic-tac-toe game using a [Node.js](https://nodejs.org/en/) server. [Socket.IO](https://socket.io) will enable realtime gameplay across the internet. We'll use Kaboom.js to create the game interface.
 
 ![The finished game](resources/9-gameplay.png)
-[Click to open gif](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/gameplay.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/gameplay.gif)
 
 ## How do multiplayer games work?
 
 Multiplayer games have an architecture that typically looks something like this:
 
-![Game server architecture](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/architecture.png)
+![Game server architecture](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/architecture.png)
 
 Players (clients) connect to a _game server_ over the internet. The game runs on the game server, where all the game rules, scores and other data are processed. The players' computers render the graphics for the game, and send player commands (from the keyboard, mouse, gamepad, or other input device) back to the game server. The game server checks if these commands are valid, and then updates the _game state_. The game state is a representation of all the variables, players, data and information about the game. This game state is then transmitted back to all the players and the graphics are updated.
 
@@ -25,9 +25,9 @@ With the [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) proto
 
 For this project, we'll need to create 2 repls - 1 using Node.js for the game server, and 1 using Kaboom for the players. Head over to [Replit](https://replit.com) and create a two new repls:
 - To create the server project, choose "Node.js" as your project type. Give this repl a name, like "tic-tac-toe-server".
-  ![New Server repl](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/server-new-repl.png)
+  ![New Server repl](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/server-new-repl.png)
 - To create the player project, choose "Kaboom" as your project type. Give this repl a name, like "tic-tac-toe".
-  ![New Player repl](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/player-new-repl.png)
+  ![New Player repl](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/player-new-repl.png)
 
 We'll code in the server repl to start, and then switch between repls as we build the game.
 
@@ -103,7 +103,7 @@ let gameState = {
 First, we have a representation of the tic-tac-toe board as an array with 9 elements. This is how the array elements are mapped to the board:
 
 {width: 75%, align: middle}
-![Tic-Tac-Toe board mapped to array indices](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/board.png)
+![Tic-Tac-Toe board mapped to array indices](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/board.png)
 
 
 Each number in the blocks represents the index at which the board position is represented in the array. Initially, we fill all the elements of the array with `null` to indicate that the block is open. When players make a move to occupy an open space, we'll add a reference to the player instead. That way we can keep track of which blocks are empty, and which are occupied by which player.
@@ -325,7 +325,7 @@ We're only interested in detecting 2 cases: A win or a draw.
 
 There are just 8 patterns that determine if a player has won at tic-tac-toe. Let's map them to our board with its indexed blocks:
 
-![All possible win lines](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/allwins.png)
+![All possible win lines](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/allwins.png)
 
 We can encode each of these winning patterns into an array of 3 numbers each. Then we can add each of those patterns to a larger array, like this:
 
@@ -486,7 +486,7 @@ This adds 4 rectangles with a width of 1 pixel and length of 400 pixels to the s
 If you run the game, and enter your name, you should see the board layout like this:
 
 {width: 80%, align: middle}
-![Board layout](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/boardLayout.png)
+![Board layout](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/boardLayout.png)
 
 Now we need to add a way to draw the _X_ and _O_ symbols in each block. To do this, we'll add objects with text components in each block of the board. First, we'll make an array containing the location and size of each block. Add the following code snippets within the "main" scene we created above:
 
@@ -554,7 +554,7 @@ Here we add 3 objects with [`text`](https://kaboomjs.com/doc/#text) components. 
 
 To connect to the game server, we need to initialize the Socket.IO library we dynamically added earlier. We need to provide the URL to the server repl, so copy that from the output window of the server repl:
 
-![Copying server url](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/server-url.png)
+![Copying server url](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/server-url.png)
 
 Now add this code along with the server URL to the "main" scene in the player repl:
 
@@ -641,11 +641,11 @@ Next we update the player name text boxes. First we reset them, in case one of t
 
 Now that we're done with updating from the game state, let's try running the game again. Open the game window in a new tab so that requests to the repl server don't get blocked by the browser due to the CORS header 'Access-Control-Allow-Origin' not matching in the embedded window.
 
-![Open in new tab](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/open-in-new-tab.png)
+![Open in new tab](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/open-in-new-tab.png)
 
 Make sure the server is also running, and enter your name. You should see something like this:
 
-![Waiting for another player](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/waiting.png)
+![Waiting for another player](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/waiting.png)
 
 You can connect to your game in another browser tab, and enter another name. Then you should see both names come up, and the status message change to allow a player to make a move. Of course, we haven't yet implemented the code to enable making a move from the UI, so let's do that now.
 
@@ -685,7 +685,7 @@ charInput((ch) => {
 
 Now you can run the game (and the server), and open the game in another tab, and you should be able to play tic-tac-toe against yourself! Send a link to the game to a friend, and see if they can join and play against you.
 
-![Playing tic tac toe](https://docs.replit.com/images/tutorials/27-tictactoe-kaboom/playing.png)
+![Playing tic tac toe](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/playing.png)
 
 ## Next Steps
 You can find the code for this tutorial on [Replit](https://replit.com/@ritza/tic-tac-toe-new)

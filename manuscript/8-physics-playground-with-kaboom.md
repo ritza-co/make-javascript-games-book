@@ -4,7 +4,7 @@ In this tutorial, we will be building a simple physics playground with [Kaboom.j
 
 ![The finished game](resources/8-gameplay.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/36-physics-playground/gameplay.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/36-physics-playground/gameplay.gif)
 
 By the end of this tutorial, you will:
 
@@ -172,7 +172,7 @@ Note the following:
 
 Run your repl now, and you'll see your level, with player, crates and walls. As we've placed the player in mid-air, you should see them fall to the platform below, confirming the presence of gravity.
 
-![Level](https://docs.replit.com/images/tutorials/36-physics-playground/level.png)
+![Level](https://replit-docs-images.bardia.repl.co/images/tutorials/36-physics-playground/level.png)
 
 
 ## Moving the player
@@ -444,13 +444,13 @@ When we launch an object, we'll give it a direction and a non-zero speed. We use
 
 Run your repl now and try out the gravity gun. You should be able to pull crates into the holding position, and then move them around your head.
 
-![Gravity gun pull](https://docs.replit.com/images/tutorials/36-physics-playground/gravity-gun-pull.png)
+![Gravity gun pull](https://replit-docs-images.bardia.repl.co/images/tutorials/36-physics-playground/gravity-gun-pull.png)
 
 ### Fixing the wall-clipping bugs
 
 If you play around with the game, you should notice a couple of wall clipping bugs. When holding an object, you can force it to teleport below the platform you're standing on by aiming them. Similarly, objects will teleport through platforms if you pull them from the other side.
 
-![Wall clip](https://docs.replit.com/images/tutorials/36-physics-playground/wall-clip.png)
+![Wall clip](https://replit-docs-images.bardia.repl.co/images/tutorials/36-physics-playground/wall-clip.png)
 
 In both cases, this is because Kaboom's `moveTo()` function does not take solid objects into account, so we'll have to do that ourselves.
 

@@ -6,7 +6,7 @@ Three-dimensional games became popular in the late 80's and early 90's with game
 
 ![The finished game](resources/5-gameplay.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/gameplay.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/gameplay.gif)
 
 ## Designing the game
 
@@ -31,7 +31,7 @@ If you haven't already, download this [zip file](https://docs.replit.com/tutoria
 {width: 50%, align: middle}
 ![Uploading sprites](resources/5-upload-sprites.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/upload-sprites.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/upload-sprites.gif)
 
 
 To set up the game play environment, we need to set up Kaboom with the screen size and colors we want for the game window. Replace the code in `main.js` with the code below:
@@ -87,7 +87,7 @@ To create this effect, we'll start by making the alien bugs small and spread out
 We need a 3D coordinate system to work out how our elements should move. We'll create a system like the one in the image below, with 0 for all three dimension axes in the center. This is how we'll track the movements of the aliens in code. When we draw them to the screen, we'll convert these coordinates into the 2D screen coordinate system.
 
 {align: middle}
-![3D co-ordinate system](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/3d-system.png)
+![3D co-ordinate system](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/3d-system.png)
 
 Let's add the following code to the `main` scene file to achieve this:
 
@@ -173,7 +173,7 @@ First we add a new event handler onto the [`onUpdate`](https://kaboomjs.com/doc/
 Remember that screen coordinates start with (0,0) in the top left corner of the screen, and our 3D coordinate system starts with (0,0,0) in the 'center' of the system. To translate between the 2 systems, we need to find the center of the screen so that we can center the 3D system over it. We do this by by halving the screen `WIDTH` and `HEIGHT` by 2. The screen is the red rectangle in the image below, showing how the 3D system will be centered on it.
 
 {align: middle}
-![Overlay 3d system over 2d system](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/overlay.png)
+![Overlay 3d system over 2d system](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/overlay.png)
 
 
 Now we can add the alien's `x` and `y` positions in 3D coordinate space relative to the center point of the screen. We bias the center point "up" a bit, as this will seem to be the center of the spaceship's view when we add the cockpit later. We also modify each of these `x` and `y` positions by a factor relating to the alien's `z` position: As the alien approaches, its `zpos` value decreases, and our factor uses this value to draw the alien nearer to the center of the screen. This enhances the depth illusion and makes it feel to the player that the aliens are coming at them.
@@ -184,7 +184,7 @@ If you run the code now, you should see the aliens start to move toward you.
 
 ![Aliens coming at you](resources/5-aliens-coming.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/alieans-coming.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/alieans-coming.gif)
 
 ## Adding a star field
 
@@ -272,7 +272,7 @@ Run the game now and you should see the view from inside the spaceship.
 
 ![Spaceship view](resources/5-spaceship-view.png)
 
-[Click top open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/spaceship-view.gif)
+[Click top open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/spaceship-view.gif)
 
 
 ## Creating the spaceship's movement controls
@@ -349,7 +349,7 @@ Give the game a run, and you should be able to control the spaceship.
 
 ![Flying controls](resources/5-fly-controls.png)
 
-[Clcik to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/fly-controls.gif)
+[Clcik to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/fly-controls.gif)
 
 
 ## Adding weapons
@@ -491,7 +491,7 @@ Try this out now, and you should be able to shoot some laser bullets into space.
 
 ![Shooting](resources/5-shooting.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/shooting.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/shooting.gif)
 
 
 ## Checking for collisions with bullets
@@ -560,7 +560,7 @@ Run this now, and you should be able to shoot the alien bugs down.
 
 ![Shooting explosions](resources/5-shooting-explosion.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/shooting-explosion.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/shooting-explosion.gif)
 
 
 ## Checking alien bug collisions with the spaceship
@@ -596,7 +596,7 @@ If the alien is close enough, and within our strike zone, we use the [`shake`](h
 
 ![Colliding](resources/5-colliding.png)
 
-[Click to open gif](https://docs.replit.com/images/tutorials/25-3d-game-kaboom/colliding.gif)
+[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/colliding.gif)
 
 
 ## Things to try

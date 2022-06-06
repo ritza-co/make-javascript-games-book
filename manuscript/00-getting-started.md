@@ -10,7 +10,7 @@ Using Kaboom in Replit takes care of all the boilerplate initialisation code, as
 
 Head over to [Replit](https://replit.com/) and create a new repl. Choose Kaboom as your project type. Give this repl a name, like "Flappy!".
 
-![Creating a new repl](https://docs.replit.com/images/tutorials/35-flappy-bird/new-repl.png)
+![Creating a new repl](https://replit-docs-images.bardia.repl.co/images/tutorials/35-flappy-bird/new-repl.png)
 
 ## Setting up Kaboom
 
