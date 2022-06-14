@@ -1,3 +1,4 @@
+000-intro.txt
 00-getting-started.md
 1-build-flappy-bird-with-kaboom.md
 2-build-snake-with-kaboom.md
