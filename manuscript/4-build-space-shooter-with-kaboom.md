@@ -379,7 +379,8 @@ function spawnAlien() {
         area(),
 		"alien",
 		 {
-		 	speedX: rand(alien_speed * 0.5, alien_speed * 1.5) * (alienDirection == directions.LEFT ? 1: -1),
+		 	speedX: rand(alien_speed * 0.5, alien_speed * 1.5) * 
+                (alienDirection == directions.LEFT ? 1: -1),
             speedY: rand(alien_speed * 0.1, alien_speed * 0.5) * choose([-1,1])
 		 },
 	]);
