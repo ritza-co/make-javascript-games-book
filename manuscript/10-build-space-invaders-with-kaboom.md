@@ -296,7 +296,7 @@ You'll also notice that we have a `pause` variable. We'll use this later on to p
 
 If you run the game now, you'll be able to move the player left and right on the screen. 
 
-![Moving](resources/10-moving.png "Moving")
+![Moving](resources/10-moving.png)
 
 ## Moving the aliens
 
