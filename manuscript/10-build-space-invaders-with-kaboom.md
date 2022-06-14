@@ -6,7 +6,7 @@ Later, Atari released a clone of *Space Invaders* on the Atari 2600 home system.
 
 Of course, *Space Invaders* was such a popular game, there were many clones and variations. Let's make our own version using [Kaboom](https://kaboomjs.com) and [Replit](https://replit.com).
 
-![gameplay](resources/10-gameplay.png "gameplay")
+![gameplay](resources/10-gameplay.png)
 
 ## Designing the game
 
@@ -22,7 +22,7 @@ When the aliens reach the bottom of the screen, the game is immediately over, as
 Download [this archive of sprites and asset files](/tutorial-files/space-invaders-kaboom/space-invaders-resources.zip) we'll need for the game, and unzip them on your computer. In the Kaboom editor, click the "Files" icon in the sidebar. Now drag and drop all the sprite files (image files) into the "sprites" folder. Once they have uploaded, you can click on the "Kaboom" icon in the sidebar, and return to the "main" code file.
 
 
-![Upload assets](resources/10-uploadassets.png "Upload assets")
+![Upload assets](resources/10-uploadassets.png)
 
 ## Setting up Kaboom
 
@@ -52,13 +52,9 @@ Similarly, we'll use a sprite sheet for the player's ship, so that we can animat
 
 This is what the two sprite sheets look like, for the aliens and the player:
 
-<img src="https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/alien-sprite.png"
-    alt="Alien sprite sheet"
-    style="Width: 30% !important;"/>
+![Alien sprite sheet](https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/alien-sprite.png)
 
-<img src="https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/player-sprite.png"
-    alt="Player sprite sheet"
-    style="Width: 30% !important;"/>
+![Player sprite sheet](https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/player-sprite.png)
 
 We need to describe how to use each of the images in the sprite sheets. Kaboom's [`loadSpriteAtlas`](https://kaboomjs.com/#loadSpriteAtlas) function accepts an object describing all these details. Add the following code to the "main" code file:
 
@@ -117,10 +113,7 @@ Then we load the sprite sheets. The first argument is the path to the sprite she
 
 For this tutorial, we'll omit the intro scene, since we already know what *Space Invaders* is and how to play it. You might like to add your own intro scene in later!
 
-<img src="https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/game-scenes.png"
-    alt="game scenes"
-    style="width: 350px !important; height: 40% !important;"/>
-
+![Game scenes](https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/game-scenes.png)
 
 Let's add the code for defining each scene: 
 
@@ -180,7 +173,7 @@ We can also add a `tag` to the game objects. This is not too useful on the playe
 
 In *Space Invaders*, the aliens operate as a unit in a tightly formed grid. They all move in sync with each other. This is what that looks like: 
 
-![alien grid](https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/alien-grid.png "alien grid")
+![alien grid](https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/alien-grid.png)
 
 To create this grid, we could add each alien one at a time, but that would be a lot of code. Instead, we can use a [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loop to cut down on the amount of code we need to write. We just need to decide how many rows and columns of aliens we want.
 
@@ -257,7 +250,7 @@ Then we call the `spawnAliens` function to add the aliens to the scene.
 
 If you run the game, you should see a block of animated aliens and the blue player block at the bottom of the screen, like this:
 
-![Added character](resources/10-added-characters.png "Added character")
+![Added character](resources/10-added-characters.png)
 
 
 ## Moving the player
@@ -422,7 +415,7 @@ const BULLET_SPEED = 300;
 If you run the game now, you should be able to shoot bullets. They won't kill the aliens yet. We'll add that next. 
 
 
-![Shooting](resources/10-shooting.png "Shooting")
+![Shooting](resources/10-shooting.png)
 
 ## Detecting bullet collisions with aliens
 
@@ -474,7 +467,7 @@ First we add a text label for the score. We use the Kaboom [`text`](https://kabo
 If you run the game now, you should be able to shoot at an alien, destroy it, and see your points increase. 
 
 
-![Destroy alien](resources/10-destroy-alien.png "Destroy alien")
+![Destroy alien](resources/10-destroy-alien.png)
 
 ## Making the aliens shoot back
 
@@ -519,7 +512,7 @@ This way, there is no pattern that the player can learn to outsmart the aliens.
 If you run the game now, you should see a random alien shoot at the player every second.
 
 
-![Aliens shooting](resources/10-aliens-shooting.png "Aliens shooting")
+![Aliens shooting](resources/10-aliens-shooting.png)
 
 ## Detecting bullet collisions with the player
 
