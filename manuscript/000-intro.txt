@@ -4,7 +4,7 @@ Welcome to Make JavaScript Games. Our Engineering-Writers have built some of the
 
 The main writers for most of the chapters were Bradley Van Aardt and David Yates.
 
-The projects we have chosen present great way to learn programming if you're brand new to it, or to learn game development if you already have basic coding skills.
+The projects we have chosen present a great way to learn programming if you're brand new to it, or to learn game development if you already have basic coding skills.
 
 If you're a seasoned expert, they form a good introduction to KaboomJS.
 
@@ -15,6 +15,6 @@ This is our first physical book, so if you have any feedback please send it to m
 You can find a free online version at https://makejsgames.com
 
 Gareth Dwyer, Ritza
-_Founder_
+*Founder*
 June 2022
 
