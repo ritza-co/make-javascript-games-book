@@ -1,12 +1,10 @@
-# Building a pseudo-3D game with Kaboom.js
+# Building a pseudo-3D game
 
 Three-dimensional games became popular in the late 80's and early 90's with games like the early Flight Simulator and Wolfenstein 3D. But these early games were really [2.5D, or pseudo-3D](https://en.wikipedia.org/wiki/2.5D): the action takes place in 2 dimensions, and the world only appears to be 3D.
 
-[Kaboom.js](https://kaboomjs.com) is a 2D game engine, but we can use some of those early game designers' techniques to create a pseudo-3D game. This game is roughly based on our [2D space shooter game tutorial](https://docs.replit.com/tutorials/24-build-space-shooter-with-kaboom), but we'll use a view from the cockpit of the spaceship instead of the side-scrolling view.
+Kaboom is a 2D game engine, but we can use some of those early game designers' techniques to create a pseudo-3D game. This game is roughly based on our 2D space shooter game tutorial, but we'll use a view from the cockpit of the spaceship instead of the side-scrolling view.
 
 ![The finished game](resources/5-gameplay.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/gameplay.gif)
 
 ## Designing the game
 
@@ -15,7 +13,7 @@ Here's what we want from this game:
 - A sense of depth to give the illusion of 3D
 - The feeling of freedom of movement throughout space
 
-We'll make use of Kaboom's [scale component](https://kaboomjs.com/doc/#scale) to achieve the sense of depth, representing our sprites as smaller if they are meant to be further away, and larger when they are closer. We'll  create a feeling of moving through space using an algorithm to generate a star field, like the early Windows screensavers.
+We'll make use of Kaboom's scale component to achieve the sense of depth, representing our sprites as smaller if they are meant to be further away, and larger when they are closer. We'll  create a feeling of moving through space using an algorithm to generate a star field, like the early Windows screensavers.
 
 ## Getting started
 
@@ -30,8 +28,6 @@ If you haven't already, download this [zip file](https://docs.replit.com/tutoria
 
 {width: 50%, align: middle}
 ![Uploading sprites](resources/5-upload-sprites.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/upload-sprites.gif)
 
 
 To set up the game play environment, we need to set up Kaboom with the screen size and colors we want for the game window. Replace the code in `main.js` with the code below:
@@ -60,7 +56,7 @@ loadSound("shoot","shoot.wav")
 loadSound("explosion","explosion.wav")
 ```
 
-The first line, [`loadRoot`](https://kaboomjs.com/#loadRoot), specifies which folder to load all the sprites and game elements from, so we don't have to keep typing it in for each sprite. Then each line loads a game sprite and gives it a name so that we can refer to it in code later. We use similar code to load the sounds we will need in this game, but instead of [`loadSprite`](https://kaboomjs.com/#loadSprite) we use [`loadSound`](https://kaboomjs.com/#loadSound) to load sounds.
+The first line, `loadRoot`, specifies which folder to load all the sprites and game elements from, so we don't have to keep typing it in for each sprite. Then each line loads a game sprite and gives it a name so that we can refer to it in code later. We use similar code to load the sounds we will need in this game, but instead of `loadSprite` we use `loadSound` to load sounds.
 
 ## Creating the interface layers
 
@@ -126,12 +122,12 @@ loop(0.8, spawnAlien);
 
 First, we define some general constants for the size of the screen and the speed at which aliens will move. This way, we don't have to keep remembering and typing numbers, and it's easier to change these aspects later if we need to. We also create an array to hold each alien object we create so that we can keep track of all of them. This will be especially important when we add movement to the aliens.
 
-The function `spawnAlien` creates a new alien at a random location on the screen. The first lines calculate a random x and y position to place the alien on the screen initially. This isn't logically needed, as we'll calculate the alien's actual position later from our 3D coordinate system and calculate the projected screen position on each frame. But we need to pass a position [`pos`](https://kaboomjs.com/doc/#pos) component to the [`add`](https://kaboomjs.com/doc/#add) method when we create a new object, so any random position will do.
+The function `spawnAlien` creates a new alien at a random location on the screen. The first lines calculate a random x and y position to place the alien on the screen initially. This isn't logically needed, as we'll calculate the alien's actual position later from our 3D coordinate system and calculate the projected screen position on each frame. But we need to pass a position `pos` component to the `add` method when we create a new object, so any random position will do.
 
 There are two more components we include when constructing the alien object:
 
-- [`scale`](https://kaboomjs.com/doc/#scale), allowing us to adjust the size of the alien over time as if it's getting closer, and
-- [`rotate`](https://kaboomjs.com/doc/#rotate), allowing us to rotate the aliens so we can simulate 'rolling' when changing the spaceship's direction.
+- `scale`, allowing us to adjust the size of the alien over time as if it's getting closer, and
+- `rotate`, allowing us to rotate the aliens so we can simulate 'rolling' when changing the spaceship's direction.
 
 We also add the coordinates of the alien's position in the 3D system to the alien object as custom properties. We start with a fixed `zpos`, or position on the Z axis, far from the screen.
 
@@ -139,7 +135,7 @@ Then we set the alien's speed, varied by a random amount of up to half the base 
 
 Finally, we add the new alien to the `aliens` array we created earlier to keep track of it.
 
-Outside the function, we make use of the Kaboom [`loop`](https://kaboomjs.com/doc/#loop) functionality to call the `spawnAlien` function to create new aliens at regular intervals.
+Outside the function, we make use of the Kaboom `loop` functionality to call the `spawnAlien` function to create new aliens at regular intervals.
 
 ## Moving the alien bugs
 
@@ -168,7 +164,7 @@ Now we need to have the aliens we've generated move with each frame. Here's the 
     }
 ```
 
-First we add a new event handler onto the [`onUpdate`](https://kaboomjs.com/doc/#onUpdate) event, and filter for any objects tagged `alien`. The `onUpdate` event handler is fired for each frame. In this event handler function, we adjust the `zpos` of the alien to make it 'move' a little closer to the screen. We use the [`dt()`](https://kaboomjs.com/doc/#dt) function to get the time from the last frame, together with the speed per second we assigned to the alien when we constructed it, to calculate the alien's new `zpos` in our 3D coordinate system. We then translate that value to screen coordinates, and mimic the z-axis position by adjusting the size, or `scale`, of the alien sprite.
+First we add a new event handler onto the `onUpdate` event, and filter for any objects tagged `alien`. The `onUpdate` event handler is fired for each frame. In this event handler function, we adjust the `zpos` of the alien to make it 'move' a little closer to the screen. We use the `dt()` function to get the time from the last frame, together with the speed per second we assigned to the alien when we constructed it, to calculate the alien's new `zpos` in our 3D coordinate system. We then translate that value to screen coordinates, and mimic the z-axis position by adjusting the size, or `scale`, of the alien sprite.
 
 Remember that screen coordinates start with (0,0) in the top left corner of the screen, and our 3D coordinate system starts with (0,0,0) in the 'center' of the system. To translate between the 2 systems, we need to find the center of the screen so that we can center the 3D system over it. We do this by by halving the screen `WIDTH` and `HEIGHT` by 2. The screen is the red rectangle in the image below, showing how the 3D system will be centered on it.
 
@@ -183,8 +179,6 @@ Finally, we see if the alien is very close by seeing if the `zpos < 1`. If it is
 If you run the code now, you should see the aliens start to move toward you.
 
 ![Aliens coming at you](resources/5-aliens-coming.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/alieans-coming.gif)
 
 ## Adding a star field
 
@@ -241,15 +235,15 @@ While this is very similar to the code we added above for the alien bugs, you'll
 
 - We create all the stars at once. This is because we need a significant star field to start with, not just a few stars every second.
 - We don't create a Kaboom object for each star. This is because we don't need the collision handling and other overhead that comes with a Kaboom object, especially since we are generating a lot of stars (`const STAR_COUNT = 1000; `). Instead, we store the stars' info in custom [object literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals), and add each of these to the `stars` array.
-- We set the initial `z-pos` of the stars to a random value from 0 to 1000, using the Kaboom [`rand`](https://kaboomjs.com/doc#rand) function. We do this because we create all the stars at once, so we seed the stars at random positions on the z-axis to give the feeling of depth to the star field. If the stars were all initialised to the same `z-pos`, they would move in unison, and it would look like a mass of pixels were coming at us - a bit weird!
+- We set the initial `z-pos` of the stars to a random value from 0 to 1000, using the Kaboom `rand` function. We do this because we create all the stars at once, so we seed the stars at random positions on the z-axis to give the feeling of depth to the star field. If the stars were all initialised to the same `z-pos`, they would move in unison, and it would look like a mass of pixels were coming at us - a bit weird!
 
-Now take a look at the [`onUpdate`](https://kaboomjs.com/doc/#onUpdate) event handler for our stars. It differs from the event handler for our alien bugs in a few ways:
+Now take a look at the `onUpdate` event handler for our stars. It differs from the event handler for our alien bugs in a few ways:
 
 - We don't use an object filter to look for the stars, as we didn't create them as Kaboom objects. Instead, we just cycle through each star in the `stars` array.
 - Instead of destroying the star and removing it from the array when it reaches the 'front' of the screen, we recycle it by resetting its `z-pos` back to 1000.
 - We also check if the star is out of the screen view. If it is, we don't draw it, to save a bit of overhead.
 - Instead of using the `z-pos` to calculate a value by which to scale the star, we use it to calculate the star's intensity, or brightness. Kaboom uses color values in the range 0-255. So we first scale the `z-pos` down to below 1. Then we subtract it from 1 to create an inverse relationship between `z-pos` and intensity. We then multiply the intensity value by 255 to scale it to a value that is within the range 0-255. In other words, stars further away from us have higher `zpos` values, giving us lower color intensity. This makes stars far away glow dimly, while those closer to our view look brighter.
-- Finally, we use the Kaboom's [drawRect](https://kaboomjs.com/doc/#drawRect) method to directly draw the star to the screen. As there is no pixel level drawing function in Kaboom, we create a rectangle of size 1 to draw just one pixel.
+- Finally, we use the Kaboom's drawRect method to directly draw the star to the screen. As there is no pixel level drawing function in Kaboom, we create a rectangle of size 1 to draw just one pixel.
 
 ## Adding the spaceship cockpit
 
@@ -266,14 +260,11 @@ Now that we have a star field to fly through, let's add the player's spaceship. 
     ]);
 ```
 
-This adds the `cockpit` sprite (image) to the `ui` layer. We also add the [`rotate`](https://kaboomjs.com/doc/#rotate) component to it, so that we can add some rotation effects when the spaceship is flying. We use the [`origin`](https://kaboomjs.com/doc/#origin) component to center the image in the middle of the screen, which also provides the axis to rotate the sprite around when banking (turning) the spaceship. Then we use a scaling factor to [`scale`](https://kaboomjs.com/doc#scale) the image down to the size of the screen. We scale the image as it's much larger (1334×834) than the size of the game screen (320x200). We could resize the image in an image editing programme, but we would lose some detail and sharpness. Note that the factor of the scale means that the image is still a little larger than the screen size. This gives us a bit of overlap available for when we rotate the image when banking the spaceship.
+This adds the `cockpit` sprite (image) to the `ui` layer. We also add the `rotate` component to it, so that we can add some rotation effects when the spaceship is flying. We use the `origin` component to center the image in the middle of the screen, which also provides the axis to rotate the sprite around when banking (turning) the spaceship. Then we use a scaling factor to `scale` the image down to the size of the screen. We scale the image as it's much larger (1334×834) than the size of the game screen (320x200). We could resize the image in an image editing programme, but we would lose some detail and sharpness. Note that the factor of the scale means that the image is still a little larger than the screen size. This gives us a bit of overlap available for when we rotate the image when banking the spaceship.
 
 Run the game now and you should see the view from inside the spaceship.
 
 ![Spaceship view](resources/5-spaceship-view.png)
-
-[Click top open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/spaceship-view.gif)
-
 
 ## Creating the spaceship's movement controls
 
@@ -341,16 +332,13 @@ Now we can add some event handlers for keyboard input:
     });
 ```
 
-Because we're moving the aliens and stars to make it appear as if the spaceship is moving, these elements must move in the opposite direction to that of the arrow key being used. When we use the left key to move the spaceship, our scene moves to the right. We use the Kaboom events [`onKeyDown`](https://kaboomjs.com/doc/#onKeyDown) and [`onKeyRelease`](https://kaboomjs.com/doc/#onKeyRelease) to attach event handlers for direction controls to the arrow keys on the keyboard. In each of the `onKeyDown` event handlers, we get the time elapsed from the last frame by calling the [`dt()`](https://kaboomjs.com/doc/#dt) function, and multiply it by a constant `MOVE_DELTA`, representing the amount to move by each second. For the `right` and `up` keys, our elements move left and down respectively, so we make the amount to move negative - recall that we are moving the objects in our 3D coordinate system. Then we call the 2 helper functions we defined above with the amount to move the objects in the `x` and `y` dimensions.
+Because we're moving the aliens and stars to make it appear as if the spaceship is moving, these elements must move in the opposite direction to that of the arrow key being used. When we use the left key to move the spaceship, our scene moves to the right. We use the Kaboom events `onKeyDown` and `onKeyRelease` to attach event handlers for direction controls to the arrow keys on the keyboard. In each of the `onKeyDown` event handlers, we get the time elapsed from the last frame by calling the `dt()` function, and multiply it by a constant `MOVE_DELTA`, representing the amount to move by each second. For the `right` and `up` keys, our elements move left and down respectively, so we make the amount to move negative - recall that we are moving the objects in our 3D coordinate system. Then we call the 2 helper functions we defined above with the amount to move the objects in the `x` and `y` dimensions.
 
-In the event handlers for `left` and `right` keys, we also make use of the Kaboom [`camRot`](https://kaboomjs.com/doc/#camRot) effect. This effect rotates all objects by the amount we specify, giving the perception of the spaceship banking hard while turning. We add in two additional event handlers on [`onKeyRelease`](https://kaboomjs.com/doc/#onKeyRelease) for the `left` and `right` keys to reset the rotation when the player stops turning.
+In the event handlers for `left` and `right` keys, we also make use of the Kaboom `camRot` effect. This effect rotates all objects by the amount we specify, giving the perception of the spaceship banking hard while turning. We add in two additional event handlers on `onKeyRelease` for the `left` and `right` keys to reset the rotation when the player stops turning.
 
 Give the game a run, and you should be able to control the spaceship.
 
 ![Flying controls](resources/5-fly-controls.png)
-
-[Clcik to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/fly-controls.gif)
-
 
 ## Adding weapons
 
@@ -374,7 +362,7 @@ const horizontal_crosshair = add([
 ]);
 
 ```
-This adds 2 lines at a point halfway across the screen, and about 1/3 down the screen, which is roughly the center of the view out of the spaceship window. Since Kaboom doesn't have a line component, we use [`rect`](https://kaboomjs.com/doc/#rect) to draw rectangles with a width of 1 pixel, effectively a line. We add the cross hairs to the UI layer, so they are always on top of the aliens and stars.
+This adds 2 lines at a point halfway across the screen, and about 1/3 down the screen, which is roughly the center of the view out of the spaceship window. Since Kaboom doesn't have a line component, we use `rect` to draw rectangles with a width of 1 pixel, effectively a line. We add the cross hairs to the UI layer, so they are always on top of the aliens and stars.
 
 Now we have a point to aim at, let's add the lasers. Our player will shoot using the spacebar, and we want a classic laser effect: 2 lasers, one shooting from each side of the ship towards the same point to give the effect of shooting into the distance, towards a vanishing point.
 
@@ -450,7 +438,7 @@ onKeyDown("space", () => {
 });
 
 ```
-Here we use the [`onUpdate`](https://kaboomjs.com/doc/#onUpdate) event handler, filtered to `bullet` objects.
+Here we use the `onUpdate` event handler, filtered to `bullet` objects.
 
 To calculate the bullet's next position on its trajectory for each frame, we need to find the values for the slope (`m`) and y-intercept (in this case, `c`) of the straight line between the bullet's current position and its end position. Our first 2 lines of the function express those variable parameters as formulas. Let's take a moment to see how we came to those formulas.
 
@@ -483,16 +471,13 @@ Now that we can express `m` and `c` as formulas, we use them in our code to calc
 
 Our code goes on to advance the bullet's current `x` position by the bullet speed amount, and we can figure out the corresponding new `y` position using the `m` and `c` values calculated above with our new `x` position. We then update the bullet's new position (`pos`) with these new values.
 
-We want the bullets to disappear once they hit the target at the vanishing point, so we go on to check if the bullet has crossed the horizontal cross hairs. If it has, we remove the bullet from the scene using the [`destroy`](https://kaboomjs.com/doc/#destroy) function.
+We want the bullets to disappear once they hit the target at the vanishing point, so we go on to check if the bullet has crossed the horizontal cross hairs. If it has, we remove the bullet from the scene using the `destroy` function.
 
 Finally, we have an event handler for the `space` key, which calls the `spawnBullet` function whenever it is pressed.
 
 Try this out now, and you should be able to shoot some laser bullets into space.
 
 ![Shooting](resources/5-shooting.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/shooting.gif)
-
 
 ## Checking for collisions with bullets
 
@@ -509,7 +494,7 @@ onCollide("alien","bullet", (alien, bullet) =>{
 
 ```
 
-We make use of the Kaboom event [`onCollide`](https://kaboomjs.com/doc/#onCollide) which is fired when 2 game objects are overlapping or touching each other. We pass in the tags for the aliens and bullets, so we know when they collide.
+We make use of the Kaboom event `onCollide` which is fired when 2 game objects are overlapping or touching each other. We pass in the tags for the aliens and bullets, so we know when they collide.
 
 We want to limit bullet hits to only be around the target area, so that the 3D perspective is kept. But because they could collide at any point along the path the bullet takes, we check if the collision has taken place at around the cross hairs area. Then, if is in the target zone, we remove both the bullet and the alien from the scene, and call a function to create an explosion effect. This is the same code used in the [2D Space Shooter tutorial](https://docs.replit.com/tutorials/24-build-space-shooter-with-kaboom).
 
@@ -560,12 +545,9 @@ Run this now, and you should be able to shoot the alien bugs down.
 
 ![Shooting explosions](resources/5-shooting-explosion.png)
 
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/shooting-explosion.gif)
-
-
 ## Checking alien bug collisions with the spaceship
 
-Now we can add functionality to check if an alien bug makes it past our laser and explodes into the spaceship. Since the cockpit covers the entire screen, we can't make use of the [`onCollide`](https://kaboomjs.com/doc/#onCollide) function to check if an alien has hit the cockpit, as it would always be colliding. Instead, we can check the `z` value of the alien, plus if it is within an area of the spacecraft that would cause damage. We'll use a "strike zone" in the center of the cockpit view as the area that aliens can do damage to the craft. Outside that area, we'll assume that the aliens go around or up and over the spacecraft.
+Now we can add functionality to check if an alien bug makes it past our laser and explodes into the spaceship. Since the cockpit covers the entire screen, we can't make use of the `onCollide` function to check if an alien has hit the cockpit, as it would always be colliding. Instead, we can check the `z` value of the alien, plus if it is within an area of the spacecraft that would cause damage. We'll use a "strike zone" in the center of the cockpit view as the area that aliens can do damage to the craft. Outside that area, we'll assume that the aliens go around or up and over the spacecraft.
 
 To implement this scheme, add a definition for the strike zone:
 
@@ -592,12 +574,9 @@ Then we can modify the `onUpdate("alien",....)` event handler that we added earl
 
 We've modified the code to check if the alien is really close to us (`alien.zpos < 1 `), and if it is, we check if it is within the bounds of the `STRIKE_ZONE` area. The strike zone is a rectangle - you could implement more complex shapes if you wanted to be more accurate about where the alien can hit. However, a rectangle approximation is OK for this game.
 
-If the alien is close enough, and within our strike zone, we use the [`shake`](https://kaboomjs.com/#shake) effect to make it "feel" like we've been hit. Then we create an explosion at the point of impact for some visual effects.
+If the alien is close enough, and within our strike zone, we use the `shake` effect to make it "feel" like we've been hit. Then we create an explosion at the point of impact for some visual effects.
 
 ![Colliding](resources/5-colliding.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/25-3d-game-kaboom/colliding.gif)
-
 
 ## Things to try
 
