@@ -113,7 +113,7 @@ Then we load the sprite sheets. The first argument is the path to the sprite she
 
 For this tutorial, we'll omit the intro scene, since we already know what *Space Invaders* is and how to play it. You might like to add your own intro scene in later!
 
-![Game scenes](https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/game-scenes.png)
+![Game scenes](resources/10-game-scenes.png)
 
 Let's add the code for defining each scene: 
 
