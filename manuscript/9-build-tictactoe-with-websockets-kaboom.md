@@ -1,11 +1,10 @@
- ,# Building tic-tac-toe with WebSocket and Kaboom.js
+# Building two-player tic-tac-toe
 
 Tic-tac-toe, or noughts and crosses, or Xs and Os, is a simple classic game for 2 players. It's usually played with paper and pen, but it also makes a good first game to write for networked multiplayer.
 
-In this tutorial, we'll create a 2-player online tic-tac-toe game using a [Node.js](https://nodejs.org/en/) server. [Socket.IO](https://socket.io) will enable realtime gameplay across the internet. We'll use Kaboom.js to create the game interface.
+In this tutorial, we'll create a two-player online tic-tac-toe game using a [Node.js](https://nodejs.org/en/) server. [Socket.IO](https://socket.io) will enable realtime gameplay across the internet. We'll use Kaboom to create the game interface.
 
 ![The finished game](resources/9-gameplay.png)
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/27-tictactoe-kaboom/gameplay.gif)
 
 ## How do multiplayer games work?
 
@@ -404,7 +403,7 @@ document.head.appendChild(script);
 ```
 Replace the `<YOUR_USER_NAME>` part of the URL with your Replit username. This code inserts the new `<script>` tag into the [`<head>`](https://www.w3schools.com/tags/tag_head.asp) section of the underlying HTML page that Kaboom runs in.
 
-Let's move on to creating the relevant scenes for our game. Kaboom ["scenes"](https://kaboomjs.com/#scene) allow us to group logic and levels together. In this game we'll have 2 scenes:
+Let's move on to creating the relevant scenes for our game. Kaboom "scenes" allow us to group logic and levels together. In this game we'll have 2 scenes:
 - A "startGame" scene that will prompt for the player's name.
 - A "main" scene, which will contain all the logic to play the tic-tac-toe game.
 
@@ -442,13 +441,13 @@ go("startGame");
 
 To keep the calculations for the UI layout simpler, we'll use a fixed size for the screen. That's where the 2 constants for the screen width and height come in.
 
-We use the Kaboom [`add`](https://kaboomjs.com/doc/#add) function to display the prompt "What's your name?" on the screen, using the  [`text`](https://kaboomjs.com/doc/#text) component. We choose a position halfway across the screen, `SCREEN_WIDTH / 2`, and about a third of the way down the screen, `SCREEN_HEIGHT / 3`. We add the [`origin`](https://kaboomjs.com/doc/#origin) component, set to `center`, to indicate that the positions we set must be in the center of the text field.
+We use the Kaboom `add` function to display the prompt "What's your name?" on the screen, using the  `text` component. We choose a position halfway across the screen, `SCREEN_WIDTH / 2`, and about a third of the way down the screen, `SCREEN_HEIGHT / 3`. We add the `origin` component, set to `center`, to indicate that the positions we set must be in the center of the text field.
 
 Then we add another object with an empty `""` text component. This will display the characters the player types in. We position it exactly halfway down and across the screen. We also hold a reference to the object in the constant `nameField`.
 
-To get the user's keyboard input, we use the Kaboom function [`charInput`](https://kaboomjs.com/doc/#charInput). This function calls an event handler each time a key on the keyboard is pressed. We take that character and append it to the text in the `nameField` object. Now, when a player presses a key to enter their name, it will show up on the screen.
+To get the user's keyboard input, we use the Kaboom function `charInput`. This function calls an event handler each time a key on the keyboard is pressed. We take that character and append it to the text in the `nameField` object. Now, when a player presses a key to enter their name, it will show up on the screen.
 
-Finally, we use the Kaboom function [`keyRelease`](https://kaboomjs.com/doc/#keyRelease) to listen for when the player pushes the `enter` key. We'll take that as meaning they have finished entering their name and want to start the game. In the handler, we use the Kaboom [`go`](https://kaboomjs.com/doc/#go) function to redirect to the main scene of the game.
+Finally, we use the Kaboom function `keyRelease` to listen for when the player pushes the `enter` key. We'll take that as meaning they have finished entering their name and want to start the game. In the handler, we use the Kaboom `go` function to redirect to the main scene of the game.
 
 ## Adding the game board
 
@@ -521,7 +520,7 @@ function createTextBoxesForGrid(){
 
 createTextBoxesForGrid();
 ```
-This function uses the array [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) method to loop through each "square" definition in the `boardSquares` array. We then find the center `x` and `y` of the square, and [`add`](https://kaboomjs.com/doc/#add) a new text object to the screen, and also add it to the square definition on the field `textBox` so we can access it later to update it. We use the `origin` component to ensure the text is centered in the square.
+This function uses the array [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) method to loop through each "square" definition in the `boardSquares` array. We then find the center `x` and `y` of the square, and `add` a new text object to the screen, and also add it to the square definition on the field `textBox` so we can access it later to update it. We use the `origin` component to ensure the text is centered in the square.
 
 Finally, we call the function to create the text boxes.
 
@@ -547,7 +546,7 @@ const statusLabel = add([
   color(0, 255, 0)
 ])
 ```
-Here we add 3 objects with [`text`](https://kaboomjs.com/doc/#text) components. The first 2 are placeholders for the player names and symbols. The third one is for the game status. They are positioned to the right of the screen, and contain empty text to start. We'll change the contents as we receive new game states from the server. The last object has a `color` component to set the color of the text to green. This is to make the status message stand out from the rest of the text.
+Here we add 3 objects with `text` components. The first 2 are placeholders for the player names and symbols. The third one is for the game status. They are positioned to the right of the screen, and contain empty text to start. We'll change the contents as we receive new game states from the server. The last object has a `color` component to set the color of the text to green. This is to make the status message stand out from the rest of the text.
 
 
 ## Connecting to the server
@@ -651,7 +650,7 @@ You can connect to your game in another browser tab, and enter another name. The
 
 ## Handling player moves
 
-We want a player to be able to click on a block to place their move. Kaboom has a function [`onMouseRelease`](https://kaboomjs.com/doc/#onMouseRelease) that we can use to handle mouse click events. All we need then is the position the mouse cursor is at, and we can map that to one of the board positions using our `boardSquares` array to do the lookup. We'll use the Kaboom function [`mousePos`](https://kaboomjs.com/doc/#mousePos) to get the coordinates of the mouse:
+We want a player to be able to click on a block to place their move. Kaboom has a function `onMouseRelease` that we can use to handle mouse click events. All we need then is the position the mouse cursor is at, and we can map that to one of the board positions using our `boardSquares` array to do the lookup. We'll use the Kaboom function `mousePos` to get the coordinates of the mouse:
 
 ```js
 onMouseRelease(() => {
@@ -673,7 +672,7 @@ onMouseRelease(() => {
 ```
 If we find a 'hit' on one of the board squares, we emit our `action` event. We pass the index of the square that was clicked on as the payload data. The server listens for this event, and runs the logic we added for the `action` event on the server side. If the action changes the game state, the server will send back the new game state, and the UI elements update.
 
-The only other input we need to implement is to check if the player wants a rematch. To do that, we'll assign the `r` key as the rematch command. We can use the Kaboom function [`charInput`](https://kaboomjs.com/doc/#charInput) to listen for key press events. We'll check if the key is `r`, or `R`, then emit the `rematch` event. We don't have any data to pass with that, so we'll just pass `null`.
+The only other input we need to implement is to check if the player wants a rematch. To do that, we'll assign the `r` key as the rematch command. We can use the Kaboom function `charInput` to listen for key press events. We'll check if the key is `r`, or `R`, then emit the `rematch` event. We don't have any data to pass with that, so we'll just pass `null`.
 
 ```js
 charInput((ch) => {

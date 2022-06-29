@@ -1,12 +1,10 @@
-# Building a *Mario*-like side-scroller with Kaboom.js
+# Building a *Mario*-like side-scroller
 
 The *Mario* series is one of the most known and loved game series of all time. The first *Mario* game was released by Nintendo in the mid-80s, and people haven't stopped playing *Mario* since.
 
 Tons of games still use the basic side-scroller formula of *Mario*, so it's a good game to build to learn the basics of game making. We'll build it in the new [Kaboom](https://kaboomjs.com) game engine. Kaboom has many useful functions for building platform games, and we'll try to go through as many as we can in this tutorial.
 
 ![The finished game](resources/7-gameplay.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/bigger-kill-scenes.gif)
 
 ## Designing the game
 
@@ -25,9 +23,6 @@ Download [this archive of sprite and asset files](https://docs.replit.com/tutori
 
 {width: 55%, align: middle}
 ![Uploading sprites](resources/7-upload-sprites.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/upload-assets.gif)
-
 
 ## Setting up Kaboom
 
@@ -68,9 +63,9 @@ loadSprite("cloud", "cloud.png");
 loadSprite("castle", "castle.png");
 ```
 
-The first line, [`loadRoot`](https://kaboomjs.com/#loadRoot), specifies which folder to load all the sprites and game elements from, so we don't have to keep typing it in for each sprite. Then each line loads a game sprite and gives it a name so that we can refer to it in code later.
+The first line, `loadRoot`, specifies which folder to load all the sprites and game elements from, so we don't have to keep typing it in for each sprite. Then each line loads a game sprite and gives it a name so that we can refer to it in code later.
 
-Notice that the `mario` and `enemies` sprites are loaded with the function [`loadAseprite`](https://kaboomjs.com/#loadAseprite), and have an extra parameter specifying a `.json` file. This extra file is in a file format made by [Aseprite](https://www.aseprite.org), which is a pixel art and animation app. If you open the `Mario.png` file, you'll see that it has many different images of Mario in different positions, which are frames of Mario animations. The `.json` file from Aseprite contains all the information needed to animate Mario in our game. Kaboom knows how to interpret this file, and we can pick which animation we want to run at any time by choosing one from the `frameTags` list in the `.json` file and using the [`.play()`](https://kaboomjs.com/#sprite) method on a sprite. We can also choose a particular frame to show at any time, using the sprite's [`.frame`](https://kaboomjs.com/#sprite) property, and specifying the frame number to use, starting from 0.
+Notice that the `mario` and `enemies` sprites are loaded with the function `loadAseprite`, and have an extra parameter specifying a `.json` file. This extra file is in a file format made by [Aseprite](https://www.aseprite.org), which is a pixel art and animation app. If you open the `Mario.png` file, you'll see that it has many different images of Mario in different positions, which are frames of Mario animations. The `.json` file from Aseprite contains all the information needed to animate Mario in our game. Kaboom knows how to interpret this file, and we can pick which animation we want to run at any time by choosing one from the `frameTags` list in the `.json` file and using the `.play()` method on a sprite. We can also choose a particular frame to show at any time, using the sprite's `.frame` property, and specifying the frame number to use, starting from 0.
 
 ![Mario Aseprite file](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/aseprite-contents.png)
 
@@ -123,7 +118,7 @@ const LEVELS = [
 ];
 ```
 
-Now we can map each symbol and letter in the levels to a [character definition](https://kaboomjs.com/#addLevel):
+Now we can map each symbol and letter in the levels to a character definition:
 
 ```js
 const levelConf = {
@@ -237,17 +232,17 @@ That looks like a lot, but it's really one pattern repeated for each element. Le
 
 The first 3 lines of the config set the default width and height of each element in the level maps. We use `pos` to specify where to position the whole map in the Kaboom canvas. This is normally going to be (0,0), i.e. at the top left of the screen.
 
-Next we have definitions for each of the symbols we used in the map. Each definition is a function that returns an array of [components](https://kaboomjs.com/doc/intro). In Kaboom, every character is made up of 1 or more components. Components give special properties to each character. There are built-in components for many properties, like [`sprite`](https://kaboomjs.com/#sprite) to give the character an avatar, [`body`](https://kaboomjs.com/#body), to make the character respond to gravity, [`solid`](https://kaboomjs.com/#solid) to make the character solid so other characters can't move through it, and many others.
+Next we have definitions for each of the symbols we used in the map. Each definition is a function that returns an array of components. In Kaboom, every character is made up of 1 or more components. Components give special properties to each character. There are built-in components for many properties, like `sprite` to give the character an avatar, `body`, to make the character respond to gravity, `solid` to make the character solid so other characters can't move through it, and many others.
 
 Kaboom also allows you to write your own custom components to create any property or behavior you like for a character. The components `patrol`, `mario`, `enemy`, and `bump` are all custom here. You'll notice that those custom components are commented out (`//`), as we'll need to create the implementations for them before we can use them. We'll do that later in this tutorial.
 
 ## Adding a scene
 
-Kaboom ["scenes"](https://kaboomjs.com/#scene) allow us to group logic and levels together. In this game we'll have 2 scenes:
+Kaboom "scenes" allow us to group logic and levels together. In this game we'll have 2 scenes:
 - A "start"  or intro scene, which waits for a player to press a button to start the game. We'll also return to this scene if the player dies, so they can start again.
 - A main "game" scene, which will contain the game levels and all the logic to move Mario, and the logic for the enemies and rewards, etc.
 
-We can use the [`go`](https://kaboomjs.com/#go) function to switch between scenes.
+We can use the `go` function to switch between scenes.
 
 Let's add the "start" scene, and make the game go to that scene by default:
 
@@ -269,13 +264,13 @@ scene("start", () => {
 go("start");
 ```
 
-We define the scene using the [`scene`](https://kaboomjs.com/#scene) function. This function takes a string as the scene name – we're calling the scene "start". We're using an inline function here, using [arrow function notation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). You could also use the `function` keyword, if you'd like to specify a function in that way.
+We define the scene using the `scene` function. This function takes a string as the scene name – we're calling the scene "start". We're using an inline function here, using [arrow function notation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). You could also use the `function` keyword, if you'd like to specify a function in that way.
 
-We also add some instruction text in the scene function, using the [`text`](https://kaboomjs.com/#text) component and setting the text's content and size. The [`pos`](https://kaboomjs.com/#pos) component sets the position of the text on the screen, and the [`origin`](https://kaboomjs.com/#origin) component specifies that the center of the text should be used to position it. Finally, we set the color of the text to white using the [`color`](https://kaboomjs.com/#color) component, which takes RGB (red, green, blue) values from 0-255.
+We also add some instruction text in the scene function, using the `text` component and setting the text's content and size. The `pos` component sets the position of the text on the screen, and the `origin` component specifies that the center of the text should be used to position it. Finally, we set the color of the text to white using the `color` component, which takes RGB (red, green, blue) values from 0-255.
 
-We also have a call to the function [`onKeyRelease`](https://kaboomjs.com/#onKeyRelease), which listens for the enter key being pressed. If the enter key is pressed, we `go` to the main game scene (which we'll add shortly!).
+We also have a call to the function `onKeyRelease`, which listens for the enter key being pressed. If the enter key is pressed, we `go` to the main game scene (which we'll add shortly!).
 
-Finally, we use the [`go`](https://kaboomjs.com/#go) function to go to the start scene when the game starts up.
+Finally, we use the `go` function to go to the start scene when the game starts up.
 
 After copying the code into your repl, press Command + S (Mac) or Control + S (Windows/Linux) to update the output window. You should see something like this:
 
@@ -340,23 +335,21 @@ You should also see the enemy character wobble its feet, like it's trying to wal
 
 ![Static Mario world](resources/7-mario-world.png)
 
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/mario-world.gif)
+Ok, back to looking at the code we added and what it does. First, we define a new `scene` like we did for the start scene. This time, we specify a parameter `levelNumber` that can be passed to the scene. We give this parameter a default value of `0`. This will be the first level in our `LEVELS` array - remember, arrays start at index 0, so 0 is level 1. This parameter will let us call the same scene again when we get to the end of the level, but with `1` as the parameter so that we can play the next level. You can specify any parameters you like or need when creating a scene, and you can pass values from one scene to another. This is very useful, for example if you want to pass the player score to an end game scene, or pass in player options from the start scene.
 
-Ok, back to looking at the code we added and what it does. First, we define a new [`scene`](https://kaboomjs.com/#scene) like we did for the start scene. This time, we specify a parameter `levelNumber` that can be passed to the scene. We give this parameter a default value of `0`. This will be the first level in our `LEVELS` array - remember, arrays start at index 0, so 0 is level 1. This parameter will let us call the same scene again when we get to the end of the level, but with `1` as the parameter so that we can play the next level. You can specify any parameters you like or need when creating a scene, and you can pass values from one scene to another. This is very useful, for example if you want to pass the player score to an end game scene, or pass in player options from the start scene.
+Next, we define some `layers`. Layers allow us to have backgrounds that don't affect the game - we call that layer `bg`. We'll place all the main game objects (like our hero, his enemies, and any other objects he interacts with) on the `game` layer, and all the UI elements (like current score, health, etc.) on the `ui` level. We make `game` the default layer, so if we don't specify a layer component on a game object, it will be drawn on the `game` layer.
 
-Next, we define some [`layers`](https://kaboomjs.com/#layers). Layers allow us to have backgrounds that don't affect the game - we call that layer `bg`. We'll place all the main game objects (like our hero, his enemies, and any other objects he interacts with) on the `game` layer, and all the UI elements (like current score, health, etc.) on the `ui` level. We make `game` the default layer, so if we don't specify a layer component on a game object, it will be drawn on the `game` layer.
-
-In the next line of code, we initialize and create the level by calling the [`addLevel`](https://kaboomjs.com/#addLevel) function. Here we pass in the level from the `LEVELS` array, using the index from the `levelNumber` parameter we added to the scene. We also pass in the configuration for all the symbols in the level map that we assigned to the `levelConf` variable. At this point, the map and all the characters in it are drawn to the screen. Note that, because the map is much wider than the size we set in the settings for the Kaboom window, we only see part of the map. This is great, because it will allow us to show more of the map as Mario starts walking.
+In the next line of code, we initialize and create the level by calling the `addLevel` function. Here we pass in the level from the `LEVELS` array, using the index from the `levelNumber` parameter we added to the scene. We also pass in the configuration for all the symbols in the level map that we assigned to the `levelConf` variable. At this point, the map and all the characters in it are drawn to the screen. Note that, because the map is much wider than the size we set in the settings for the Kaboom window, we only see part of the map. This is great, because it will allow us to show more of the map as Mario starts walking.
 
 Then we add a few elements to the background layer - clouds, hills and shrubberies. Note the use of the `layer` component on these elements. We do this so that they don't interact with our game objects - they just add some visual interest. You can add as many as you like - the original *Mario* has them in a repeating pattern across the whole level.
 
-We also add some temporary text to the `ui` layer to let the player know which level they are on. Notice that we use the [`lifespan`](https://kaboomjs.com/#lifespan) component here to automatically fade out and remove the info text after 1 second.
+We also add some temporary text to the `ui` layer to let the player know which level they are on. Notice that we use the `lifespan` component here to automatically fade out and remove the info text after 1 second.
 
-Finally, we add Mario to the game! We could have added him by placing his symbol, `p`, on our level map definition. However, by adding him manually to the scene using [`level.spawn()`](https://kaboomjs.com/#spawn), we can get a reference to him. This will be useful later when we are dealing with collisions and other interactions. We also set the position we want the character to initially be placed at.
+Finally, we add Mario to the game! We could have added him by placing his symbol, `p`, on our level map definition. However, by adding him manually to the scene using `level.spawn()`, we can get a reference to him. This will be useful later when we are dealing with collisions and other interactions. We also set the position we want the character to initially be placed at.
 
 ## Making Mario move
 
-The scene is all set up, so let's add in some interaction. The player will use the arrow keys to move Mario left and right, and the space bar to make him jump. We'll use the [`onKeyDown`](https://kaboomjs.com/#onKeyDown) function for moving left and right, as we want Mario to keep moving as long as the player holds down either key. Then we can use the [`onKeyPress`](https://kaboomjs.com/#onKeyPress) function to make Mario jump. The player will need to push the space key each time they want Mario to jump - it's always fun to smash buttons! Add the following code at the bottom of the game scene:
+The scene is all set up, so let's add in some interaction. The player will use the arrow keys to move Mario left and right, and the space bar to make him jump. We'll use the `onKeyDown` function for moving left and right, as we want Mario to keep moving as long as the player holds down either key. Then we can use the `onKeyPress` function to make Mario jump. The player will need to push the space key each time they want Mario to jump - it's always fun to smash buttons! Add the following code at the bottom of the game scene:
 
 ```js
     const SPEED = 120;
@@ -380,21 +373,19 @@ The scene is all set up, so let's add in some interaction. The player will use t
     });
 ```
 
-Take a look at the`onKeyDown` handlers `"right"` and `"left"`. We use the `flipX` method that is added to the character through the [`sprite`](https://kaboomjs.com/#sprite) component. If this is `true`, it draws the sprite as a mirror image. This flip will make Mario face in the correct direction. We call the `move` method, which is added by the [`pos`](https://kaboomjs.com/#pos) component. Our `move` method takes in the number of pixels to move per second, which we set in the `SPEED` constant. You might want to move this constant definition nearer to the top of the file, so it's easier to find if you want to tweak it later.
+Take a look at the`onKeyDown` handlers `"right"` and `"left"`. We use the `flipX` method that is added to the character through the `sprite` component. If this is `true`, it draws the sprite as a mirror image. This flip will make Mario face in the correct direction. We call the `move` method, which is added by the `pos` component. Our `move` method takes in the number of pixels to move per second, which we set in the `SPEED` constant. You might want to move this constant definition nearer to the top of the file, so it's easier to find if you want to tweak it later.
 
-In the `"left"` handler, there is also another check. In *Mario*, you can't walk back to previous parts of a level once it's gone off screen. We can simulate this by checking if Mario is near the left edge of the screen. We get Mario's current position by calling the [`pos`](https://kaboomjs.com/#pos) method which is added by the `pos` component. However, this position will be relative to the whole level, and not just the onscreen view. To help us figure out if Mario is near the edge of the screen, and not just at the beginning of the level, we can use the [`toScreen`](https://kaboomjs.com/#toScreen) function, which converts "game world" or level co-ordinates to actual screen co-ordinates.
+In the `"left"` handler, there is also another check. In *Mario*, you can't walk back to previous parts of a level once it's gone off screen. We can simulate this by checking if Mario is near the left edge of the screen. We get Mario's current position by calling the `pos` method which is added by the `pos` component. However, this position will be relative to the whole level, and not just the onscreen view. To help us figure out if Mario is near the edge of the screen, and not just at the beginning of the level, we can use the `toScreen` function, which converts "game world" or level co-ordinates to actual screen co-ordinates.
 
-When a player releases the space key, we want to make Mario jump. To do this, we can call the [`jump`](https://kaboomjs.com/#body) method, which is added to the character through the [`body`](https://kaboomjs.com/#body) component. However, `jump` will make the character shoot up, even if it is already in the air. To prevent this double jumping, we first check if the player is standing on some [`solid`](https://kaboomjs.com/#solid) object. The [`body`](https://kaboomjs.com/#body) component also adds the [`grounded()`](https://kaboomjs.com/#body) function, which returns `true` if the player is indeed standing on a solid object.
+When a player releases the space key, we want to make Mario jump. To do this, we can call the `jump` method, which is added to the character through the `body` component. However, `jump` will make the character shoot up, even if it is already in the air. To prevent this double jumping, we first check if the player is standing on some `solid` object. The `body` component also adds the `grounded()` function, which returns `true` if the player is indeed standing on a solid object.
 
 Press Command + S or Control + S to update the output, and test it out. Mario should move around, but it doesn't look very natural and *Mario*-like - yet! Another thing you'll notice is that the screen does not scroll when Mario walks to the right, so we can't get to the rest of the level. Let's fix that first.
 
 ![Mario moving](resources/7-mario-move.png)
 
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/mario-move.gif)
-
 ## Adding scrolling
 
-Kaboom has a number of functions to control the "camera" of the scene. The camera represents the field of view that the player can see. At the moment, the camera only shows the first part of the level. By using the [`camPos`](https://kaboomjs.com/#camPos) function, we can move the camera to show more of the level as Mario walks across the scene.
+Kaboom has a number of functions to control the "camera" of the scene. The camera represents the field of view that the player can see. At the moment, the camera only shows the first part of the level. By using the `camPos` function, we can move the camera to show more of the level as Mario walks across the scene.
 
 Let's add this code to the game scene:
 
@@ -408,13 +399,11 @@ player.onUpdate(() => {
 });
 ```
 
-Here we add a handler to the [`onUpdate`](https://kaboomjs.com/#onUpdate) event for the player. This is called for each frame that is rendered. In this handler, we get the camera's current position by calling the [`camPos`](https://kaboomjs.com/#camPos) function without any arguments. Then we can check if Mario is further to the right of the scene than the camera is. If he is, then we set the camera's X position to that of Mario, so essentially the camera is following Mario. We only do this if he is further to the right of the camera, and not for positions further to the left. This is because we don't want the player to be able to go back on a level.
+Here we add a handler to the `onUpdate` event for the player. This is called for each frame that is rendered. In this handler, we get the camera's current position by calling the `camPos` function without any arguments. Then we can check if Mario is further to the right of the scene than the camera is. If he is, then we set the camera's X position to that of Mario, so essentially the camera is following Mario. We only do this if he is further to the right of the camera, and not for positions further to the left. This is because we don't want the player to be able to go back on a level.
 
 Update the output again and test it out. As you move Mario past the center of the screen, the camera should start following him, giving the sense of scrolling.
 
 ![Scrolling](resources/7-scrolling.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/scrolling.gif)
 
 ## Creating a custom component
 
@@ -461,19 +450,17 @@ function patrol(distance = 100, speed = 50, dir = 1) {
 }
 ```
 
-We've called this custom component "patrol", as it will make a character move some `distance`, at a set `speed`, and then turn around and walk in the opposite direction, `dir`. The character will also turn and move in the opposite direction if it collides with another game object. Because we use the `move` method (which is part of the [`pos`](https://kaboomjs.com/#pos) component), and the `collide` event handler (which is part of the [`area`](https://kaboomjs.com/#area) component), we add the `pos` and `area` components to the `require` list.
+We've called this custom component "patrol", as it will make a character move some `distance`, at a set `speed`, and then turn around and walk in the opposite direction, `dir`. The character will also turn and move in the opposite direction if it collides with another game object. Because we use the `move` method (which is part of the `pos` component), and the `collide` event handler (which is part of the `area` component), we add the `pos` and `area` components to the `require` list.
 
-When the component is first initialized, we want to record its starting position. This is so that we know how far the character is from where it started off, and therefore we'll know when we must turn it to move in the opposite direction. We do this by making use of the `add()` method. As we mentioned above, Kaboom will call this method on our component when the character is added to the scene. We read the position of the character at that time by calling `this.pos`: `this` refers to our character (as our component is made part of the character, `this` is reference to the combination of all the components making up the character). We can save this initial position to a property of the component object, in our case one called `startingPos`. We then attach a [`collide`](https://kaboomjs.com/#area) handler, so we know if the character bumps into anything, so we can turn it and move it in the opposite direction again.
+When the component is first initialized, we want to record its starting position. This is so that we know how far the character is from where it started off, and therefore we'll know when we must turn it to move in the opposite direction. We do this by making use of the `add()` method. As we mentioned above, Kaboom will call this method on our component when the character is added to the scene. We read the position of the character at that time by calling `this.pos`: `this` refers to our character (as our component is made part of the character, `this` is reference to the combination of all the components making up the character). We can save this initial position to a property of the component object, in our case one called `startingPos`. We then attach a `collide` handler, so we know if the character bumps into anything, so we can turn it and move it in the opposite direction again.
 
-The [`collide`](https://kaboomjs.com/#on) handler has 2 arguments passed to it: the `obj` that our character collided with, and the `side` of character that was hit. We only want to flip the direction our character moves in if it was hit from the sides `left` and `right`. To change the direction, we flip the sign of our `dir` variable, which we'll use in the `update()` method.
+The `collide` handler has 2 arguments passed to it: the `obj` that our character collided with, and the `side` of character that was hit. We only want to flip the direction our character moves in if it was hit from the sides `left` and `right`. To change the direction, we flip the sign of our `dir` variable, which we'll use in the `update()` method.
 
-The `update()` method is called for each frame. In it, we first check if the character is further than the specified maximum `distance` from its starting position. If it is, we switch the sign of the `dir` variable to make the character move in the opposite direction. Note that we we use the [`Math.abs`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) function, which returns the absolute value of a number. The absolute value of a number is always positive, and this allows us to compare it to our `distance` variable, which is also a positive value. Then we call the `move` method (provided by the [`pos`](https://kaboomjs.com/#pos) component) and use the `speed` variable (passed in when the component was created) along with the `dir` variable to specify how fast and in which direction to move the character for this frame.
+The `update()` method is called for each frame. In it, we first check if the character is further than the specified maximum `distance` from its starting position. If it is, we switch the sign of the `dir` variable to make the character move in the opposite direction. Note that we we use the [`Math.abs`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) function, which returns the absolute value of a number. The absolute value of a number is always positive, and this allows us to compare it to our `distance` variable, which is also a positive value. Then we call the `move` method (provided by the `pos` component) and use the `speed` variable (passed in when the component was created) along with the `dir` variable to specify how fast and in which direction to move the character for this frame.
 
 Now that we've created this component, let's use it on a character. Uncomment the lines `//patrol` wherever you see it in the `levelConf` setup we created. Update the output and test it out. You should see the enemy character walk back and forth.
 
 ![Patrol component](resources/7-patrol.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/patrol.gif)
 
 You'll notice we also make use of the `patrol` component on the `bigMushy` character, which we'll use to make Mario grow from small Mario to big Mario. We'll get to that in a bit.
 
@@ -484,7 +471,7 @@ Now that the enemies are moving around, we can give them some more behaviors and
 ![Enemies-index](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/enemies-index.png)
 
 
-We can swap out the animation that is played when the enemy is patrolling for this frame. Kaboom has a built in [`lifespan`](https://kaboomjs.com/#lifespan) component that also has a fade out function. This component allows us to slowly fade out the squashed enemy from the scene, and then automatically remove it entirely once the specified lifetime is reached. Kaboom also allows us to dynamically add and remove components from characters using the `use` and `unuse` methods. These methods are not yet documented, but you can find them (and more tricks!) by looking at the [Kaboom source code](https://github.com/replit/kaboom). Let's use this knowledge to build a custom component to handle the enemy getting squashed and fading out of the scene:
+We can swap out the animation that is played when the enemy is patrolling for this frame. Kaboom has a built in `lifespan` component that also has a fade out function. This component allows us to slowly fade out the squashed enemy from the scene, and then automatically remove it entirely once the specified lifetime is reached. Kaboom also allows us to dynamically add and remove components from characters using the `use` and `unuse` methods. These methods are not yet documented, but you can find them (and more tricks!) by looking at the [Kaboom source code](https://github.com/replit/kaboom). Let's use this knowledge to build a custom component to handle the enemy getting squashed and fading out of the scene:
 
 ```js
 function enemy() {
@@ -508,13 +495,13 @@ function enemy() {
 }
 ```
 
-We define the custom component as we did before. Because we need to stop the enemy from patrolling, we require the `patrol` custom component. We also require the [`sprite`](https://kaboomjs.com/#sprite) component so we can stop the animation and set the squashed frame to display. The [`area`](https://kaboomjs.com/#area) component is necessary, as the squashed enemy frame is half the height of the regular enemy frames (8 pixels vs 16 pixels). We're going to need to adjust the height of the area so that the collision zone the enemy occupies once squashed is correct.
+We define the custom component as we did before. Because we need to stop the enemy from patrolling, we require the `patrol` custom component. We also require the `sprite` component so we can stop the animation and set the squashed frame to display. The `area` component is necessary, as the squashed enemy frame is half the height of the regular enemy frames (8 pixels vs 16 pixels). We're going to need to adjust the height of the area so that the collision zone the enemy occupies once squashed is correct.
 
-As a side note, pressing F1 in the game turns on Kaboom debugging, which will draw the [`area`](https://kaboomjs.com/#area) box around each game element, so you can easily see when characters collide. It also shows other handy info, like the frame rate and character properties.
+As a side note, pressing F1 in the game turns on Kaboom debugging, which will draw the `area` box around each game element, so you can easily see when characters collide. It also shows other handy info, like the frame rate and character properties.
 
 ![Debug mode](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/debug-mode.png)
 
-Back to our code. We execute our enemy squash in the `squash` method. We have a flag called `isAlive`, which we'll use to determine if the enemy is able to hurt Mario. This is usually `true`, but set to `false` once the enemy is squashed and harmless. We also `unuse` the patrol component so that the enemy stops walking back and forth. Then we call `stop`, which is a method added by the [`sprite`](https://kaboomjs.com/#sprite) component. Calling `stop` stops playing the current animation. Then we set the `frame` of the sprite to use to `2`, which is the squashed enemy frame, and update the [`area`](https://kaboomjs.com/#area) width and height to be the same size as the frame. Finally, we call `use` to add the [`lifespan`](https://kaboomjs.com/#lifespan) component so that the character is removed from the scene after `0.5` seconds, and fades out for `0.1` seconds.
+Back to our code. We execute our enemy squash in the `squash` method. We have a flag called `isAlive`, which we'll use to determine if the enemy is able to hurt Mario. This is usually `true`, but set to `false` once the enemy is squashed and harmless. We also `unuse` the patrol component so that the enemy stops walking back and forth. Then we call `stop`, which is a method added by the `sprite` component. Calling `stop` stops playing the current animation. Then we set the `frame` of the sprite to use to `2`, which is the squashed enemy frame, and update the `area` width and height to be the same size as the frame. Finally, we call `use` to add the `lifespan` component so that the character is removed from the scene after `0.5` seconds, and fades out for `0.1` seconds.
 
 Now let's add this custom component to the enemy. First, uncomment the `//enemy(),` line in the `levelConf` setup we created earlier. Now create a collision handler in the game scene between Mario and the enemy, so we know when it gets squashed:
 
@@ -561,8 +548,6 @@ This code will reset the `canSquash` variable so that the player will not squash
 Update the output and test our game out. If you jump on an enemy, it should be squashed and then disappear after half a second.
 
 ![Squash enemy](resources/7-squash.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/squash.gif)
 
 ## Headbutting surprise boxes
 
@@ -645,13 +630,11 @@ If it is a `coinBox`, we `spawn` a new coin 1 block above the coin box, using th
 
 If it is a `mushyBox`, we do the same, except we don't bump the mushroom. The mushroom has our custom `patrol` component added to it (check in the `levelConf` for `M`), so it will start moving immediately. We set the patrol distance very large on the mushroom so it won't automatically turn around, it will just keep going until if falls of the screen.
 
-Then, to replace the `questionBox` with an empty box, we first record its position, then [`destroy`](https://kaboomjs.com/#destroy) it, and `spawn` a new empty box (`!` in the `levelConf`) to take its place. Finally, we `bump` this new box to give it the motion we want.
+Then, to replace the `questionBox` with an empty box, we first record its position, then `destroy` it, and `spawn` a new empty box (`!` in the `levelConf`) to take its place. Finally, we `bump` this new box to give it the motion we want.
 
 Cool, time to update the output and test this out. When you jump up using the `space` key and headbutt the question boxes now, they should move and have things pop out!
 
 ![Question-boxes](resources/7-question-box.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/question-box.gif)
 
 ## Adding special behaviors to Mario
 
@@ -733,21 +716,21 @@ function mario() {
   }
 ```
 
-Firstly, we require the character to have a few other components: [`body`](https://kaboomjs.com/#body), so we can determine if Mario is jumping or on the ground; [`area`](https://kaboomjs.com/#area), so we can change the collision box area of Mario as he grows or shrinks; [`sprite`](https://kaboomjs.com/#sprite), so we can start and stop animations and set static frames; and our custom `bump` component, so we can throw Mario off the screen if he dies.
+Firstly, we require the character to have a few other components: `body`, so we can determine if Mario is jumping or on the ground; `area`, so we can change the collision box area of Mario as he grows or shrinks; `sprite`, so we can start and stop animations and set static frames; and our custom `bump` component, so we can throw Mario off the screen if he dies.
 
 If we take a peek in the `Mario.json` file along with the `Mario.png` sprite file, we'll see that there are some animations defined in the `frameTags` section that we can use. The `Running` animation contains all the frames to make Mario appear to be running when he is in small size. Similarly, `RunningBig` has all the frames for when Mario is running while he is in big size. We can also see that a good frame for small Mario standing still, or stopped, is the first frame, or frame `0`. A good frame to use for big Mario standing still or stopped is frame `8`. Good frames for Mario jumping when he is small and big are `5` and `13` respectively. So we don't have to keep remembering all these magic strings and numbers, we set them as properties of the Mario component.
 
-If we measure the size of the big Mario images, we'll see that the tightest crop we can get on them is about 24x32 pixels. For small Mario, the size is 16x16 pixels. We'll use this knowledge to set the correct Mario animation and [`area`](https://kaboomjs.com/#area) collision boxes when changing between animations and sizes.
+If we measure the size of the big Mario images, we'll see that the tightest crop we can get on them is about 24x32 pixels. For small Mario, the size is 16x16 pixels. We'll use this knowledge to set the correct Mario animation and `area` collision boxes when changing between animations and sizes.
 
 In the `mario` component, we define a number of custom methods. Let's go through them.
 
-- The `bigger` and `smaller` methods provide a way to change the size of Mario. We set a flag `isBig` that we check in the other methods to choose appropriate animations and frames. We also set the collision [`area`](https://kaboomjs.com/#area) size appropriate for the size of Mario.
-- The `standing` and `jumping` methods are called from our main `update` method, which is called with each frame. In these 2 methods, we stop any animation that is currently running using the `stop` method provided by the [`sprite`](https://kaboomjs.com/#sprite) component. Then, depending on the size of Mario, determined by the `isBig` flag, we set the appropriate static `frame` to make Mario look like he is standing still or jumping.
-- In the `running` method, we find the correct running animation depending on whether Mario is big or small. Then we check if that animation is the same animation that Mario is currently using, by calling the `curAnim` method provided by the [`sprite`](https://kaboomjs.com/#sprite) component. If they are not the same, we update the current animation by calling `play` to start the new animation. We first check the current animation because, if we set the animation regardless of what is currently playing, we'd keep resetting the current animation to the beginning with each frame and make it appear as a static frame.
+- The `bigger` and `smaller` methods provide a way to change the size of Mario. We set a flag `isBig` that we check in the other methods to choose appropriate animations and frames. We also set the collision `area` size appropriate for the size of Mario.
+- The `standing` and `jumping` methods are called from our main `update` method, which is called with each frame. In these 2 methods, we stop any animation that is currently running using the `stop` method provided by the `sprite` component. Then, depending on the size of Mario, determined by the `isBig` flag, we set the appropriate static `frame` to make Mario look like he is standing still or jumping.
+- In the `running` method, we find the correct running animation depending on whether Mario is big or small. Then we check if that animation is the same animation that Mario is currently using, by calling the `curAnim` method provided by the `sprite` component. If they are not the same, we update the current animation by calling `play` to start the new animation. We first check the current animation because, if we set the animation regardless of what is currently playing, we'd keep resetting the current animation to the beginning with each frame and make it appear as a static frame.
 - The `freeze` method sets a flag `isFrozen`, which is used in the `update` method to determine whether Mario can move.
-- When Mario is killed, we can call the `die` method. This first removes the [`body`](https://kaboomjs.com/#body) component on Mario so that he is no longer subject to gravity or collisions, because these are things that ghosts are not worried about. Then we call the `bump` method that is added by our custom `bump` component. This shoots Mario up into the air, and back down again. We also set the `isAlive` flag to false, to signal to any collision handlers that Mario is dead before they try kill him again, or give him a 1-up mushroom or coin. We `freeze()` Mario so that he reverts to a standing pose and keyboard input doesn't affect him, and finally, we `use` the [`lifespan`](https://kaboomjs.com/#lifesspan) component to fade Mario out and remove him from the scene.
+- When Mario is killed, we can call the `die` method. This first removes the `body` component on Mario so that he is no longer subject to gravity or collisions, because these are things that ghosts are not worried about. Then we call the `bump` method that is added by our custom `bump` component. This shoots Mario up into the air, and back down again. We also set the `isAlive` flag to false, to signal to any collision handlers that Mario is dead before they try kill him again, or give him a 1-up mushroom or coin. We `freeze()` Mario so that he reverts to a standing pose and keyboard input doesn't affect him, and finally, we `use` the `lifespan` component to fade Mario out and remove him from the scene.
 
-We also have the required `update` method, which Kaboom calls every frame. In this method, we check if Mario is frozen, in which case we call our `standing` method to update Mario's pose. Then we check if Mario is not on the ground, in other words he is in the air, using the `grounded()` method provided by the [`body`](https://kaboomjs.com/#body) component. This method returns `true` if he is on a `solid` object, or `false` otherwise. If this comes back `false`, we call the `jumping` method to stop any animations and set the static jumping frame.
+We also have the required `update` method, which Kaboom calls every frame. In this method, we check if Mario is frozen, in which case we call our `standing` method to update Mario's pose. Then we check if Mario is not on the ground, in other words he is in the air, using the `grounded()` method provided by the `body` component. This method returns `true` if he is on a `solid` object, or `false` otherwise. If this comes back `false`, we call the `jumping` method to stop any animations and set the static jumping frame.
 
 If Mario is not jumping, i.e. he is `grounded`, then we check if the user currently has the `left` or `right` key down. If so, this means Mario is `running()`. The final condition is if Mario is on the ground but is not moving, then he must be `standing()`.
 
@@ -811,7 +794,7 @@ function killed() {
 }
 ```
 
-This function does a few things. First, we run the code in the `die` method from the custom `mario` component. Then we [`add`](https://kaboomjs.com/#add) some [`text`](https://kaboomjs.com/#text) to notify the player that the game is over. We [`wait`](https://kaboomjs.com/#wait) for 2 seconds as we pay Mario our final respects, and then we [`go`](https://kaboomjs.com/#go) back to the start scene to play again.
+This function does a few things. First, we run the code in the `die` method from the custom `mario` component. Then we `add` some `text` to notify the player that the game is over. We `wait` for two seconds as we pay Mario our final respects, and then we `go` back to the start scene to play again.
 
 Another way Mario can die in *Mario World* is if he falls off the platform into the void. We can check for this by modifying the `player.onUpdate` handler we added earlier for moving the camera:
 
@@ -835,7 +818,7 @@ player.onUpdate(() => {
 });
 ```
 
-Here, we check if Mario's `y` co-ordinate is greater than the [`height`](https://kaboomjs.com/#height) of the Kaboom window, less the size of one platform block, which is 16 pixels. If this is the case, it means Mario has fallen off the top row of the platform, and therefore has been `killed()`.
+Here, we check if Mario's `y` co-ordinate is greater than the `height` of the Kaboom window, less the size of one platform block, which is 16 pixels. If this is the case, it means Mario has fallen off the top row of the platform, and therefore has been `killed()`.
 
 We also need to update our `left` and `right` key handler events to check if Mario `isFrozen`. In this case the handlers should just return early without moving Mario:
 
@@ -870,13 +853,11 @@ Time to update the output and test all these changes out! First thing to test is
 
 ![Mario bigger and killed](resources/7-bigger-kill-scenes.png)
 
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/32-mario-kaboom/bigger-kill-scenes.gif)
-
 ## Ending when we get to the castle
 
 The final thing to do for this tutorial is to handle the case when Mario reaches the castle. At this point, when Mario is at the door, we want him to `freeze`, a congratulations message to appear to the player, and then move on to the next level.
 
-We can use a regular collision handler to check if Mario is at the castle. Notice in the setup for the castle in the `levelConf` we added earlier, we set the collision [`area`](https://kaboomjs.com/#area) of the castle to a very narrow, completely vertical line of width 1 pixel and height 240, which is the screen height:
+We can use a regular collision handler to check if Mario is at the castle. Notice in the setup for the castle in the `levelConf` we added earlier, we set the collision `area` of the castle to a very narrow, completely vertical line of width 1 pixel and height 240, which is the screen height:
 
 ```js
   "H": () => [
@@ -917,7 +898,7 @@ player.onCollide("castle", (castle, side) => {
 });
 ```
 
-First, we `freeze` Mario so the player can't control him anymore. Then we [`add`](https://kaboomjs.com/#add) our "Well Done!" [`text`](https://kaboomjs.com/#text) message to the center of the screen. We [`wait`](https://kaboomjs.com/#wait) a second before incrementing our level number and going to the next level, or going back to the start of the game if we have completed all levels.
+First, we `freeze` Mario so the player can't control him anymore. Then we `add` our "Well Done!" `text` message to the center of the screen. We `wait` a second before incrementing our level number and going to the next level, or going back to the start of the game if we have completed all levels.
 
 
 ## Next steps
@@ -925,7 +906,7 @@ First, we `freeze` Mario so the player can't control him anymore. Then we [`add`
 There are few things left to do to complete the game:
 
 - Add in some scoring. You can check out a previous Kaboom tutorial, like [Space Shooter](https://docs.replit.com/tutorials/24-build-space-shooter-with-kaboom), to see how scoring works.
-- Add in sounds and music. If you get your own copy of the *Mario* soundtrack and effects, you can use the [`play`](https://kaboomjs.com/#play) sound function in Kaboom to get those classic tunes blasting as you play.
+- Add in sounds and music. If you get your own copy of the *Mario* soundtrack and effects, you can use the `play` sound function in Kaboom to get those classic tunes blasting as you play.
 - Add in some more levels. This is the really fun part, where you get to create *Mario* levels you wish existed.
 - You can also add in some more of the *Mario World* game characters.
 

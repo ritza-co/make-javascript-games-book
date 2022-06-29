@@ -1,10 +1,10 @@
-# Building *Space Invaders* with Kaboom.js
+# Building *Space Invaders*
 
 *Space Invaders* is a classic shoot 'em up arcade game created by Taito Corporation in Japan way back in 1978. It was an absolute monster hit, making nearly $4 billion in sales (that's the equivalent of over $13 billion today)!
 
 Later, Atari released a clone of *Space Invaders* on the Atari 2600 home system. It was a great success, and meant that people could play *Space Invaders* on their home systems, instead of on an arcade machine. *Space Invaders* is pretty embedded in pop culture these days, and you might even find [*Space Invaders* mosaic and graffiti on the streets](https://theculturetrip.com/europe/france/paris/articles/everything-you-need-to-know-about-the-street-artist-invader/)!
 
-Of course, *Space Invaders* was such a popular game, there were many clones and variations. Let's make our own version using [Kaboom](https://kaboomjs.com) and [Replit](https://replit.com).
+Of course, *Space Invaders* was such a popular game, there were many clones and variations. Let's make our own version.
 
 ![gameplay](resources/10-gameplay.png)
 
@@ -46,7 +46,7 @@ We initialize Kaboom with a black background (`[0, 0, 0]`), a width of 800 pixel
 
 ## Importing sprites and other game assets
 
-Kaboom can import sprites in many different formats. We'll use the `.png` format, along with the Kaboom [`loadSpriteAtlas`](https://kaboomjs.com/#loadSpriteAtlas) function. This function allows us to tell Kaboom how to load a _sprite sheet_. A sprite sheet is an image with multiple frames of a sprite animation in it. We'll use sprite sheets for the aliens, so we can have a "move" animation when the aliens move, and an "explosion" animation for when the aliens are destroyed.
+Kaboom can import sprites in many different formats. We'll use the `.png` format, along with the Kaboom `loadSpriteAtlas` function. This function allows us to tell Kaboom how to load a _sprite sheet_. A sprite sheet is an image with multiple frames of a sprite animation in it. We'll use sprite sheets for the aliens, so we can have a "move" animation when the aliens move, and an "explosion" animation for when the aliens are destroyed.
 
 Similarly, we'll use a sprite sheet for the player's ship, so that we can animate an explosion when the player is destroyed.
 
@@ -56,7 +56,7 @@ This is what the two sprite sheets look like, for the aliens and the player:
 
 ![Player sprite sheet](https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/player-sprite.png)
 
-We need to describe how to use each of the images in the sprite sheets. Kaboom's [`loadSpriteAtlas`](https://kaboomjs.com/#loadSpriteAtlas) function accepts an object describing all these details. Add the following code to the "main" code file:
+We need to describe how to use each of the images in the sprite sheets. Kaboom's `loadSpriteAtlas` function accepts an object describing all these details. Add the following code to the "main" code file:
 
 ```js
 loadRoot("sprites/");
@@ -105,7 +105,7 @@ Then we load the sprite sheets. The first argument is the path to the sprite she
 
 ## Setting up scenes
 
-[Scenes](https://kaboomjs.com/#scene) are like different stages in a Kaboom game. Generally, there are three scenes in games:
+Scenes are like different stages in a Kaboom game. Generally, there are three scenes in games:
 
 - The intro scene, which gives some info and instructions, and waits for the player to press "start".
 - The main game, where we play.
@@ -113,7 +113,7 @@ Then we load the sprite sheets. The first argument is the path to the sprite she
 
 For this tutorial, we'll omit the intro scene, since we already know what *Space Invaders* is and how to play it. You might like to add your own intro scene in later!
 
-![Game scenes](https://replit-docs-images.bardia.repl.co/images/tutorials/41-space-invaders-kaboom/game-scenes.png)
+![Game scenes](resources/10-game-scenes.png)
 
 Let's add the code for defining each scene: 
 
@@ -135,7 +135,7 @@ go("game")
 
 Notice in the `"gameOver"` scene definition, we add a custom parameter: `score`. This is so we can pass the player's final score to the end game scene to display it. 
 
-To start the whole game off, we use the [`go`](https://kaboomjs.com/#go) function, which switches between scenes. 
+To start the whole game off, we use the `go` function, which switches between scenes. 
 
 ## Adding the player object
 
@@ -160,10 +160,10 @@ Let's add in our player object. Add this code to the `"game"` scene:
   player.play('move');
 ```
 
-This uses the [`add`](https://kaboomjs.com/#add) function to add a new character to the scene. The `add` function takes an array (`[ ]`) of components that make up the look and behavior of a game character. In Kaboom, every character is made up of one or more components. Components give special properties to each character. There are built-in components for many properties, like:
-* [`sprite`](https://kaboomjs.com/#sprite), to give the character an avatar.
-* [`pos`](https://kaboomjs.com/#pos), to specify the starting position of the object and give it functionality like movement.
-* [`origin`](https://kaboomjs.com/#origin), to specify whether `pos` uses the object's center or one of the corners.
+This uses the `add` function to add a new character to the scene. The `add` function takes an array (`[ ]`) of components that make up the look and behavior of a game character. In Kaboom, every character is made up of one or more components. Components give special properties to each character. There are built-in components for many properties, like:
+* `sprite`, to give the character an avatar.
+* `pos`, to specify the starting position of the object and give it functionality like movement.
+* `origin`, to specify whether `pos` uses the object's center or one of the corners.
  
 Kaboom also allows us to add custom properties to a game object. For the player, we add in their score and number of lives remaining as custom properties. This makes it simple to keep track of these variables without using global variables. 
 
@@ -255,7 +255,7 @@ If you run the game, you should see a block of animated aliens and the blue play
 
 ## Moving the player
 
-The next step is adding controls to move the player around the screen. Kaboom has the useful [`onKeyDown`](https://kaboomjs.com/#onKeyDown) function that we can use to call a handler when specified keys are pressed. When we added the [`pos`](https://kaboomjs.com/#pos) component to our player, it added methods to [`move`](https://kaboomjs.com/#move) the player. We'll use these functions to add this move-handling code to the `"game"` scene:
+The next step is adding controls to move the player around the screen. Kaboom has the useful `onKeyDown` function that we can use to call a handler when specified keys are pressed. When we added the `pos` component to our player, it added methods to `move` the player. We'll use these functions to add this move-handling code to the `"game"` scene:
 
 ```js
   let pause = false;
@@ -313,7 +313,7 @@ const ALIEN_STEPS = 322;
 const ALIEN_ROWS_MOVE = 7;
 ```
 
-Since the aliens should move automatically, without the player pressing a key, we need a way to call our code to move the aliens every frame. Kaboom has a function [`onUpdate`](https://kaboomjs.com/#onUpdate) that we can use. Add the following code to the `"game"` scene:
+Since the aliens should move automatically, without the player pressing a key, we need a way to call our code to move the aliens every frame. Kaboom has a function `onUpdate` that we can use. Add the following code to the `"game"` scene:
 
 ```js
  onUpdate(() => {
@@ -348,15 +348,15 @@ Since the aliens should move automatically, without the player pressing a key, w
   }
 
 ```
-This code has a number of parts. First, we check if the game is in the pause state. If it is, we don't want to do anything, so we return early. Then we use the Kaboom [`every`](https://kaboomjs.com/#every) function, which selects game objects with a given tag, and runs the given function on each one. In this case, we're selecting all aliens and using [`move`](https://kaboomjs.com/#move) to move them across the screen, at the speed and direction specified by our direction flag. 
+This code has a number of parts. First, we check if the game is in the pause state. If it is, we don't want to do anything, so we return early. Then we use the Kaboom `every` function, which selects game objects with a given tag, and runs the given function on each one. In this case, we're selecting all aliens and using `move` to move them across the screen, at the speed and direction specified by our direction flag. 
 
-Then we update the `alienMoveCounter` and check if it has reached the value of `ALIEN_STEPS`. If it has, we switch the direction of the aliens and reset the counter. We also call a helper function `moveAliensDown` to move the aliens down a row. Note that in the `moveAliensDown` function, we also select all aliens using the [`every`](https://kaboomjs.com/#every) function. This time, we make use of the `moveBy` function, which moves the aliens by a given amount. The difference between the [`move`](https://kaboomjs.com/#move) and `moveBy` functions is that `move` parameters specify pixels per second, while `moveBy` specifies the total number of pixels to move by. 
+Then we update the `alienMoveCounter` and check if it has reached the value of `ALIEN_STEPS`. If it has, we switch the direction of the aliens and reset the counter. We also call a helper function `moveAliensDown` to move the aliens down a row. Note that in the `moveAliensDown` function, we also select all aliens using the `every` function. This time, we make use of the `moveBy` function, which moves the aliens by a given amount. The difference between the `move` and `moveBy` functions is that `move` parameters specify pixels per second, while `moveBy` specifies the total number of pixels to move by. 
 
 Finally, we check if the aliens have moved down more than `ALIEN_ROWS_MOVE`. If they have, we end the game. When the game ends, we change the player sprite to play the `explode` animation, which plays the last two frames of the sprite sheet. We also wait for two seconds before calling the `go` function to go to the `"gameOver"` scene, passing in the player's score so it can be shown to the player.
 
 ## Firing bullets
 
-Now our game characters can all move around. Let's add in some shooting. In *Space Invaders*, the player shoots up to the aliens. There should be a "reload" time between shots, so that the player can't just hold down the fire button and machine-gun all the aliens. That would make the game too easy, and therefore boring. To counter that, we'll need to keep track of when the last bullet was fired and implement a short "cooldown" period before the player can shoot again. We'll use the [`onKeyDown`](https://kaboomjs.com/#onKeyDown) function to connect pressing the space bar to our shooting code. Add the following code to the `"game"` scene:
+Now our game characters can all move around. Let's add in some shooting. In *Space Invaders*, the player shoots up to the aliens. There should be a "reload" time between shots, so that the player can't just hold down the fire button and machine-gun all the aliens. That would make the game too easy, and therefore boring. To counter that, we'll need to keep track of when the last bullet was fired and implement a short "cooldown" period before the player can shoot again. We'll use the `onKeyDown` function to connect pressing the space bar to our shooting code. Add the following code to the `"game"` scene:
 
 ```js
   let lastShootTime = time();
@@ -387,7 +387,7 @@ Now our game characters can all move around. Let's add in some shooting. In *Spa
 
 ```
 
-You'll see in the code above that we have a helper function, `spawnBullet`, that handles creating a bullet. It has some parameters, like the starting position of the bullet `bulletPos`, the direction it should move in `direction`, and the tag to give the bullet. The reason this is in a separate function is so that we can re-use it for the aliens' bullets when we make them shoot. Notice that we use Kaboom's [`cleanup`](https://kaboomjs.com/#cleanup) component to automatically remove the bullet when it leaves the screen. That is super useful, because once a bullet leaves the screen, we don't want Kaboom spending resources updating it every frame. With hundreds of bullets on the screen, this can be a performance killer.
+You'll see in the code above that we have a helper function, `spawnBullet`, that handles creating a bullet. It has some parameters, like the starting position of the bullet `bulletPos`, the direction it should move in `direction`, and the tag to give the bullet. The reason this is in a separate function is so that we can re-use it for the aliens' bullets when we make them shoot. Notice that we use Kaboom's `cleanup` component to automatically remove the bullet when it leaves the screen. That is super useful, because once a bullet leaves the screen, we don't want Kaboom spending resources updating it every frame. With hundreds of bullets on the screen, this can be a performance killer.
 
 We also use the constant `GUN_COOLDOWN_TIME` to test if the player can shoot again. This is the time in seconds between shots. Add this constant to the other constants we have used:
 
@@ -395,7 +395,7 @@ We also use the constant `GUN_COOLDOWN_TIME` to test if the player can shoot aga
 const GUN_COOLDOWN_TIME = 1;
 ```
 
-To check the gun cooldown time, we use the Kaboom [`time`](https://kaboomjs.com/#time) function. The `time` function returns the time since the game started in seconds. Whenever the player shoots, we record the time in `lastShootTime`. Then, each time the player presses the space bar, we check if the time since the last shot is greater than `GUN_COOLDOWN_TIME`. If it is, we can shoot again. If it isn't, we can't shoot again. This way we can make sure the player needs to smash the fire button to get a rapid fire.
+To check the gun cooldown time, we use the Kaboom `time` function. The `time` function returns the time since the game started in seconds. Whenever the player shoots, we record the time in `lastShootTime`. Then, each time the player presses the space bar, we check if the time since the last shot is greater than `GUN_COOLDOWN_TIME`. If it is, we can shoot again. If it isn't, we can't shoot again. This way we can make sure the player needs to smash the fire button to get a rapid fire.
 
 The code above handles the player pressing the fire button, the space bar, and spawning a bullet. This bullet will just be stationary until we add in some movement for it each frame. We've given each bullet spawned a tag called `missile` so that we'll be able to select it later. We also added a custom property `direction` to the bullet. Using those properties, we can move the bullet in the direction it should move using this code:
 
@@ -406,7 +406,7 @@ The code above handles the player pressing the fire button, the space bar, and s
   });
 ```
 
-The [`onUpdate`](https://kaboomjs.com/#onUpdate) function has an option to take a tag to select the game objects to update each frame. In this case, we're updating all bullets. We also have a constant `BULLET_SPEED` that specifies the speed of the bullets. Add this constant to the other constants:
+The `onUpdate` function has an option to take a tag to select the game objects to update each frame. In this case, we're updating all bullets. We also have a constant `BULLET_SPEED` that specifies the speed of the bullets. Add this constant to the other constants:
 
 ```js
 const BULLET_SPEED = 300;
@@ -419,7 +419,7 @@ If you run the game now, you should be able to shoot bullets. They won't kill th
 
 ## Detecting bullet collisions with aliens
 
-Now that we have bullets and they move, we need to add collision detection and handling code to check when the bullet hits an alien. For this, we can use the Kaboom [`onCollide`](https://kaboomjs.com/#onCollide) function. First add the constant below to the other constants:
+Now that we have bullets and they move, we need to add collision detection and handling code to check when the bullet hits an alien. For this, we can use the Kaboom `onCollide` function. First add the constant below to the other constants:
 
 ```js
 const POINTS_PER_ALIEN = 100;
@@ -437,7 +437,7 @@ Then add the following code to the `"game"` scene:
   });
 ```
 
-In this function, we pass the tags for the `bullet` and `alien` in to `onCollide`, so that our handler is fired whenever these two types of objects collide on the screen. First we call Kaboom's [`destroy`](https://kaboomjs.com/#destroy) function to destroy the bullet on the screen. Then we call the `play` function on the alien to play the `explode` animation. We also use the [`lifespan`](https://kaboomjs.com/#lifespan) function to make the alien fade out and disappear after a short period of time. Finally, we mark the alien as dead in the `alienMap` array, by setting its entry to null. This way, we can keep tabs on which aliens are still alive when we choose an alien to shoot back at the player. 
+In this function, we pass the tags for the `bullet` and `alien` in to `onCollide`, so that our handler is fired whenever these two types of objects collide on the screen. First we call Kaboom's `destroy` function to destroy the bullet on the screen. Then we call the `play` function on the alien to play the `explode` animation. We also use the `lifespan` function to make the alien fade out and disappear after a short period of time. Finally, we mark the alien as dead in the `alienMap` array, by setting its entry to null. This way, we can keep tabs on which aliens are still alive when we choose an alien to shoot back at the player. 
 
 Finally, we call a helper method `updateScore` to add to the player's score, and update it on screen. We need a bit of code to get this part working - including adding text elements to the screen to show the score. Add the following code to the `"game"` scene:
 
@@ -462,7 +462,7 @@ Finally, we call a helper method `updateScore` to add to the player's score, and
   }
 ```
 
-First we add a text label for the score. We use the Kaboom [`text`](https://kaboomjs.com/#text) component to create a text element. Then we need a text element that shows the actual score. We add it the same way as the label, except this time we store a reference to this text element in `scoreText`. Then we have the helper function `updateScore`, which adds points to the player's score and updates the score text element. We use the `padStart` function to add leading zeros to the score, so that the score is always six digits long. This shows the player that it is possible to score a lot of points!
+First we add a text label for the score. We use the Kaboom `text` component to create a text element. Then we need a text element that shows the actual score. We add it the same way as the label, except this time we store a reference to this text element in `scoreText`. Then we have the helper function `updateScore`, which adds points to the player's score and updates the score text element. We use the `padStart` function to add leading zeros to the score, so that the score is always six digits long. This shows the player that it is possible to score a lot of points!
 
 If you run the game now, you should be able to shoot at an alien, destroy it, and see your points increase. 
 
@@ -473,7 +473,7 @@ If you run the game now, you should be able to shoot at an alien, destroy it, an
 
 It's not fair that only the player can shoot the aliens - we've got to give the aliens a chance to shoot back! Since we don't want the aliens to be shooting each other, we need to only allow aliens with a clear shot to the ground to be able to shoot. In other words, an alien that shoots must not have another alien in front of them. Recall that when we added the aliens, we created a 2D array that stores a reference to each alien. When an alien gets hit, we set the entry in the array to null. Therefore we can use this array to find an alien that has a clear shot to the ground to shoot at the player. 
 
-To make the aliens shoot at regular intervals, we'll use the Kaboom [`loop`](https://kaboomjs.com/#loop) function, which calls a function at a regular interval. Add the following code to the `"game"` scene:
+To make the aliens shoot at regular intervals, we'll use the Kaboom `loop` function, which calls a function at a regular interval. Add the following code to the `"game"` scene:
 
 ```js
   // Find a random alien to make shoot
@@ -516,7 +516,7 @@ If you run the game now, you should see a random alien shoot at the player every
 
 ## Detecting bullet collisions with the player
 
-Now that the aliens can shoot, we can add code to determine if one of their bullets hit the player. To do this, we can use the Kaboom [`onCollide`](https://kaboomjs.com/#onCollide) function again. Add the following code to the `"game"` scene:
+Now that the aliens can shoot, we can add code to determine if one of their bullets hit the player. To do this, we can use the Kaboom `onCollide` function again. Add the following code to the `"game"` scene:
 
 ```js
   player.onCollide("alienBullet", (bullet) => {
@@ -540,7 +540,7 @@ Now that the aliens can shoot, we can add code to determine if one of their bull
 
 This code is similar to the previous collision handler we added for bullets hitting aliens. There are a few difference though. 
 
-First, we check if the game is in the pause state, and exit early from the function if it is. If not, then we destroy the bullet, as we don't want to display it anymore (it's stuck in the player!). Next, we use the `play` method to change the player sprite to the `explode` animation we defined in the `loadSpriteAtlas` call. We have a helper method, `updateLives`, similar to the one we used to update the score. We set the the `pause` flag to true to prevent the player or aliens from moving or shooting. After two seconds, using the [`wait`](https://kaboomjs.com/#wait) function, we either go to the end game screen (if the player has no more lives left) or reset the player to the start position (if the player still has lives) to allow the game to continue. Once the player has been reset, we set the `pause` flag to false and switch the player sprite back to the `move` animation.
+First, we check if the game is in the pause state, and exit early from the function if it is. If not, then we destroy the bullet, as we don't want to display it anymore (it's stuck in the player!). Next, we use the `play` method to change the player sprite to the `explode` animation we defined in the `loadSpriteAtlas` call. We have a helper method, `updateLives`, similar to the one we used to update the score. We set the the `pause` flag to true to prevent the player or aliens from moving or shooting. After two seconds, using the `wait` function, we either go to the end game screen (if the player has no more lives left) or reset the player to the start position (if the player still has lives) to allow the game to continue. Once the player has been reset, we set the `pause` flag to false and switch the player sprite back to the `move` animation.
 
 The `updateLives` helper function needs a few UI elements, as we did for the score. Add the following code to add the lives text elements to the `"game"` scene:
 
@@ -590,7 +590,7 @@ We made a call to the `"gameOver"` scene. At the moment, we just have a placehol
   });
 ```
 
-In the `"gameOver"` scene, we add a big, size 40 "Game Over" banner. The score is added below it, in smaller text. We also add a way to start a new game. We use the [`onKeyPress`](https://kaboomjs.com/#onKeyPress) function to listen for the space bar being pressed. When this happens, we call the `go` function to start the game again.
+In the `"gameOver"` scene, we add a big, size 40 "Game Over" banner. The score is added below it, in smaller text. We also add a way to start a new game. We use the `onKeyPress` function to listen for the space bar being pressed. When this happens, we call the `go` function to start the game again.
 
 All the elements for the game are now defined. Give it a go, and see how you do!
 
@@ -601,6 +601,6 @@ You can find the code for this tutorial on [Replit](https://replit.com/@ritza/Sp
 Here are some things to try to make this game more entertaining:
 
 - make the aliens move or shoot faster for each level the player reaches
-- add some sound effects and music. Kaboom has the [`play`](https://kaboomjs.com/#play) function to play audio files. Try adding effects for shooting, explosions, points scored, etc
+- add some sound effects and music. Kaboom has the `play` function to play audio files. Try adding effects for shooting, explosions, points scored, etc
 - add different types of aliens. In many *Space Invaders* versions, a "boss" ship flies across the top of the screen at random intervals. Shooting this ship gives the player lots of bonus points
 -give the player a bonus life if they reach a certain score

@@ -1,6 +1,6 @@
 # Getting started
 
-Kaboom.js is a JavaScript library that contains many useful features to make simple in-browser games. It has functionality to draw shapes and sprites (the images of characters and game elements) to the screen, get user input, play sounds, and more.
+Kaboom is a JavaScript library that contains many useful features to make simple in-browser games. It has functionality to draw shapes and sprites (the images of characters and game elements) to the screen, get user input, play sounds, and more.
 
 Kaboom also makes good use of JavaScript's support for callbacks; instead of writing loops to read in keyboard input and check if game objects have collided (bumped into each other), Kaboom uses an event model, where it tells us when such an event has occurred. Then we can connect up callback functions that act on these events.
 

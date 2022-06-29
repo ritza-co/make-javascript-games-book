@@ -1,10 +1,8 @@
-# Build a Physics playground with Kaboom.js
+# Build a Physics playground
 
-In this tutorial, we will be building a simple physics playground with [Kaboom.js](https://kaboomjs.com/). This will be a 2D side-view platformer in which the player can use a [gravity gun](https://en.wikipedia.org/wiki/Gravity_gun) to pick up and shoot objects in the world, similar to games like *Half-Life 2* and *Rochard*.
+In this tutorial, we will be building a simple physics playground. This will be a 2D side-view platformer in which the player can use a [gravity gun](https://en.wikipedia.org/wiki/Gravity_gun) to pick up and shoot objects in the world, similar to games like *Half-Life 2* and *Rochard*.
 
 ![The finished game](resources/8-gameplay.png)
-
-[Click to open gif](https://replit-docs-images.bardia.repl.co/images/tutorials/36-physics-playground/gameplay.gif)
 
 By the end of this tutorial, you will:
 
@@ -99,7 +97,7 @@ addLevel([
 });
 ```
 
-This code uses Kaboom's [`addLevel()`](https://kaboomjs.com/#addLevel) function to visually construct a level. This function takes two arguments: an ASCII art representation of the level, and a JSON object defining the width and height of individual blocks and providing definitions for each of the objects used. Let's take a closer look at each of these definitions, starting with the wall object.
+This code uses Kaboom's `addLevel()` function to visually construct a level. This function takes two arguments: an ASCII art representation of the level, and a JSON object defining the width and height of individual blocks and providing definitions for each of the objects used. Let's take a closer look at each of these definitions, starting with the wall object.
 
 ```javascript
     "=": () => [ // wall
@@ -111,14 +109,14 @@ This code uses Kaboom's [`addLevel()`](https://kaboomjs.com/#addLevel) function 
     ],
 ```
 
-A [game object definition](https://kaboomjs.com/#add) in Kaboom is a list of components and tags, and optionally custom attributes and functions. Components are a core part of Kaboom – they provide different functionality to game objects, from an object's appearance to functionality such as collision detection.
+A game object definition in Kaboom is a list of components and tags, and optionally custom attributes and functions. Components are a core part of Kaboom – they provide different functionality to game objects, from an object's appearance to functionality such as collision detection.
 
 This wall object has four components:
 
-* [`rect()`](https://kaboomjs.com/#rect), which draws a rectangle to represent the object.
-* [`color()`](https://kaboomjs.com/#color), which gives the rectangle a color.
-* [`area()`](https://kaboomjs.com/#area), which provides collision detection for the object.
-* [`solid()`](https://kaboomjs.com/#solid), which will prevent other objects from moving past it.
+* `rect()`, which draws a rectangle to represent the object.
+* `color()`, which gives the rectangle a color.
+* `area()`, which provides collision detection for the object.
+* `solid()`, which will prevent other objects from moving past it.
 
 We've given the object the tag "wall". Objects can have multiple tags, which can be used to define custom behavior, such as collision detection between objects with particular tags.
 
@@ -139,10 +137,10 @@ Next, let's look at the crate definition:
 
 Compared to our wall, we've given our crate the following additional components:
 
-* [`z()`](https://kaboomjs.com/#z), which defines the crate's [z-order](https://en.wikipedia.org/wiki/Z-order), ensuring it will be drawn on top of walls.
-* [`outline()`](https://kaboomjs.com/#z), which will draw a single-pixel outline around the object.
-* [`origin()`](https://kaboomjs.com/#origin), which sets the sprite's origin to "center", so that we can move it around from its center, rather than the default top-left corner.
-* [`body()`](https://kaboomjs.com/#body), which makes our crate subject to gravity.
+* `z()`, which defines the crate's [z-order](https://en.wikipedia.org/wiki/Z-order), ensuring it will be drawn on top of walls.
+* `outline()`, which will draw a single-pixel outline around the object.
+* `origin()`, which sets the sprite's origin to "center", so that we can move it around from its center, rather than the default top-left corner.
+* `body()`, which makes our crate subject to gravity.
 
 We've given it the tag "movable", a generic tag we can use for all objects that can be manipulated by the player's gravity gun.
 
@@ -167,7 +165,7 @@ Finally, let's look at the player object:
 
 Note the following:
 
-* As we're using the [`circle`](https://kaboomjs.com/#circle) component to draw the player, we must specify a width and height for the `area()` component. All collision areas in Kaboom.js are rectangular (as of v2000.1.6).
+* As we're using the `circle` component to draw the player, we must specify a width and height for the `area()` component. All collision areas in Kaboom are rectangular (as of v2000.1.6).
 * We've added `speed` and `jumpspeed` custom variables to the player object, which we'll use to control its movement speed and jump height.
 
 Run your repl now, and you'll see your level, with player, crates and walls. As we've placed the player in mid-air, you should see them fall to the platform below, confirming the presence of gravity.
@@ -177,7 +175,7 @@ Run your repl now, and you'll see your level, with player, crates and walls. As 
 
 ## Moving the player
 
-Let's write some code to control the player. First, we need to retrieve a reference to the player using [`get()`](https://kaboomjs.com/#get):
+Let's write some code to control the player. First, we need to retrieve a reference to the player using `get()`:
 
 ```javascript
 // player
@@ -195,7 +193,7 @@ onKeyDown("d", () => {
 });
 ```
 
-Here we detect the [`onKeyDown`](https://kaboomjs.com/#onKeyDown) event for the `A` key to move the player to the left and `D` key to move the player to the right. The `move()` function automatically checks for collisions with solid objects, so the player will only move if there is space to do so.
+Here we detect the `onKeyDown` event for the `A` key to move the player to the left and `D` key to move the player to the right. The `move()` function automatically checks for collisions with solid objects, so the player will only move if there is space to do so.
 
 ```javascript
 onKeyDown("w", () => {
@@ -216,7 +214,7 @@ player.onUpdate(() => {
 });
 ```
 
-This code will [run every frame](https://kaboomjs.com/#onUpdate) and keep the camera focused on the player as they move around. Refresh your in-repl browser and try it out.
+This code will run every frame and keep the camera focused on the player as they move around. Refresh your in-repl browser and try it out.
 
 ## Pulling objects with the gravity gun
 
@@ -255,7 +253,7 @@ function gravitygun(range, hold, firepower) {
 }
 ```
 
-Components are written as functions that return objects of a specific format. Each component should have an `id`, and a list of components it depends on attached to the `require` attribute. Beyond that, components can have arbitrary attributes, which will be assigned to their parent object, and special functions, which will be integrated into the game's [event loop](https://kaboomjs.com/#on).
+Components are written as functions that return objects of a specific format. Each component should have an `id`, and a list of components it depends on attached to the `require` attribute. Beyond that, components can have arbitrary attributes, which will be assigned to their parent object, and special functions, which will be integrated into the game's event loop.
 
 The only dependency for our component is `pos()`, as it will not work on an object that doesn't have a position in the world. Function arguments will allow us to customize this component, in the form of specifying the gravity gun's range, hold distance, and firepower.
 
@@ -403,7 +401,7 @@ onUpdate("movable", (movable) => {
 });
 ```
 
-First, we get the coordinates for the movable object's collision rectangle, using `worldArea()`, a function provided by the `area()` component. We then use the [`testRectLine()`](https://kaboomjs.com/#testRectLine) function to determine whether our player's range line or hold line intersects with this collision rectangle.
+First, we get the coordinates for the movable object's collision rectangle, using `worldArea()`, a function provided by the `area()` component. We then use the `testRectLine()` function to determine whether our player's range line or hold line intersects with this collision rectangle.
 
 Now let's have the gravity gun pull objects in range when the player holds down the right mouse button. Add the following code below the line where you assigned `movable.inHold` in the body of the `onUpdate` event callback: 
 
@@ -496,7 +494,7 @@ function checkCollisionLine(line, tag) {
 }
 ```
 
-The `checkCollisionLine()` function tests whether an object with a given tag intersects with a line. We do this by [getting all objects with the tag](https://kaboomjs.com/#get) and testing each one until we find a collision. The [`some()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) method will stop executing after a single `true` is returned, so this isn't quite as inefficient as it could be, but it's still probably not the optimal way to do this. Nonetheless, it should work fine while our game is relatively small.
+The `checkCollisionLine()` function tests whether an object with a given tag intersects with a line. We do this by getting all objects with the tag and testing each one until we find a collision. The [`some()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) method will stop executing after a single `true` is returned, so this isn't quite as inefficient as it could be, but it's still probably not the optimal way to do this. Nonetheless, it should work fine while our game is relatively small.
 
 To use this function, find the `if (isMouseDown("right"))` in your `onUpdate("movable")` event callback and make the modifications shown:
 
@@ -549,7 +547,7 @@ Let's implement a dropping timeout for dropped objects to make this more user-fr
         });
 ```
 
-This code uses a [`wait()`](https://kaboomjs.com/#wait) callback, which will execute after the given number of seconds. 
+This code uses a `wait()` callback, which will execute after the given number of seconds. 
 
 We defined the `dropping` attribute as part of our `physics()` component, so now all we need to do is make our pull respect the timeout. Find the `if (isMouseDown("right"))` line in your `onUpdate("movable")` event callback and alter it to resemble the following:
 
